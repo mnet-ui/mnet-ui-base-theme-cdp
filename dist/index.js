@@ -470,7 +470,7 @@ var generate = function generate(baseSpacing, scale) {
       border: {
         // color: { dark: undefined, light: undefined }
         width: borderWidth + "px",
-        radius: baseSpacing * 0.312 + "px"
+        radius: baseSpacing * 0.25 + "px"
       },
       color: {
         dark: undefined,
@@ -509,7 +509,7 @@ var generate = function generate(baseSpacing, scale) {
             light: 'accent-2'
           }
         },
-        color: 'white' // padding: {
+        color: 'dark-1' // padding: {
         //   vertical: undefined,
         //   horizontal: undefined,
         // },
@@ -517,14 +517,15 @@ var generate = function generate(baseSpacing, scale) {
 
       },
       tertiary: {
-        background: 'light-3',
+        background: 'white',
         border: {
           color: {
-            dark: 'light-3',
-            light: 'light-3'
-          }
-        } // color: 'white',
-        // padding: {
+            dark: 'accent-1',
+            light: 'accent-1'
+          },
+          width: '1px'
+        },
+        color: 'accent-1' // padding: {
         //   vertical: undefined,
         //   horizontal: undefined,
         // },
@@ -640,38 +641,41 @@ var generate = function generate(baseSpacing, scale) {
       icons: {// checked: undefined,
         // indeterminate: undefined,
       },
-      size: baseSpacing + "px",
+      size: baseSpacing * 0.625 + "px",
       toggle: {
         background: {
           light: 'accent-2'
         },
-        size: baseSpacing * 2.3125 + "px",
+        size: baseSpacing * 1.5 + "px",
         color: {
-          dark: '#d9d9d9',
-          light: 'white'
+          dark: statusColors.error,
+          light: statusColors.error
         },
         knob: {
           background: {
-            light: 'white'
+            light: statusColors.error
           },
           color: {
-            light: 'white'
+            light: statusColors.error
           },
-          extend: {
-            top: '2px',
-            left: '2px',
-            width: baseSpacing * 0.937 + "px",
-            height: baseSpacing * 0.937 + "px",
-            background: colors.white
+          extend: function extend(_ref) {
+            var checked = _ref.checked;
+            return {
+              top: '3px',
+              left: '2px',
+              width: baseSpacing * 0.375 + "px",
+              height: baseSpacing * 0.375 + "px",
+              background: checked ? statusColors.error : darkColors[1]
+            };
           }
         },
         radius: baseSpacing + "px",
-        extend: function extend(_ref) {
-          var checked = _ref.checked;
+        extend: function extend(_ref2) {
+          var checked = _ref2.checked;
           return {
-            height: baseSpacing * 1.187 + "px",
-            border: 'none',
-            background: checked ? accentColors[0] : accentColors[1]
+            height: baseSpacing * 0.938 + "px",
+            border: "1px solid " + (checked ? statusColors.error : darkColors[1]),
+            background: 'white'
           };
         }
       }
@@ -1329,7 +1333,7 @@ var generate = function generate(baseSpacing, scale) {
 
     },
     select: {
-      background: 'white',
+      background: 'dark-3',
       activeColor: lightColors[4],
       container: {
         extend: function extend(props) {
@@ -1341,7 +1345,7 @@ var generate = function generate(baseSpacing, scale) {
       control: {
         // open: undefined,
         extend: {
-          border: '1px solid #DEDEDE'
+          border: 'none'
         }
       },
       options: {
@@ -1361,8 +1365,8 @@ var generate = function generate(baseSpacing, scale) {
       icons: {
         color: 'icon',
         margin: 'none',
-        pad: 'small',
-        background: 'background-contrast' // extend: {},
+        pad: 'medium',
+        background: 'dark-3' // extend: {},
 
       },
       // searchInput: undefined,
@@ -1490,7 +1494,7 @@ var generate = function generate(baseSpacing, scale) {
     textInput: {
       // disabled: { opacity: undefined },
       extend: {
-        // 'padding-left': `${baseSpacing}px`,
+        'padding-left': baseSpacing * 1.25 + "px",
         'box-shadow': 'none'
       }
     },
