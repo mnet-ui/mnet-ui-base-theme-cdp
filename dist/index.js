@@ -659,22 +659,24 @@ var generate = function generate(baseSpacing, scale) {
             light: statusColors.error
           },
           extend: function extend(_ref) {
-            var checked = _ref.checked;
+            var checked = _ref.checked,
+                theme = _ref.theme;
             return {
               top: '3px',
               left: '2px',
               width: baseSpacing * 0.375 + "px",
               height: baseSpacing * 0.375 + "px",
-              background: checked ? statusColors.error : darkColors[1]
+              background: (0, _colors.normalizeColor)(checked ? 'status-error' : 'dark-2', theme)
             };
           }
         },
         radius: baseSpacing + "px",
         extend: function extend(_ref2) {
-          var checked = _ref2.checked;
+          var checked = _ref2.checked,
+              theme = _ref2.theme;
           return {
             height: baseSpacing * 0.938 + "px",
-            border: "1px solid " + (checked ? statusColors.error : darkColors[1]),
+            border: "1px solid " + (0, _colors.normalizeColor)(checked ? 'status-error' : 'dark-2', theme),
             background: 'white'
           };
         }
@@ -1064,7 +1066,7 @@ var generate = function generate(baseSpacing, scale) {
         },
         checkmark: {
           size: baseSpacing * 1.2 + "px",
-          color: 'white'
+          color: 'dark-1'
         },
         check: {
           height: baseSpacing * 1.2 + "px",
@@ -1072,30 +1074,13 @@ var generate = function generate(baseSpacing, scale) {
           margin: 'auto',
           round: 'small',
           align: 'center',
-          background: 'white',
+          background: 'dark-3',
           border: {
-            color: 'light-6'
+            color: 'dark-1'
           },
           extend: function extend(props) {
-            var getBackground = function getBackground() {
-              switch (props.isExcluded) {
-                case null:
-                  return accentColors[2];
-
-                case false:
-                  return '#38C18B';
-
-                case true:
-                  return '#FC564F';
-
-                default:
-                  return accentColors[2];
-              }
-            };
-
             return {
-              background: props.active ? getBackground() : 'white',
-              'border-color': props.active ? 'transparent' : lightColors[5]
+              background: (0, _colors.normalizeColor)('dark-3', props.theme)
             };
           }
         }
@@ -1125,7 +1110,7 @@ var generate = function generate(baseSpacing, scale) {
             return {
               width: props.twoColumnLayout ? '100%' : 'auto',
               margin: props.twoColumnLayout ? 0 : baseSpacing / (1.618 * 2) + "px",
-              background: props.twoColumnLayout ? 'white' : lightColors[2],
+              background: (0, _colors.normalizeColor)(props.twoColumnLayout ? 'white' : 'light-3', props.theme),
               padding: props.twoColumnLayout ? baseSpacing / 1.618 + "px" : baseSpacing / (1.618 * 2) + "px " + baseSpacing / 1.618 + "px",
               'border-radius': props.twoColumnLayout ? 0 : baseSpacing / (1.618 * 2) + "px",
               'border-bottom': props.twoColumnLayout ? '1px solid #D9DBE5' : 'none',
@@ -1150,7 +1135,7 @@ var generate = function generate(baseSpacing, scale) {
                   return '#FC564F';
 
                 default:
-                  return darkColors[2];
+                  return (0, _colors.normalizeColor)('dark-3', props.theme);
               }
             };
 
@@ -1196,7 +1181,7 @@ var generate = function generate(baseSpacing, scale) {
           },
           extend: function extend(props) {
             return {
-              background: props.layout === 'double-column' ? 'white' : lightColors[1],
+              background: (0, _colors.normalizeColor)(props.layout === 'double-column' ? 'white' : 'light-2', props.theme),
               'flex-direction': props.layout === 'double-column' ? 'row-reverse' : 'row',
               'padding-left': props.layout === 'double-column' ? baseSpacing / 1.618 + "px" : 0,
               'border-bottom': props.layout === 'double-column' ? '1px solid #D9DBE5' : 'none'
@@ -1334,11 +1319,12 @@ var generate = function generate(baseSpacing, scale) {
     },
     select: {
       background: 'dark-3',
-      activeColor: lightColors[4],
+      activeColor: 'light-5',
       container: {
         extend: function extend(props) {
           return {
-            borderColor: (0, _colors.normalizeColor)('border', props.theme)
+            borderColor: (0, _colors.normalizeColor)('border', props.theme),
+            background: (0, _colors.normalizeColor)('dark-3', props.theme)
           };
         }
       },
@@ -1359,7 +1345,8 @@ var generate = function generate(baseSpacing, scale) {
           }
         },
         text: {
-          margin: 'small'
+          margin: 'small',
+          color: 'dark-1'
         }
       },
       icons: {
@@ -1499,18 +1486,28 @@ var generate = function generate(baseSpacing, scale) {
       }
     },
     pagination: {
-      background: 'white',
+      background: 'transparent',
       round: 'small',
       border: {
-        color: 'dark-6'
+        color: 'transparent'
       },
-      pad: 'xlarge',
+      pad: 'medium',
       active: {
-        color: '#e7eaf1'
+        color: 'transparent'
       },
       icon: {
-        bgColor: 'light-2',
+        bgColor: 'transparent',
         pad: 'xsmall'
+      },
+      extend: function extend(_ref3) {
+        var className = _ref3.className,
+            theme = _ref3.theme;
+        return {
+          button: {
+            color: (0, _colors.normalizeColor)(className === 'active' ? 'dark-1' : 'dark-2', theme),
+            'font-weight': className === 'active' ? '700' : '400'
+          }
+        };
       }
     },
     tooptip: {

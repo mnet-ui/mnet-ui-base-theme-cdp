@@ -572,18 +572,18 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         knob: {
           background: { light: statusColors.error },
           color: { light: statusColors.error },
-          extend: ({ checked }) => ({
+          extend: ({ checked, theme }) => ({
             top: '3px',
             left: '2px',
             width: `${baseSpacing * 0.375}px`,
             height: `${baseSpacing * 0.375}px`,
-            background: checked ? statusColors.error : darkColors[1],
+            background: normalizeColor(checked ? 'status-error' : 'dark-2', theme),
           }),
         },
         radius: `${baseSpacing}px`,
-        extend: ({ checked }) => ({
+        extend: ({ checked, theme }) => ({
           height: `${baseSpacing * 0.938}px`,
-          border: `1px solid ${checked ? statusColors.error : darkColors[1]}`,
+          border: `1px solid ${normalizeColor(checked ? 'status-error' : 'dark-2', theme)}`,
           background: 'white',
         }),
       },
@@ -934,7 +934,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         },
         checkmark: {
           size: `${baseSpacing * 1.2}px`,
-          color: 'white',
+          color: 'dark-1',
         },
         check: {
           height: `${baseSpacing * 1.2}px`,
@@ -942,26 +942,11 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           margin: 'auto',
           round: 'small',
           align: 'center',
-          background: 'white',
-          border: { color: 'light-6' },
-          extend: props => {
-            const getBackground = () => {
-              switch (props.isExcluded) {
-                case null:
-                  return accentColors[2];
-                case false:
-                  return '#38C18B';
-                case true:
-                  return '#FC564F';
-                default:
-                  return accentColors[2];
-              }
-            };
-            return {
-              background: props.active ? getBackground() : 'white',
-              'border-color': props.active ? 'transparent' : lightColors[5],
-            };
-          },
+          background: 'dark-3',
+          border: { color: 'dark-1' },
+          extend: props => ({
+            background: normalizeColor('dark-3', props.theme),
+          }),
         },
       },
       chips: {
@@ -990,7 +975,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
             margin: props.twoColumnLayout
               ? 0
               : `${baseSpacing / (1.618 * 2)}px`,
-            background: props.twoColumnLayout ? 'white' : lightColors[2],
+            background: normalizeColor(props.twoColumnLayout ? 'white' : 'light-3', props.theme),
             padding: props.twoColumnLayout
               ? `${baseSpacing / 1.618}px`
               : `${baseSpacing / (1.618 * 2)}px ${baseSpacing / 1.618}px`,
@@ -1020,7 +1005,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
                 case true:
                   return '#FC564F';
                 default:
-                  return darkColors[2];
+                  return normalizeColor('dark-3', props.theme);
               }
             };
             return {
@@ -1062,7 +1047,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           pad: { right: 'medium', vertical: 'small' },
           extend: props => ({
             background:
-              props.layout === 'double-column' ? 'white' : lightColors[1],
+              normalizeColor(props.layout === 'double-column' ? 'white' : 'light-2', props.theme),
             'flex-direction':
               props.layout === 'double-column' ? 'row-reverse' : 'row',
             'padding-left':
@@ -1197,10 +1182,11 @@ export const generate = (baseSpacing = 16, scale = 6) => {
     },
     select: {
       background: 'dark-3',
-      activeColor: lightColors[4],
+      activeColor: 'light-5',
       container: {
         extend: props => ({
           borderColor: normalizeColor('border', props.theme),
+          background: normalizeColor('dark-3', props.theme),
         }),
       },
       control: {
@@ -1221,6 +1207,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         },
         text: {
           margin: 'small',
+          color: 'dark-1',
         },
       },
       icons: {
@@ -1349,19 +1336,25 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
     },
     pagination: {
-      background: 'white',
+      background: 'transparent',
       round: 'small',
       border: {
-        color: 'dark-6',
+        color: 'transparent',
       },
-      pad: 'xlarge',
+      pad: 'medium',
       active: {
-        color: '#e7eaf1',
+        color: 'transparent',
       },
       icon: {
-        bgColor: 'light-2',
+        bgColor: 'transparent',
         pad: 'xsmall',
       },
+      extend: ({ className, theme }) => ({
+        button: {
+          color: normalizeColor(className === 'active' ? 'dark-1' : 'dark-2', theme),
+          'font-weight': className === 'active' ? '700' : '400',
+        },
+      }),
     },
     tooptip: {
       background: 'dark-1',
