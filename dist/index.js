@@ -614,10 +614,10 @@ var generate = function generate(baseSpacing, scale) {
     checkBox: {
       border: {
         color: {
-          dark: 'rgba(255, 255, 255, 0.5)',
-          light: 'rgba(0, 0, 0, 0.15)'
+          dark: 'dark-2',
+          light: 'dark-2'
         },
-        width: '2px'
+        width: '1.5px'
       },
       check: {
         // extend: undefined,
