@@ -1422,43 +1422,77 @@ var generate = function generate(baseSpacing, scale) {
       }
     },
     table: {
+      extend: function extend(_ref3) {
+        var theme = _ref3.theme;
+        return {
+          'tr:nth-child(even)': {
+            background: (0, _colors.normalizeColor)('background-front', theme)
+          },
+          color: (0, _colors.normalizeColor)('dark-1', theme),
+          th: {
+            padding: baseSpacing / 2.2 + "px"
+          },
+          tbody: {
+            th: {
+              height: baseSpacing * 5 + "px",
+              padding: 0
+            }
+          }
+        };
+      },
       header: {
         align: 'start',
-        pad: {
-          horizontal: 'small',
-          vertical: 'xsmall'
+        fill: 'horizontal',
+        verticalAlign: 'bottom',
+        weight: 600,
+        background: {
+          color: 'dark-3'
         },
-        border: 'bottom' // verticalAlign: undefined,
+        extend: function extend(_ref4) {
+          var theme = _ref4.theme;
+          return {
+            span: {
+              color: (0, _colors.normalizeColor)('dark-1', theme),
+              'font-weight': '600'
+            }
+          };
+        } // verticalAlign: undefined,
         // background: undefined,
         // extend: undefined,
 
       },
       body: {
-        align: 'start',
-        pad: {
-          horizontal: 'small',
-          vertical: 'xsmall'
-        } // background: undefined,
+        align: 'start' // background: undefined,
         // border: undefined,
         // extend: undefined,
 
       },
-      // row: {
-      //   hover: {
-      //     background: undefined,
-      //     color: undefined,
-      //   },
-      // },
+      row: {
+        hover: {
+          background: undefined,
+          color: undefined
+        },
+        text: {
+          margin: 'none',
+          size: 'small',
+          color: 'dark-1'
+        }
+      },
       footer: {
         align: 'start',
         pad: {
           horizontal: 'small',
           vertical: 'xsmall'
         },
-        border: 'top' // verticalAlign: undefined,
+        border: 'top',
+        // verticalAlign: undefined,
         // background: undefined,
         // extend: undefined,
-
+        text: {
+          margin: 'none',
+          size: 'small',
+          color: 'dark-1'
+        }
       }
     },
     text: {
@@ -1499,9 +1533,9 @@ var generate = function generate(baseSpacing, scale) {
         bgColor: 'transparent',
         pad: 'xsmall'
       },
-      extend: function extend(_ref3) {
-        var className = _ref3.className,
-            theme = _ref3.theme;
+      extend: function extend(_ref5) {
+        var className = _ref5.className,
+            theme = _ref5.theme;
         return {
           button: {
             color: (0, _colors.normalizeColor)(className === 'active' ? 'dark-1' : 'dark-2', theme),
