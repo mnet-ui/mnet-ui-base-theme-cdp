@@ -1283,21 +1283,21 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
     },
     table: {
-      extend: {
+      extend: ({ theme }) => ({
         'tr:nth-child(even)': {
-          background: '#F8FAFE',
+          background: normalizeColor('background-front', theme),
         },
-        color: '#575F7D',
+        color: normalizeColor('dark-1', theme),
         th: {
           padding: `${baseSpacing / 2.2}px`,
         },
         tbody: {
           th: {
-            height: '80px',
+            height: `${baseSpacing * 5}px`,
             padding: 0,
           },
         },
-      },
+      }),
       header: {
         align: 'start',
         fill: 'horizontal',
@@ -1306,12 +1306,12 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         background: {
           color: 'dark-3',
         },
-        extend: {
+        extend: ({ theme }) => ({
           span: {
-            color: '#575F7D',
+            color: normalizeColor('dark-1', theme),
             'font-weight': '600',
           },
-        },
+        }),
         // verticalAlign: undefined,
         // background: undefined,
         // extend: undefined,
