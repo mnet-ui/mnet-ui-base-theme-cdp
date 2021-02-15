@@ -1283,27 +1283,56 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
     },
     table: {
+      extend: {
+        'tr:nth-child(even)': {
+          background: '#F8FAFE',
+        },
+        color: '#575F7D',
+        th: {
+          padding: `${baseSpacing / 2.2}px`,
+        },
+        tbody: {
+          th: {
+            height: '80px',
+            padding: 0,
+          },
+        },
+      },
       header: {
         align: 'start',
-        pad: { horizontal: 'small', vertical: 'xsmall' },
-        border: 'bottom',
+        fill: 'horizontal',
+        verticalAlign: 'bottom',
+        weight: 600,
+        background: {
+          color: 'dark-3',
+        },
+        extend: {
+          span: {
+            color: '#575F7D',
+            'font-weight': '600',
+          },
+        },
         // verticalAlign: undefined,
         // background: undefined,
         // extend: undefined,
       },
       body: {
         align: 'start',
-        pad: { horizontal: 'small', vertical: 'xsmall' },
         // background: undefined,
         // border: undefined,
         // extend: undefined,
       },
-      // row: {
-      //   hover: {
-      //     background: undefined,
-      //     color: undefined,
-      //   },
-      // },
+      row: {
+        hover: {
+          background: undefined,
+          color: undefined,
+        },
+        text: {
+          margin: 'none',
+          size: 'small',
+          color: 'dark-1',
+        },
+      },
       footer: {
         align: 'start',
         pad: { horizontal: 'small', vertical: 'xsmall' },
@@ -1311,6 +1340,11 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         // verticalAlign: undefined,
         // background: undefined,
         // extend: undefined,
+        text: {
+          margin: 'none',
+          size: 'small',
+          color: 'dark-1',
+        },
       },
     },
     text: {
