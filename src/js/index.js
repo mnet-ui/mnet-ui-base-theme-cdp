@@ -61,8 +61,8 @@ const colors = {
   'active-text': 'text-strong',
   black: '#000000',
   border: {
-    dark: rgba(255, 255, 255, 0.33),
-    light: '#DEDEDE',
+    dark: '#D4D9E2',
+    light: '#D4D9E2',
   },
   brand: brandColor,
   control: {
@@ -239,7 +239,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           xsmall: '0px 1px 2px rgba(0, 0, 0, 0.02)',
           small: '0px 1px 5px 0px rgba(217,217,217,1)',
           medium: '0px 4px 8px rgba(0, 0, 0, 0.02)',
-          large: '0px 8px 16px rgba(0, 0, 0, 0.02)',
+          large: '0px 4px 13px rgba(0, 0, 0, 0.1)',
           xlarge: '0px 12px 24px rgba(0, 0, 0, 0.02)',
         },
         dark: {
@@ -247,7 +247,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           xsmall: '0px 2px 2px rgba(255, 255, 255, 0.40)',
           small: '0px 4px 4px rgba(255, 255, 255, 0.40)',
           medium: '0px 6px 8px rgba(255, 255, 255, 0.40)',
-          large: '0px 8px 16px rgba(255, 255, 255, 0.40)',
+          large: '0px 4px 13px rgba(0, 0, 0, 0.1)',
           xlarge: '0px 12px 24px rgba(255, 255, 255, 0.40)',
         },
       },
@@ -290,7 +290,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           }px`,
         },
         font: {
-          // size: undefined,
+          size: 'large',
           // height: undefined,
           weight: 600,
         },
@@ -424,11 +424,14 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           color: { dark: 'accent-1', light: 'accent-1' },
         },
         color: 'white',
-        // padding: {
-        //   vertical: undefined,
-        //   horizontal: undefined,
-        // },
-        // extend: undefined,
+        padding: {
+          vertical: 'medium',
+          horizontal: 'xlarge',
+        },
+        extend: {
+          fontWeight: 600,
+          fontSize: `${baseSpacing * 0.875}px`,
+        },
       },
       secondary: {
         background: 'accent-2',
@@ -436,10 +439,10 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           color: { dark: 'accent-2', light: 'accent-2' },
         },
         color: 'dark-1',
-        // padding: {
-        //   vertical: undefined,
-        //   horizontal: undefined,
-        // },
+        padding: {
+          vertical: 'medium',
+          horizontal: 'xlarge',
+        },
         // extend: undefined,
       },
       tertiary: {
@@ -469,10 +472,10 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         //   secondary: {},
       },
       disabled: {
-        background: undefined,
+        background: 'dark-2',
         border: undefined,
         color: undefined,
-        opacity: 0.6,
+        opacity: undefined,
         //   extend: undefined,
         //   default: {},
         //   primary: {},
@@ -1364,9 +1367,20 @@ export const generate = (baseSpacing = 16, scale = 6) => {
     },
     textInput: {
       // disabled: { opacity: undefined },
-      extend: {
+      extend: ({ theme, onSuggestionsOpen }) => ({
         'padding-left': `${baseSpacing * 1.25}px`,
         'box-shadow': 'none',
+        color: normalizeColor('dark-1', theme),
+        input: {
+          fontWeight: onSuggestionsOpen ? '400' : '600',
+        },
+      }),
+      suggestions: {
+        extend: ({ theme }) => ({
+          'button:hover': {
+            backgroundColor: normalizeColor('background-front', theme),
+          },
+        }),
       },
     },
     pagination: {

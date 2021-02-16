@@ -65,8 +65,8 @@ var colors = {
   'active-text': 'text-strong',
   black: '#000000',
   border: {
-    dark: rgba(255, 255, 255, 0.33),
-    light: '#DEDEDE'
+    dark: '#D4D9E2',
+    light: '#D4D9E2'
   },
   brand: brandColor,
   control: {
@@ -282,7 +282,7 @@ export var generate = function generate(baseSpacing, scale) {
           xsmall: '0px 1px 2px rgba(0, 0, 0, 0.02)',
           small: '0px 1px 5px 0px rgba(217,217,217,1)',
           medium: '0px 4px 8px rgba(0, 0, 0, 0.02)',
-          large: '0px 8px 16px rgba(0, 0, 0, 0.02)',
+          large: '0px 4px 13px rgba(0, 0, 0, 0.1)',
           xlarge: '0px 12px 24px rgba(0, 0, 0, 0.02)'
         },
         dark: {
@@ -290,7 +290,7 @@ export var generate = function generate(baseSpacing, scale) {
           xsmall: '0px 2px 2px rgba(255, 255, 255, 0.40)',
           small: '0px 4px 4px rgba(255, 255, 255, 0.40)',
           medium: '0px 6px 8px rgba(255, 255, 255, 0.40)',
-          large: '0px 8px 16px rgba(255, 255, 255, 0.40)',
+          large: '0px 4px 13px rgba(0, 0, 0, 0.1)',
           xlarge: '0px 12px 24px rgba(255, 255, 255, 0.40)'
         }
       },
@@ -326,7 +326,7 @@ export var generate = function generate(baseSpacing, scale) {
           vertical: parseMetricToNum(baseSpacing / 1.418 + "px") - parseMetricToNum(controlBorderWidth + "px") + "px"
         },
         font: {
-          // size: undefined,
+          size: 'large',
           // height: undefined,
           weight: 600
         } // deprecate in v3
@@ -483,12 +483,15 @@ export var generate = function generate(baseSpacing, scale) {
             light: 'accent-1'
           }
         },
-        color: 'white' // padding: {
-        //   vertical: undefined,
-        //   horizontal: undefined,
-        // },
-        // extend: undefined,
-
+        color: 'white',
+        padding: {
+          vertical: 'medium',
+          horizontal: 'xlarge'
+        },
+        extend: {
+          fontWeight: 600,
+          fontSize: baseSpacing * 0.875 + "px"
+        }
       },
       secondary: {
         background: 'accent-2',
@@ -498,11 +501,11 @@ export var generate = function generate(baseSpacing, scale) {
             light: 'accent-2'
           }
         },
-        color: 'dark-1' // padding: {
-        //   vertical: undefined,
-        //   horizontal: undefined,
-        // },
-        // extend: undefined,
+        color: 'dark-1',
+        padding: {
+          vertical: 'medium',
+          horizontal: 'xlarge'
+        } // extend: undefined,
 
       },
       tertiary: {
@@ -538,10 +541,10 @@ export var generate = function generate(baseSpacing, scale) {
 
       },
       disabled: {
-        background: undefined,
+        background: 'dark-2',
         border: undefined,
         color: undefined,
-        opacity: 0.6 //   extend: undefined,
+        opacity: undefined //   extend: undefined,
         //   default: {},
         //   primary: {},
         //   secondary: {},
@@ -1503,9 +1506,27 @@ export var generate = function generate(baseSpacing, scale) {
     },
     textInput: {
       // disabled: { opacity: undefined },
-      extend: {
-        'padding-left': baseSpacing * 1.25 + "px",
-        'box-shadow': 'none'
+      extend: function extend(_ref5) {
+        var theme = _ref5.theme,
+            onSuggestionsOpen = _ref5.onSuggestionsOpen;
+        return {
+          'padding-left': baseSpacing * 1.25 + "px",
+          'box-shadow': 'none',
+          color: normalizeColor('dark-1', theme),
+          input: {
+            fontWeight: onSuggestionsOpen ? '400' : '600'
+          }
+        };
+      },
+      suggestions: {
+        extend: function extend(_ref6) {
+          var theme = _ref6.theme;
+          return {
+            'button:hover': {
+              backgroundColor: normalizeColor('background-front', theme)
+            }
+          };
+        }
       }
     },
     pagination: {
@@ -1522,9 +1543,9 @@ export var generate = function generate(baseSpacing, scale) {
         bgColor: 'transparent',
         pad: 'xsmall'
       },
-      extend: function extend(_ref5) {
-        var className = _ref5.className,
-            theme = _ref5.theme;
+      extend: function extend(_ref7) {
+        var className = _ref7.className,
+            theme = _ref7.theme;
         return {
           button: {
             color: normalizeColor(className === 'active' ? 'dark-1' : 'dark-2', theme),
