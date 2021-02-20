@@ -1398,61 +1398,36 @@ export var generate = function generate(baseSpacing, scale) {
     },
     tab: {
       active: {
-        color: 'dark-3',
-        weight: 600 // background: undefined,
-
+        color: 'white',
+        weight: 600,
+        background: 'dark-1'
       },
+      color: 'dark-1',
       // background: undefined,
-      border: {
-        side: 'bottom',
-        size: 'medium',
-        color: {
-          dark: 'brand',
-          light: 'white'
-        },
-        active: {
-          color: {
-            dark: 'white',
-            light: 'accent-3'
-          }
-        },
-        hover: {
-          color: {
-            dark: 'white',
-            light: 'white'
-          } // extend: undefined,
-
-        }
-      },
-      color: 'dark-4',
-      // extend: undefined,
-      hover: {
-        // background: undefined,
-        // extend: undefined,
-        color: {
-          dark: 'white',
-          light: 'dark-3'
-        }
+      // hover: undefined,
+      pad: {
+        vertical: 'small',
+        horizontal: 'medium'
       },
       margin: {
-        top: 'large',
-        horizontal: 'small',
-        bottom: 'none'
+        vertical: 'xlarge',
+        horizontal: 'none'
       },
-      pad: {
-        bottom: 'large'
+      border: 0,
+      extend: {
+        borderRadius: baseSpacing / 3.2 + "px",
+        span: {
+          fontSize: baseSpacing * 0.875 + "px"
+        },
+        paddingBottom: baseSpacing / 3.2 + "px"
       }
     },
     tabs: {
       // background: undefined,
       // extend: undefined,
-      gap: 'large',
-      header: {
-        // background: undefined,
-        extend: {
-          'padding-left': baseSpacing * 1.2 + "px",
-          'border-bottom': '1px solid #E8E7E7 '
-        }
+      gap: 'none',
+      header: {// background: undefined,
+        // extend: undefined,
       },
       panel: {
         extend: {}
