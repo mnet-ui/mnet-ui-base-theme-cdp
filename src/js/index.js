@@ -1279,10 +1279,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         vertical: 'small',
         horizontal: 'medium',
       },
-      margin: {
-        vertical: 'xlarge',
-        horizontal: 'none',
-      },
+      margin: 'none',
       border: 0,
       extend: {
         borderRadius: `${baseSpacing / 3.2}px`,

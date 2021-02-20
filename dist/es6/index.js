@@ -1409,10 +1409,7 @@ export var generate = function generate(baseSpacing, scale) {
         vertical: 'small',
         horizontal: 'medium'
       },
-      margin: {
-        vertical: 'xlarge',
-        horizontal: 'none'
-      },
+      margin: 'none',
       border: 0,
       extend: {
         borderRadius: baseSpacing / 3.2 + "px",
