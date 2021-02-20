@@ -24,12 +24,16 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import { rgba } from 'polished';
 import { css } from 'styled-components';
-import { add as addGoogleFont } from 'google-fonts'; // import { NeoComponents } from 'mnet-icons';
-
+import { add as addGoogleFont } from 'google-fonts';
+import { CDPComponents, NeoComponents } from 'mnet-icons';
 import { deepFreeze } from 'mnet-ui-base/utils/object';
 import { normalizeColor } from 'mnet-ui-base/utils/colors';
-import { parseMetricToNum } from 'mnet-ui-base/utils/mixins'; // const { Close, TickCircle, Error } = NeoComponents;
-
+import { parseMetricToNum } from 'mnet-ui-base/utils/mixins';
+var Close = NeoComponents.Close,
+    TickCircle = NeoComponents.TickCircle,
+    Error = NeoComponents.Error;
+var ArrowUp = CDPComponents.ArrowUp,
+    ArrowDown = CDPComponents.ArrowDown;
 addGoogleFont({
   'Open Sans': true
 });
@@ -98,8 +102,8 @@ var colors = {
     light: '#BABDCA'
   },
   icon: {
-    dark: '#f8f8f8',
-    light: '#8F94A6'
+    dark: 'dark-1',
+    light: 'dark-1'
   },
   'selected-background': 'brand',
   'selected-text': 'text-strong',
@@ -1209,6 +1213,9 @@ export var generate = function generate(baseSpacing, scale) {
           }
         }
       },
+      label: {
+        color: 'dark-1'
+      },
       custom: {
         wrapper: {
           direction: 'row'
@@ -1323,18 +1330,15 @@ export var generate = function generate(baseSpacing, scale) {
       control: {
         // open: undefined,
         extend: {
-          border: 'none'
+          border: 'none',
+          borderRadius: baseSpacing / 3.2 + "px"
         }
       },
       options: {
         container: {
           align: 'start',
           pad: 'small',
-          round: 'false',
-          border: {
-            side: 'bottom',
-            color: '#D9DBE5'
-          }
+          round: 'false'
         },
         text: {
           margin: 'small',
@@ -1345,8 +1349,16 @@ export var generate = function generate(baseSpacing, scale) {
         color: 'icon',
         margin: 'none',
         pad: 'medium',
-        background: 'dark-3' // extend: {},
-
+        background: 'dark-3',
+        up: ArrowUp,
+        down: ArrowDown,
+        extend: {
+          borderRadius: baseSpacing / 3.2 + "px",
+          span: {
+            fontSize: baseSpacing + "px",
+            fontWeight: 600
+          }
+        }
       },
       // searchInput: undefined,
       step: 20
@@ -1596,15 +1608,15 @@ export var generate = function generate(baseSpacing, scale) {
     },
     notification: {
       toast: {
-        // closeIcon: Close,
+        closeIcon: Close,
         position: 'top-right',
         zIndex: 999,
         width: '60%',
         timeout: 2000,
         icon: {
           size: 'xlarge',
-          // default: TickCircle,
-          // ok: TickCircle,
+          "default": TickCircle,
+          ok: TickCircle,
           error: Error
         },
         text: {

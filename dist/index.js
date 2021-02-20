@@ -9,6 +9,8 @@ var _styledComponents = require("styled-components");
 
 var _googleFonts = require("google-fonts");
 
+var _mnetIcons = require("mnet-icons");
+
 var _object = require("mnet-ui-base/utils/object");
 
 var _colors = require("mnet-ui-base/utils/colors");
@@ -39,7 +41,11 @@ function _taggedTemplateLiteralLoose(strings, raw) { if (!raw) { raw = strings.s
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-// const { Close, TickCircle, Error } = NeoComponents;
+var Close = _mnetIcons.NeoComponents.Close,
+    TickCircle = _mnetIcons.NeoComponents.TickCircle,
+    Error = _mnetIcons.NeoComponents.Error;
+var ArrowUp = _mnetIcons.CDPComponents.ArrowUp,
+    ArrowDown = _mnetIcons.CDPComponents.ArrowDown;
 (0, _googleFonts.add)({
   'Open Sans': true
 });
@@ -108,8 +114,8 @@ var colors = {
     light: '#BABDCA'
   },
   icon: {
-    dark: '#f8f8f8',
-    light: '#8F94A6'
+    dark: 'dark-1',
+    light: 'dark-1'
   },
   'selected-background': 'brand',
   'selected-text': 'text-strong',
@@ -1220,6 +1226,9 @@ var generate = function generate(baseSpacing, scale) {
           }
         }
       },
+      label: {
+        color: 'dark-1'
+      },
       custom: {
         wrapper: {
           direction: 'row'
@@ -1334,18 +1343,15 @@ var generate = function generate(baseSpacing, scale) {
       control: {
         // open: undefined,
         extend: {
-          border: 'none'
+          border: 'none',
+          borderRadius: baseSpacing / 3.2 + "px"
         }
       },
       options: {
         container: {
           align: 'start',
           pad: 'small',
-          round: 'false',
-          border: {
-            side: 'bottom',
-            color: '#D9DBE5'
-          }
+          round: 'false'
         },
         text: {
           margin: 'small',
@@ -1356,8 +1362,16 @@ var generate = function generate(baseSpacing, scale) {
         color: 'icon',
         margin: 'none',
         pad: 'medium',
-        background: 'dark-3' // extend: {},
-
+        background: 'dark-3',
+        up: ArrowUp,
+        down: ArrowDown,
+        extend: {
+          borderRadius: baseSpacing / 3.2 + "px",
+          span: {
+            fontSize: baseSpacing + "px",
+            fontWeight: 600
+          }
+        }
       },
       // searchInput: undefined,
       step: 20
@@ -1607,15 +1621,15 @@ var generate = function generate(baseSpacing, scale) {
     },
     notification: {
       toast: {
-        // closeIcon: Close,
+        closeIcon: Close,
         position: 'top-right',
         zIndex: 999,
         width: '60%',
         timeout: 2000,
         icon: {
           size: 'xlarge',
-          // default: TickCircle,
-          // ok: TickCircle,
+          "default": TickCircle,
+          ok: TickCircle,
           error: Error
         },
         text: {
