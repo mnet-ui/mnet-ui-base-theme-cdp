@@ -621,7 +621,9 @@ export var generate = function generate(baseSpacing, scale) {
         thickness: '4px'
       },
       // color: { dark: undefined, light: undefined },
-      // extend: undefined,
+      extend: {
+        opacity: 1
+      },
       // gap: undefined
       hover: {
         border: {

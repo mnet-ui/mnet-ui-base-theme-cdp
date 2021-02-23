@@ -547,7 +547,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         thickness: '4px',
       },
       // color: { dark: undefined, light: undefined },
-      // extend: undefined,
+      extend: {
+        opacity: 1,
+      },
       // gap: undefined
       hover: {
         border: {
