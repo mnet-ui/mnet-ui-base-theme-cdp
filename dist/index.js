@@ -78,6 +78,7 @@ var colors = {
     light: '#F3FFF5'
   },
   'active-background': 'background-contrast',
+  'error-background': '#FEEFEE',
   'active-text': 'text-strong',
   black: '#000000',
   border: {
