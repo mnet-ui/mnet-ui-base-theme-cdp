@@ -1,13 +1,14 @@
 import { rgba } from 'polished';
 import { css } from 'styled-components';
 import { add as addGoogleFont } from 'google-fonts';
-// import { NeoComponents } from 'mnet-icons';
+import { CDPComponents, NeoComponents } from 'mnet-icons';
 
 import { deepFreeze } from 'mnet-ui-base/utils/object';
 import { normalizeColor } from 'mnet-ui-base/utils/colors';
 import { parseMetricToNum } from 'mnet-ui-base/utils/mixins';
 
-// const { Close, TickCircle, Error } = NeoComponents;
+const { Close, TickCircle, Error } = NeoComponents;
+const { ArrowUp, ArrowDown } = CDPComponents;
 
 addGoogleFont({
   'Open Sans': true,
@@ -58,11 +59,12 @@ const colors = {
     light: '#F3FFF5',
   },
   'active-background': 'background-contrast',
+  'error-background': '#FEEFEE',
   'active-text': 'text-strong',
   black: '#000000',
   border: {
-    dark: rgba(255, 255, 255, 0.33),
-    light: '#DEDEDE',
+    dark: '#D4D9E2',
+    light: '#D4D9E2',
   },
   brand: brandColor,
   control: {
@@ -94,8 +96,8 @@ const colors = {
     light: '#BABDCA',
   },
   icon: {
-    dark: '#f8f8f8',
-    light: '#8F94A6',
+    dark: 'dark-1',
+    light: 'dark-1',
   },
   'selected-background': 'brand',
   'selected-text': 'text-strong',
@@ -239,7 +241,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           xsmall: '0px 1px 2px rgba(0, 0, 0, 0.02)',
           small: '0px 1px 5px 0px rgba(217,217,217,1)',
           medium: '0px 4px 8px rgba(0, 0, 0, 0.02)',
-          large: '0px 8px 16px rgba(0, 0, 0, 0.02)',
+          large: '0px 4px 13px rgba(0, 0, 0, 0.1)',
           xlarge: '0px 12px 24px rgba(0, 0, 0, 0.02)',
         },
         dark: {
@@ -247,7 +249,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           xsmall: '0px 2px 2px rgba(255, 255, 255, 0.40)',
           small: '0px 4px 4px rgba(255, 255, 255, 0.40)',
           medium: '0px 6px 8px rgba(255, 255, 255, 0.40)',
-          large: '0px 8px 16px rgba(255, 255, 255, 0.40)',
+          large: '0px 4px 13px rgba(0, 0, 0, 0.1)',
           xlarge: '0px 12px 24px rgba(255, 255, 255, 0.40)',
         },
       },
@@ -290,7 +292,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           }px`,
         },
         font: {
-          // size: undefined,
+          size: 'large',
           // height: undefined,
           weight: 600,
         },
@@ -424,11 +426,14 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           color: { dark: 'accent-1', light: 'accent-1' },
         },
         color: 'white',
-        // padding: {
-        //   vertical: undefined,
-        //   horizontal: undefined,
-        // },
-        // extend: undefined,
+        padding: {
+          vertical: 'medium',
+          horizontal: 'xlarge',
+        },
+        extend: {
+          fontWeight: 600,
+          fontSize: `${baseSpacing * 0.875}px`,
+        },
       },
       secondary: {
         background: 'accent-2',
@@ -436,10 +441,10 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           color: { dark: 'accent-2', light: 'accent-2' },
         },
         color: 'dark-1',
-        // padding: {
-        //   vertical: undefined,
-        //   horizontal: undefined,
-        // },
+        padding: {
+          vertical: 'medium',
+          horizontal: 'xlarge',
+        },
         // extend: undefined,
       },
       tertiary: {
@@ -469,10 +474,10 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         //   secondary: {},
       },
       disabled: {
-        background: undefined,
+        background: 'dark-2',
         border: undefined,
         color: undefined,
-        opacity: 0.6,
+        opacity: undefined,
         //   extend: undefined,
         //   default: {},
         //   primary: {},
@@ -532,10 +537,10 @@ export const generate = (baseSpacing = 16, scale = 6) => {
     checkBox: {
       border: {
         color: {
-          dark: 'rgba(255, 255, 255, 0.5)',
-          light: 'rgba(0, 0, 0, 0.15)',
+          dark: 'dark-2',
+          light: 'dark-2',
         },
-        width: '2px',
+        width: '1.5px',
       },
       check: {
         // extend: undefined,
@@ -543,7 +548,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         thickness: '4px',
       },
       // color: { dark: undefined, light: undefined },
-      // extend: undefined,
+      extend: {
+        opacity: 1,
+      },
       // gap: undefined
       hover: {
         border: {
@@ -1085,6 +1092,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           },
         },
       },
+      label: {
+        color: 'dark-1',
+      },
 
       custom: {
         wrapper: {
@@ -1193,6 +1203,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         // open: undefined,
         extend: {
           border: 'none',
+          borderRadius: `${baseSpacing / 3.2}px`,
         },
       },
       options: {
@@ -1200,10 +1211,6 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           align: 'start',
           pad: 'small',
           round: 'false',
-          border: {
-            side: 'bottom',
-            color: '#D9DBE5',
-          },
         },
         text: {
           margin: 'small',
@@ -1215,75 +1222,90 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         margin: 'none',
         pad: 'medium',
         background: 'dark-3',
-        // extend: {},
+        up: ArrowUp,
+        down: ArrowDown,
+        extend: {
+          borderRadius: `${baseSpacing / 3.2}px`,
+          span: {
+            fontSize: `${baseSpacing}px`,
+            fontWeight: 600,
+          },
+        },
       },
       // searchInput: undefined,
       step: 20,
     },
+    switch: {
+      padding: `${baseSpacing * 0.625}px`,
+      fontWeight: 600,
+      opacity: 1,
+      background: {
+        active: 'accent-1',
+        inactive: 'dark-3',
+        disabled: {
+          active: 'dark-2',
+          // inactive: undefined,
+        },
+      },
+      text: {
+        active: 'white',
+        inactive: 'dark-2',
+        disabled: {
+          active: 'dark-3',
+          // inactive: undefined,
+        },
+      },
+      container: {
+        direction: 'row',
+        gap: 'none',
+        round: 'small',
+        overflow: 'hidden',
+      },
+      disabled: {
+        border: {
+          size: 'xsmall',
+          color: 'dark-2',
+        },
+      },
+    },
     tab: {
       active: {
-        color: 'dark-3',
+        color: 'white',
         weight: 600,
-        // background: undefined,
+        background: 'dark-1',
       },
+      color: 'dark-1',
       // background: undefined,
-      border: {
-        side: 'bottom',
-        size: 'medium',
-        color: {
-          dark: 'brand',
-          light: 'white',
-        },
-        active: {
-          color: {
-            dark: 'white',
-            light: 'accent-3',
-          },
-        },
-        hover: {
-          color: {
-            dark: 'white',
-            light: 'white',
-          },
-          // extend: undefined,
-        },
-      },
-      color: 'dark-4',
-      // extend: undefined,
-      hover: {
-        // background: undefined,
-        // extend: undefined,
-        color: {
-          dark: 'white',
-          light: 'dark-3',
-        },
-      },
-      margin: {
-        top: 'large',
-        horizontal: 'small',
-        bottom: 'none',
-      },
+      // hover: undefined,
+
       pad: {
-        bottom: 'large',
+        vertical: 'small',
+        horizontal: 'medium',
+      },
+      margin: 'none',
+      border: 0,
+      extend: {
+        borderRadius: `${baseSpacing / 3.2}px`,
+        span: {
+          fontSize: `${baseSpacing * 0.875}px`,
+        },
+        paddingBottom: `${baseSpacing / 3.2}px`,
       },
     },
     tabs: {
       // background: undefined,
       // extend: undefined,
-      gap: 'large',
+      gap: 'none',
       header: {
         // background: undefined,
-        extend: {
-          'padding-left': `${baseSpacing * 1.2}px`,
-          'border-bottom': '1px solid #E8E7E7 ',
-        },
+        // extend: undefined,
       },
       panel: {
         extend: {},
       },
     },
     table: {
-      extend: ({ className, theme }) => ({
+      extend: ({ theme }) => ({
         'tr:nth-child(even)': {
           background: normalizeColor('background-front', theme),
         },
@@ -1378,9 +1400,20 @@ export const generate = (baseSpacing = 16, scale = 6) => {
     },
     textInput: {
       // disabled: { opacity: undefined },
-      extend: {
+      extend: ({ theme, onSuggestionsOpen }) => ({
         'padding-left': `${baseSpacing * 1.25}px`,
         'box-shadow': 'none',
+        color: normalizeColor('dark-1', theme),
+        input: {
+          fontWeight: onSuggestionsOpen ? '400' : '600',
+        },
+      }),
+      suggestions: {
+        extend: ({ theme }) => ({
+          'button:hover': {
+            backgroundColor: normalizeColor('background-front', theme),
+          },
+        }),
       },
     },
     pagination: {
@@ -1413,15 +1446,15 @@ export const generate = (baseSpacing = 16, scale = 6) => {
     },
     notification: {
       toast: {
-        // closeIcon: Close,
+        closeIcon: Close,
         position: 'top-right',
         zIndex: 999,
         width: '60%',
         timeout: 2000,
         icon: {
           size: 'xlarge',
-          // default: TickCircle,
-          // ok: TickCircle,
+          default: TickCircle,
+          ok: TickCircle,
           error: Error,
         },
         text: {
