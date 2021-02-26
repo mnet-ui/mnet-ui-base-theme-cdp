@@ -47,6 +47,7 @@
     "lint"
   ],
   "dependencies": {
-    "google-fonts": "^1.0.0"
+    "google-fonts": "^1.0.0",
+    "mnet-icons": "git+ssh://git@tree.mn:saumik.s/mnet-icons.git"
   }
 }
