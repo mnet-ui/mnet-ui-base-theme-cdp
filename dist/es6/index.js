@@ -555,8 +555,7 @@ export var generate = function generate(baseSpacing, scale) {
             dark: 'accent-1',
             light: 'accent-1'
           },
-          width: '1px',
-          radius: baseSpacing / 3.2 + "px"
+          width: '1px'
         },
         color: 'accent-1',
         // padding: {
@@ -564,7 +563,8 @@ export var generate = function generate(baseSpacing, scale) {
         //   horizontal: undefined,
         // },
         extend: {
-          height: baseSpacing * 3.75 + "px"
+          height: baseSpacing * 3.75 + "px",
+          borderRadius: baseSpacing / 3.2 + "px"
         }
       },
       active: {
