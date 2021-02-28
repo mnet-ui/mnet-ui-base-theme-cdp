@@ -483,13 +483,16 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         border: {
           color: { dark: 'accent-1', light: 'accent-1' },
           width: '1px',
+          radius: `${baseSpacing / 3.2}px`,
         },
         color: 'accent-1',
         // padding: {
         //   vertical: undefined,
         //   horizontal: undefined,
         // },
-        // extend: undefined,
+        extend: {
+          height: `${baseSpacing * 3.75}px`,
+        },
       },
       active: {
         background: undefined,

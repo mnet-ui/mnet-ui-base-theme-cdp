@@ -555,14 +555,17 @@ export var generate = function generate(baseSpacing, scale) {
             dark: 'accent-1',
             light: 'accent-1'
           },
-          width: '1px'
+          width: '1px',
+          radius: baseSpacing / 3.2 + "px"
         },
-        color: 'accent-1' // padding: {
+        color: 'accent-1',
+        // padding: {
         //   vertical: undefined,
         //   horizontal: undefined,
         // },
-        // extend: undefined,
-
+        extend: {
+          height: baseSpacing * 3.75 + "px"
+        }
       },
       active: {
         background: undefined,
