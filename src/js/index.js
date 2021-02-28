@@ -438,7 +438,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       border: {
         // color: { dark: undefined, light: undefined }
         width: `${borderWidth}px`,
-        radius: `${baseSpacing * 0.25}px`,
+        radius: `${baseSpacing * 0.0625}px`,
       },
       color: { dark: undefined, light: undefined },
       default: {
