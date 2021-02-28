@@ -8,7 +8,7 @@ import { normalizeColor } from 'mnet-ui-base/utils/colors';
 import { parseMetricToNum } from 'mnet-ui-base/utils/mixins';
 
 const { Close, TickCircle, Error } = NeoComponents;
-const { ArrowUp, ArrowDown } = CDPComponents;
+const { ArrowUp, ArrowDown, ArrowRight } = CDPComponents;
 
 addGoogleFont({
   'Open Sans': true,
@@ -373,6 +373,37 @@ export const generate = (baseSpacing = 16, scale = 6) => {
     box: {
       responsiveBreakpoint: 'small', // when we switch rows to columns
       // extend: undefined,
+    },
+    breadcrumb: {
+      item: {
+        margin: {
+          right: 'medium',
+        },
+      },
+      content: {
+        color: 'dark-1',
+        size: 'large',
+        extend: ({ last }) => ({
+          fontWeight: last ? '400' : '600',
+          marginRight: `${baseSpacing / 3.2}px`,
+        }),
+      },
+      icon: {
+        color: 'dark-1',
+        size: 'large',
+      },
+      icons: {
+        separator: ArrowRight,
+      },
+      extend: {
+        ul: {
+          display: 'flex',
+          li: {
+            border: 'none',
+            padding: 0,
+          },
+        },
+      },
     },
     button: {
       size: {

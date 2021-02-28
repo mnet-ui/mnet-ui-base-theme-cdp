@@ -45,7 +45,8 @@ var Close = _mnetIcons.NeoComponents.Close,
     TickCircle = _mnetIcons.NeoComponents.TickCircle,
     Error = _mnetIcons.NeoComponents.Error;
 var ArrowUp = _mnetIcons.CDPComponents.ArrowUp,
-    ArrowDown = _mnetIcons.CDPComponents.ArrowDown;
+    ArrowDown = _mnetIcons.CDPComponents.ArrowDown,
+    ArrowRight = _mnetIcons.CDPComponents.ArrowRight;
 (0, _googleFonts.add)({
   'Open Sans': true
 });
@@ -441,6 +442,40 @@ var generate = function generate(baseSpacing, scale) {
       // extend: undefined,
 
     },
+    breadcrumb: {
+      item: {
+        margin: {
+          right: 'medium'
+        }
+      },
+      content: {
+        color: 'dark-1',
+        size: 'large',
+        extend: function extend(_ref) {
+          var last = _ref.last;
+          return {
+            fontWeight: last ? '400' : '600',
+            marginRight: baseSpacing / 3.2 + "px"
+          };
+        }
+      },
+      icon: {
+        color: 'dark-1',
+        size: 'large'
+      },
+      icons: {
+        separator: ArrowRight
+      },
+      extend: {
+        ul: {
+          display: 'flex',
+          li: {
+            border: 'none',
+            padding: 0
+          }
+        }
+      }
+    },
     button: {
       size: {
         small: {
@@ -670,9 +705,9 @@ var generate = function generate(baseSpacing, scale) {
           color: {
             light: statusColors.error
           },
-          extend: function extend(_ref) {
-            var checked = _ref.checked,
-                theme = _ref.theme;
+          extend: function extend(_ref2) {
+            var checked = _ref2.checked,
+                theme = _ref2.theme;
             return {
               top: '3px',
               left: '2px',
@@ -683,9 +718,9 @@ var generate = function generate(baseSpacing, scale) {
           }
         },
         radius: baseSpacing + "px",
-        extend: function extend(_ref2) {
-          var checked = _ref2.checked,
-              theme = _ref2.theme;
+        extend: function extend(_ref3) {
+          var checked = _ref3.checked,
+              theme = _ref3.theme;
           return {
             height: baseSpacing * 0.938 + "px",
             border: "1px solid " + (0, _colors.normalizeColor)(checked ? 'status-error' : 'dark-2', theme),
@@ -1447,8 +1482,8 @@ var generate = function generate(baseSpacing, scale) {
       }
     },
     table: {
-      extend: function extend(_ref3) {
-        var theme = _ref3.theme;
+      extend: function extend(_ref4) {
+        var theme = _ref4.theme;
         return {
           'tr:nth-child(even)': {
             background: (0, _colors.normalizeColor)('background-front', theme)
@@ -1473,8 +1508,8 @@ var generate = function generate(baseSpacing, scale) {
         background: {
           color: 'dark-3'
         },
-        extend: function extend(_ref4) {
-          var theme = _ref4.theme;
+        extend: function extend(_ref5) {
+          var theme = _ref5.theme;
           return {
             span: {
               color: (0, _colors.normalizeColor)('dark-1', theme),
@@ -1539,9 +1574,9 @@ var generate = function generate(baseSpacing, scale) {
     },
     textInput: {
       // disabled: { opacity: undefined },
-      extend: function extend(_ref5) {
-        var theme = _ref5.theme,
-            onSuggestionsOpen = _ref5.onSuggestionsOpen;
+      extend: function extend(_ref6) {
+        var theme = _ref6.theme,
+            onSuggestionsOpen = _ref6.onSuggestionsOpen;
         return {
           'padding-left': baseSpacing * 1.25 + "px",
           'box-shadow': 'none',
@@ -1552,8 +1587,8 @@ var generate = function generate(baseSpacing, scale) {
         };
       },
       suggestions: {
-        extend: function extend(_ref6) {
-          var theme = _ref6.theme;
+        extend: function extend(_ref7) {
+          var theme = _ref7.theme;
           return {
             'button:hover': {
               backgroundColor: (0, _colors.normalizeColor)('background-front', theme)
@@ -1576,9 +1611,9 @@ var generate = function generate(baseSpacing, scale) {
         bgColor: 'transparent',
         pad: 'xsmall'
       },
-      extend: function extend(_ref7) {
-        var className = _ref7.className,
-            theme = _ref7.theme;
+      extend: function extend(_ref8) {
+        var className = _ref8.className,
+            theme = _ref8.theme;
         return {
           button: {
             color: (0, _colors.normalizeColor)(className === 'active' ? 'dark-1' : 'dark-2', theme),
