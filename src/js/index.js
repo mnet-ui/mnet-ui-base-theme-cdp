@@ -38,7 +38,7 @@ const lightColors = [
   '#f5f6f8',
   '#E7EAF1',
   '#e1e3ef',
-  '#dfdfdf',
+  '#9DA2AD',
   '#DADADA',
   '#F5F7FD',
 ];
@@ -77,7 +77,7 @@ const colors = {
   'graph-2': 'neutral-2',
   'graph-3': 'neutral-3',
   'graph-4': 'neutral-4',
-  placeholder: 'dark-3',
+  placeholder: 'light-5',
   selected: 'light-7',
   text: {
     dark: '#f8f8f8',
