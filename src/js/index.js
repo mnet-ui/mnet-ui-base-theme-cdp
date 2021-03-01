@@ -215,14 +215,14 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       drop: {
         background: '#ffffff',
         border: {
-          radius: '4px',
+          radius: `${controlBorderWidth * 5}px`,
         },
         zIndex: '20',
-        marginTop: '4px',
-        extend: {
-          'box-shadow': '0 1px 7px 3px rgba(0,0,0,0.15)',
-          // bottom: `${1.5 * baseSpacing}px`,
-        },
+        // marginTop: '4px',
+        extend: ({ theme }) => ({
+          'box-shadow': '0px 4px 13px rgba(0, 0, 0, 0.1)',
+          border: `${controlBorderWidth / 2}px solid ${normalizeColor('dark-2', theme)}`,
+        }),
       },
       edgeSize: {
         none: '0px',
@@ -427,7 +427,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         },
         color: 'white',
         padding: {
-          vertical: 'medium',
+          vertical: 'large',
           horizontal: 'xlarge',
         },
         extend: {
@@ -860,8 +860,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
     list: {
       item: {
         // background: undefined,
-        border: 'horizontal',
-        pad: { horizontal: 'medium', vertical: 'small' },
+        border: 0,
+        pad: { horizontal: `${baseSpacing * 2}px`, vertical: `${baseSpacing}px` },
         // extend: undefined,
       },
       // extend: undefined,
