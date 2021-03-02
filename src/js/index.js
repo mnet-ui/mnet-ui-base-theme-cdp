@@ -215,14 +215,14 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       drop: {
         background: '#ffffff',
         border: {
-          radius: '4px',
+          radius: `${controlBorderWidth * 5}px`,
         },
         zIndex: '20',
-        marginTop: '4px',
-        extend: {
-          'box-shadow': '0 1px 7px 3px rgba(0,0,0,0.15)',
-          // bottom: `${1.5 * baseSpacing}px`,
-        },
+        // marginTop: '4px',
+        extend: ({ theme }) => ({
+          'box-shadow': '0px 4px 13px rgba(0, 0, 0, 0.1)',
+          border: `${controlBorderWidth / 2}px solid ${normalizeColor('dark-2', theme)}`,
+        }),
       },
       edgeSize: {
         none: '0px',
@@ -458,7 +458,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         },
         color: 'white',
         padding: {
-          vertical: 'medium',
+          vertical: 'large',
           horizontal: 'xlarge',
         },
         extend: {
@@ -894,8 +894,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
     list: {
       item: {
         // background: undefined,
-        border: 'horizontal',
-        pad: { horizontal: 'medium', vertical: 'small' },
+        border: 0,
+        pad: { horizontal: `${baseSpacing * 2}px`, vertical: `${baseSpacing}px` },
         // extend: undefined,
       },
       // extend: undefined,
@@ -1343,14 +1343,27 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         'tr:nth-child(even)': {
           background: normalizeColor('background-front', theme),
         },
+        'tr:nth-child(odd)': {
+          background: normalizeColor('background-back', theme),
+        },
         color: normalizeColor('dark-1', theme),
         th: {
-          padding: `${baseSpacing / 2.2}px`,
+          // padding: `${baseSpacing / 2.2}px`,
+        },
+        td: {
+          border: 'none',
+        },
+        thead: {
+          td: {
+            padding: `${baseSpacing / 2.2}px 0`,
+          },
         },
         tbody: {
-          th: {
-            height: `${baseSpacing * 5}px`,
-            padding: 0,
+          td: {
+            padding: `${baseSpacing * 2}px 0`,
+            span: {
+              fontSize: `${baseFontSize * 1.5}px`,
+            },
           },
         },
       }),
@@ -1366,6 +1379,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           span: {
             color: normalizeColor('dark-1', theme),
             'font-weight': '600',
+            fontSize: `${baseFontSize}px`,
           },
         }),
         // verticalAlign: undefined,
@@ -1391,7 +1405,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       footer: {
         align: 'start',
-        pad: { horizontal: 'small', vertical: 'xsmall' },
+        // pad: { horizontal: 'small', vertical: 'xsmall' },
         border: 'top',
         // verticalAlign: undefined,
         // background: undefined,
