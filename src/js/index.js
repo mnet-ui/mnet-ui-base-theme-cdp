@@ -8,7 +8,7 @@ import { normalizeColor } from 'mnet-ui-base/utils/colors';
 import { parseMetricToNum } from 'mnet-ui-base/utils/mixins';
 
 const { Close, TickCircle, Error } = NeoComponents;
-const { ArrowUp, ArrowDown } = CDPComponents;
+const { ArrowUp, ArrowDown, ArrowRight } = CDPComponents;
 
 addGoogleFont({
   'Open Sans': true,
@@ -38,7 +38,7 @@ const lightColors = [
   '#f5f6f8',
   '#E7EAF1',
   '#e1e3ef',
-  '#dfdfdf',
+  '#9DA2AD',
   '#DADADA',
   '#F5F7FD',
 ];
@@ -77,7 +77,7 @@ const colors = {
   'graph-2': 'neutral-2',
   'graph-3': 'neutral-3',
   'graph-4': 'neutral-4',
-  placeholder: 'dark-3',
+  placeholder: 'light-5',
   selected: 'light-7',
   text: {
     dark: '#f8f8f8',
@@ -374,6 +374,37 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       responsiveBreakpoint: 'small', // when we switch rows to columns
       // extend: undefined,
     },
+    breadcrumb: {
+      item: {
+        margin: {
+          right: 'medium',
+        },
+      },
+      content: {
+        color: 'dark-1',
+        size: 'large',
+        extend: ({ last }) => ({
+          fontWeight: last ? '400' : '600',
+          marginRight: `${baseSpacing / 3.2}px`,
+        }),
+      },
+      icon: {
+        color: 'dark-1',
+        size: 'large',
+      },
+      icons: {
+        separator: ArrowRight,
+      },
+      extend: {
+        ul: {
+          display: 'flex',
+          li: {
+            border: 'none',
+            padding: 0,
+          },
+        },
+      },
+    },
     button: {
       size: {
         small: {
@@ -407,7 +438,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       border: {
         // color: { dark: undefined, light: undefined }
         width: `${borderWidth}px`,
-        radius: `${baseSpacing * 0.25}px`,
+        radius: `${baseSpacing * 0.0625}px`,
       },
       color: { dark: undefined, light: undefined },
       default: {
@@ -458,7 +489,10 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         //   vertical: undefined,
         //   horizontal: undefined,
         // },
-        // extend: undefined,
+        extend: {
+          height: `${baseSpacing * 3.75}px`,
+          borderRadius: `${baseSpacing / 3.2}px`,
+        },
       },
       active: {
         background: undefined,
