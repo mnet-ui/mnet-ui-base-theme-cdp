@@ -25,16 +25,17 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 import { rgba } from 'polished';
 import { css } from 'styled-components';
 import { add as addGoogleFont } from 'google-fonts';
-import { CDPComponents, NeoComponents } from 'mnet-icons';
+import { CDPComponents } from 'mnet-icons';
 import { deepFreeze } from 'mnet-ui-base/utils/object';
 import { normalizeColor } from 'mnet-ui-base/utils/colors';
 import { parseMetricToNum } from 'mnet-ui-base/utils/mixins';
-var Close = NeoComponents.Close,
-    TickCircle = NeoComponents.TickCircle,
-    Error = NeoComponents.Error;
 var ArrowUp = CDPComponents.ArrowUp,
     ArrowDown = CDPComponents.ArrowDown,
-    ArrowRight = CDPComponents.ArrowRight;
+    ArrowRight = CDPComponents.ArrowRight,
+    Close = CDPComponents.Close,
+    Info = CDPComponents.Info,
+    Success = CDPComponents.Success,
+    Failed = CDPComponents.Failed;
 addGoogleFont({
   'Open Sans': true
 });
@@ -49,9 +50,10 @@ var statusColors = {
   unknown: '#CCCCCC',
   disabled: '#CCCCCC'
 };
-var darkColors = ['#575F7D', '#8F94A6', '#E8EAF0', '#898EA2', '#BABDCA', '#DEDEDE'];
+var darkColors = ['#575F7D', '#8F94A6', '#E8EAF0', '#898EA2', '#BABDCA', '#DEDEDE', '#2F3A4A', '#29313D'];
 var lightColors = ['#fbfbfb', '#f5f6f8', '#E7EAF1', '#e1e3ef', '#9DA2AD', '#DADADA', '#F5F7FD'];
 var focusColor = '#B1C2FE';
+var initialBgColor = '#FC564F';
 var colors = {
   active: '#E28880',
   'background-back': {
@@ -263,7 +265,10 @@ export var generate = function generate(baseSpacing, scale) {
           var theme = _ref.theme;
           return {
             'box-shadow': '0px 4px 13px rgba(0, 0, 0, 0.1)',
-            border: controlBorderWidth / 2 + "px solid " + normalizeColor('dark-2', theme)
+            border: controlBorderWidth / 2 + "px solid " + normalizeColor('dark-2', theme),
+            'li:hover': {
+              backgroundColor: normalizeColor('dark-3', theme)
+            }
           };
         }
       },
@@ -1062,7 +1067,10 @@ export var generate = function generate(baseSpacing, scale) {
       },
       message: {
         wrapper: {
-          pad: 'large'
+          pad: {
+            horizontal: 'large',
+            vertical: 'xlarge'
+          }
         },
         text: {
           size: 'medium',
@@ -1407,6 +1415,89 @@ export var generate = function generate(baseSpacing, scale) {
       // searchInput: undefined,
       step: 20
     },
+    sidebar: {
+      header: {
+        background: 'dark-8',
+        align: 'center',
+        pad: {
+          vertical: 'large'
+        },
+        initial: {
+          background: initialBgColor,
+          height: 'xsmall',
+          width: 'xsmall',
+          align: 'center',
+          justify: 'center',
+          round: 'full',
+          margin: {
+            vertical: 'medium'
+          },
+          text: {
+            color: 'white',
+            size: baseSpacing * 1.55 + "px"
+          }
+        },
+        username: {
+          size: 'large',
+          color: 'white',
+          margin: {
+            vertical: 'small'
+          }
+        },
+        anchor: {
+          textDecoration: 'none',
+          size: 'medium',
+          margin: {
+            top: 'small'
+          },
+          color: 'accent-1',
+          fontWeight: '200'
+        }
+      },
+      menu: {
+        pad: {
+          vertical: 'large',
+          horizontal: 'small'
+        },
+        item: {
+          pad: {
+            horizontal: 'medium',
+            vertical: 'medium'
+          },
+          direction: 'row',
+          gap: 'large',
+          align: 'center',
+          icon: {
+            size: baseSpacing * 1.5 + "px",
+            color: 'dark-2'
+          },
+          label: {
+            size: 'large',
+            color: 'dark-2'
+          }
+        },
+        list: {
+          alignSelf: 'stretch',
+          pad: {
+            horizontal: baseSpacing * 2.25 + "px",
+            vertical: baseSpacing / 2 + "px"
+          },
+          border: {
+            color: 'dark-1',
+            side: 'top',
+            size: 'xsmall'
+          },
+          margin: {
+            horizontal: 'large',
+            vertical: '0'
+          },
+          text: {
+            color: 'dark-4',
+            alignSelf: 'start'
+          }
+        }
+      }
+    },
     "switch": {
       padding: baseSpacing * 0.625 + "px",
       fontWeight: 600,
@@ -1491,13 +1582,20 @@ export var generate = function generate(baseSpacing, scale) {
             border: 'none'
           },
           thead: {
-            td: {
-              padding: baseSpacing / 2.2 + "px 0"
+            th: {
+              span: {
+                color: normalizeColor('dark-1', theme),
+                fontWeight: 600
+              },
+              button: {
+                color: normalizeColor('dark-1', theme),
+                fontWeight: 600
+              }
             }
           },
           tbody: {
             td: {
-              padding: baseSpacing * 2 + "px 0",
+              padding: baseSpacing * 2 + "px " + baseSpacing / 1.65 + "px",
               span: {
                 fontSize: baseFontSize * 1.5 + "px"
               }
@@ -1638,27 +1736,31 @@ export var generate = function generate(baseSpacing, scale) {
         position: 'top-right',
         zIndex: 999,
         width: '60%',
-        timeout: 2000,
+        color: 'white',
+        timeout: 2000000,
         icon: {
           size: 'xlarge',
-          "default": TickCircle,
-          ok: TickCircle,
-          error: Error
+          "default": Info,
+          ok: Success,
+          error: Failed
         },
         text: {
           "default": {
-            weight: 600
+            weight: 600,
+            size: 'large'
           },
           ok: {
-            color: '#38C18B',
+            color: 'white',
             weight: 600,
+            size: 'large',
             margin: {
               horizontal: 'small'
             }
           },
           error: {
-            color: '#E9716C',
+            color: 'white',
             weight: 600,
+            size: 'large',
             margin: {
               horizontal: 'small'
             }

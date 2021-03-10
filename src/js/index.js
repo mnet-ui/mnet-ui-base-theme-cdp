@@ -1,14 +1,15 @@
 import { rgba } from 'polished';
 import { css } from 'styled-components';
 import { add as addGoogleFont } from 'google-fonts';
-import { CDPComponents, NeoComponents } from 'mnet-icons';
+import { CDPComponents } from 'mnet-icons';
 
 import { deepFreeze } from 'mnet-ui-base/utils/object';
 import { normalizeColor } from 'mnet-ui-base/utils/colors';
 import { parseMetricToNum } from 'mnet-ui-base/utils/mixins';
 
-const { Close, TickCircle, Error } = NeoComponents;
-const { ArrowUp, ArrowDown, ArrowRight } = CDPComponents;
+const {
+  ArrowUp, ArrowDown, ArrowRight, Close, Info, Success, Failed,
+} = CDPComponents;
 
 addGoogleFont({
   'Open Sans': true,
@@ -32,6 +33,9 @@ const darkColors = [
   '#898EA2',
   '#BABDCA',
   '#DEDEDE',
+  '#2F3A4A',
+  '#29313D',
+
 ];
 const lightColors = [
   '#fbfbfb',
@@ -43,7 +47,7 @@ const lightColors = [
   '#F5F7FD',
 ];
 const focusColor = '#B1C2FE';
-
+const initialBgColor = '#FC564F';
 const colors = {
   active: '#E28880',
   'background-back': {
@@ -222,6 +226,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         extend: ({ theme }) => ({
           'box-shadow': '0px 4px 13px rgba(0, 0, 0, 0.1)',
           border: `${controlBorderWidth / 2}px solid ${normalizeColor('dark-2', theme)}`,
+          'li:hover': {
+            backgroundColor: normalizeColor('dark-3', theme),
+          },
         }),
       },
       edgeSize: {
@@ -933,7 +940,10 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       message: {
         wrapper: {
-          pad: 'large',
+          pad: {
+            horizontal: 'large',
+            vertical: 'xlarge',
+          },
         },
         text: {
           size: 'medium',
@@ -1269,6 +1279,69 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       // searchInput: undefined,
       step: 20,
     },
+    sidebar: {
+      header: {
+        background: 'dark-8',
+        align: 'center',
+        pad: { vertical: 'large' },
+        initial: {
+          background: initialBgColor,
+          height: 'xsmall',
+          width: 'xsmall',
+          align: 'center',
+          justify: 'center',
+          round: 'full',
+          margin: { vertical: 'medium' },
+          text: {
+            color: 'white',
+            size: `${baseSpacing * 1.55}px`,
+          },
+        },
+        username: {
+          size: 'large',
+          color: 'white',
+          margin: { vertical: 'small' },
+        },
+        anchor: {
+          textDecoration: 'none',
+          size: 'medium',
+          margin: { top: 'small' },
+          color: 'accent-1',
+          fontWeight: '200',
+        },
+      },
+      menu: {
+        pad: { vertical: 'large', horizontal: 'small' },
+        item: {
+          pad: { horizontal: 'medium', vertical: 'medium' },
+          direction: 'row',
+          gap: 'large',
+          align: 'center',
+          icon: {
+            size: `${baseSpacing * 1.5}px`,
+            color: 'dark-2',
+          },
+          label: {
+            size: 'large',
+            color: 'dark-2',
+          },
+        },
+        list: {
+          alignSelf: 'stretch',
+          pad: { horizontal: `${baseSpacing * 2.25}px`, vertical: `${baseSpacing / 2}px` },
+          border: {
+            color: 'dark-1',
+            side: 'top',
+            size: 'xsmall',
+          },
+          margin: { horizontal: 'large', vertical: '0' },
+          text: {
+            color: 'dark-4',
+            alignSelf: 'start',
+          },
+        },
+      },
+    },
     switch: {
       padding: `${baseSpacing * 0.625}px`,
       fontWeight: 600,
@@ -1354,13 +1427,20 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           border: 'none',
         },
         thead: {
-          td: {
-            padding: `${baseSpacing / 2.2}px 0`,
+          th: {
+            span: {
+              color: normalizeColor('dark-1', theme),
+              fontWeight: 600,
+            },
+            button: {
+              color: normalizeColor('dark-1', theme),
+              fontWeight: 600,
+            },
           },
         },
         tbody: {
           td: {
-            padding: `${baseSpacing * 2}px 0`,
+            padding: `${baseSpacing * 2}px ${baseSpacing / 1.65}px`,
             span: {
               fontSize: `${baseFontSize * 1.5}px`,
             },
@@ -1484,25 +1564,29 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         position: 'top-right',
         zIndex: 999,
         width: '60%',
-        timeout: 2000,
+        color: 'white',
+        timeout: 2000000,
         icon: {
           size: 'xlarge',
-          default: TickCircle,
-          ok: TickCircle,
-          error: Error,
+          default: Info,
+          ok: Success,
+          error: Failed,
         },
         text: {
           default: {
             weight: 600,
+            size: 'large',
           },
           ok: {
-            color: '#38C18B',
+            color: 'white',
             weight: 600,
+            size: 'large',
             margin: { horizontal: 'small' },
           },
           error: {
-            color: '#E9716C',
+            color: 'white',
             weight: 600,
+            size: 'large',
             margin: { horizontal: 'small' },
           },
         },
