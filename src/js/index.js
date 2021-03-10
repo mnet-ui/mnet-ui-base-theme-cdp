@@ -33,6 +33,9 @@ const darkColors = [
   '#898EA2',
   '#BABDCA',
   '#DEDEDE',
+  '#2F3A4A',
+  '#29313D',
+
 ];
 const lightColors = [
   '#fbfbfb',
@@ -44,7 +47,7 @@ const lightColors = [
   '#F5F7FD',
 ];
 const focusColor = '#B1C2FE';
-
+const initialBgColor = '#FC564F';
 const colors = {
   active: '#E28880',
   'background-back': {
@@ -1278,11 +1281,11 @@ export const generate = (baseSpacing = 16, scale = 6) => {
     },
     sidebar: {
       header: {
-        background: '#2a313e',
+        background: 'dark-8',
         align: 'center',
-        pad: { vertical: 'xlarge' },
+        pad: { vertical: 'large' },
         initial: {
-          background: '#FC564F',
+          background: initialBgColor,
           height: 'xsmall',
           width: 'xsmall',
           align: 'center',
@@ -1308,7 +1311,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         },
       },
       menu: {
-        pad: { vertical: 'large', horizontal: 'large' },
+        pad: { vertical: 'large', horizontal: 'small' },
         item: {
           pad: { horizontal: 'medium', vertical: 'medium' },
           direction: 'row',
@@ -1327,13 +1330,13 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           alignSelf: 'stretch',
           pad: { horizontal: `${baseSpacing * 2.25}px`, vertical: `${baseSpacing / 2}px` },
           border: {
-            color: '#39475b',
+            color: 'dark-1',
             side: 'top',
             size: 'xsmall',
           },
           margin: { horizontal: 'large', vertical: '0' },
           text: {
-            color: '#67758B',
+            color: 'dark-4',
             alignSelf: 'start',
           },
         },
