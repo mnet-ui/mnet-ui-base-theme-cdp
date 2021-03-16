@@ -1607,8 +1607,10 @@ var generate = function generate(baseSpacing, scale) {
             }
           },
           tbody: {
+            th: {
+              padding: baseSpacing * 2 + "px " + baseSpacing / 1.65 + "px"
+            },
             td: {
-              padding: baseSpacing * 2 + "px " + baseSpacing / 1.65 + "px",
               span: {
                 fontSize: baseFontSize * 1.5 + "px"
               }
@@ -1694,6 +1696,8 @@ var generate = function generate(baseSpacing, scale) {
         return {
           'padding-left': baseSpacing * 1.25 + "px",
           'box-shadow': 'none',
+          'font-size': '12px',
+          'margin-left': '2px',
           color: (0, _colors.normalizeColor)('dark-1', theme),
           input: {
             fontWeight: onSuggestionsOpen ? '400' : '600'
@@ -1813,6 +1817,111 @@ var generate = function generate(baseSpacing, scale) {
         warning: {
           background: 'status-warning' // text: {},
 
+        }
+      }
+    },
+    avails: {
+      container: {
+        background: 'white',
+        direction: 'column',
+        border: {
+          side: 'all'
+        },
+        round: {
+          size: 'small',
+          corner: 'top'
+        }
+      },
+      views: {
+        size: '40px',
+        color: 'dark-1'
+      },
+      collapsible: {
+        container: {
+          reverse: true,
+          headerProps: {
+            border: false
+          },
+          alignTitle: {
+            gap: 'medium'
+          },
+          pad: {
+            bottom: 'xlarge'
+          }
+        },
+        grid: {
+          rows: ['xxsmall', 'xxsmall', 'xxsmall'],
+          columns: ['auto', 'auto'],
+          areas: [{
+            name: 'env',
+            start: [0, 0],
+            end: [1, 0]
+          }, {
+            name: 'country',
+            start: [0, 1],
+            end: [0, 1]
+          }, {
+            name: 'device',
+            start: [1, 1],
+            end: [1, 1]
+          }, {
+            name: 'browser',
+            start: [0, 2],
+            end: [0, 2]
+          }, {
+            name: 'os',
+            start: [1, 2],
+            end: [1, 2]
+          }]
+        }
+      },
+      multiSelect: {
+        labelKey: 'label',
+        valueKey: {
+          key: 'id',
+          reduce: true
+        },
+        layout: 'single-column',
+        loader: {
+          size: '20'
+        }
+      }
+    },
+    urlList: {
+      container: {
+        direction: 'column',
+        width: 'large',
+        border: true,
+        round: {
+          size: 'small',
+          corner: 'bottom'
+        }
+      },
+      title: {
+        margin: {
+          vertical: 'medium'
+        },
+        size: 'xlarge',
+        weight: '600'
+      },
+      anchor: {
+        extend: {
+          margin: {
+            vertical: 'medium'
+          },
+          color: 'accent-1',
+          target: '_blank',
+          style: {
+            overflow: 'hidden',
+            whiteSpace: 'nowrap',
+            textOverflow: 'ellipsis'
+          }
+        },
+        anchorLabel: {
+          weight: 400,
+          margin: {
+            vertical: 'medium'
+          }
         }
       }
     }
