@@ -1596,7 +1596,6 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         },
         default: {
           background: 'dark-1',
-          // border: {},
           size: 'medium',
           align: 'center',
           direction: 'row',

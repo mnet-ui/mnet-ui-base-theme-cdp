@@ -1785,7 +1785,6 @@ var generate = function generate(baseSpacing, scale) {
         },
         "default": {
           background: 'dark-1',
-          // border: {},
           size: 'medium',
           align: 'center',
           direction: 'row',
