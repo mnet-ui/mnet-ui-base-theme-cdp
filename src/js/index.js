@@ -1519,8 +1519,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       extend: ({ theme, onSuggestionsOpen }) => ({
         'padding-left': `${baseSpacing * 1.25}px`,
         'box-shadow': 'none',
-        'font-size': '12px',
-        'margin-left': '2px',
+        'font-size': `${baseSpacing / 1.34}px`,
+        'margin-left': `${baseSpacing / 8}px`,
         color: normalizeColor('dark-1', theme),
         input: {
           fontWeight: onSuggestionsOpen ? '400' : '600',
@@ -1632,7 +1632,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         round: { size: 'small', corner: 'top' },
       },
       views: {
-        size: '40px',
+        size: `${baseSpacing * 2.5}px`,
         color: 'dark-1',
       },
       collapsible: {
