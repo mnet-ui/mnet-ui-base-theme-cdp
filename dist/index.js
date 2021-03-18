@@ -1889,7 +1889,6 @@ var generate = function generate(baseSpacing, scale) {
     urlList: {
       container: {
         direction: 'column',
-        width: 'large',
         border: true,
         round: {
           size: 'small',

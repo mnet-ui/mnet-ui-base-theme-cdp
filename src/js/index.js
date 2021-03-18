@@ -1666,7 +1666,6 @@ export const generate = (baseSpacing = 16, scale = 6) => {
     urlList: {
       container: {
         direction: 'column',
-        width: 'large',
         border: true,
         round: { size: 'small', corner: 'bottom' },
       },
