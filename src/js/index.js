@@ -16,7 +16,7 @@ addGoogleFont({
 });
 
 const brandColor = '#E15151';
-const accentColors = ['#739FFC', '#F5F5F5', '#739FFC', '#439ADC'];
+const accentColors = ['#739FFC', '#F5F5F5', '#739FFC', '#439ADC', '#FC564F'];
 const neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
 const statusColors = {
   critical: '#e35e59',
@@ -1413,11 +1413,29 @@ export const generate = (baseSpacing = 16, scale = 6) => {
     },
     table: {
       extend: ({ theme }) => ({
+        'table-layout': 'fixed',
+        'border-collapse': 'collapse',
+        width: '100%',
         'tr:nth-child(even)': {
           background: normalizeColor('background-front', theme),
         },
         'tr:nth-child(odd)': {
           background: normalizeColor('background-back', theme),
+        },
+        'th:nth-child(1)': {
+          width: '15%',
+        },
+        'th:nth-child(2)': {
+          width: '40%',
+        },
+        'th:nth-child(3)': {
+          width: '15%',
+        },
+        'th:nth-child(4)': {
+          width: '20%',
+        },
+        'th:nth-child(5)': {
+          width: '10%',
         },
         color: normalizeColor('dark-1', theme),
         th: {
@@ -1429,10 +1447,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         thead: {
           th: {
             span: {
-              color: normalizeColor('dark-1', theme),
-              fontWeight: 600,
-            },
-            button: {
+              fontSize: 'small',
               color: normalizeColor('dark-1', theme),
               fontWeight: 600,
             },
