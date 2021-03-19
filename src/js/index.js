@@ -1423,24 +1423,15 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           background: normalizeColor('background-back', theme),
         },
         'th:nth-child(1)': {
-          width: '15%',
-        },
-        'th:nth-child(2)': {
-          width: '40%',
+          width: `${baseSpacing * 9}px`,
         },
         'th:nth-child(3)': {
-          width: '15%',
-        },
-        'th:nth-child(4)': {
-          width: '20%',
+          width: `${baseSpacing * 12}px`,
         },
         'th:nth-child(5)': {
-          width: '10%',
+          width: `${baseSpacing * 9}px`,
         },
         color: normalizeColor('dark-1', theme),
-        th: {
-          // padding: `${baseSpacing / 2.2}px`,
-        },
         td: {
           border: 'none',
         },
