@@ -614,8 +614,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         background: { light: 'accent-2' },
         size: `${baseSpacing * 1.5}px`,
         color: {
-          dark: statusColors.error,
-          light: statusColors.error,
+          dark: statusColors.ok,
+          light: statusColors.ok,
         },
         knob: {
           background: { light: statusColors.error },
@@ -631,7 +631,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         radius: `${baseSpacing}px`,
         extend: ({ checked, theme }) => ({
           height: `${baseSpacing * 0.938}px`,
-          border: `1px solid ${normalizeColor(checked ? 'status-error' : 'dark-2', theme)}`,
+          border: `1px solid ${normalizeColor(checked ? 'status-ok' : 'dark-2', theme)}`,
           background: 'white',
         }),
       },
@@ -1553,11 +1553,16 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       icon: {
         bgColor: 'transparent',
         pad: 'xsmall',
+        size: `${baseSpacing / 1.14}px`,
       },
       extend: ({ className, theme }) => ({
         button: {
           color: normalizeColor(className === 'active' ? 'dark-1' : 'dark-2', theme),
+          'font-size': `${baseSpacing / 1.14}px`,
           'font-weight': className === 'active' ? '700' : '400',
+          span: {
+            'font-size': `${baseSpacing / 1.14}px`,
+          },
         },
       }),
     },
@@ -1575,7 +1580,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         zIndex: 999,
         width: '60%',
         color: 'white',
-        timeout: 2000000,
+        timeout: 5000,
         icon: {
           size: 'xlarge',
           default: Info,
