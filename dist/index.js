@@ -706,8 +706,8 @@ var generate = function generate(baseSpacing, scale) {
         },
         size: baseSpacing * 1.5 + "px",
         color: {
-          dark: statusColors.error,
-          light: statusColors.error
+          dark: statusColors.ok,
+          light: statusColors.ok
         },
         knob: {
           background: {
@@ -734,7 +734,7 @@ var generate = function generate(baseSpacing, scale) {
               theme = _ref4.theme;
           return {
             height: baseSpacing * 0.938 + "px",
-            border: "1px solid " + (0, _colors.normalizeColor)(checked ? 'status-error' : 'dark-2', theme),
+            border: "1px solid " + (0, _colors.normalizeColor)(checked ? 'status-ok' : 'dark-2', theme),
             background: 'white'
           };
         }
@@ -1734,7 +1734,8 @@ var generate = function generate(baseSpacing, scale) {
       },
       icon: {
         bgColor: 'transparent',
-        pad: 'xsmall'
+        pad: 'xsmall',
+        size: baseSpacing / 1.14 + "px"
       },
       extend: function extend(_ref9) {
         var className = _ref9.className,
@@ -1742,7 +1743,11 @@ var generate = function generate(baseSpacing, scale) {
         return {
           button: {
             color: (0, _colors.normalizeColor)(className === 'active' ? 'dark-1' : 'dark-2', theme),
-            'font-weight': className === 'active' ? '700' : '400'
+            'font-size': baseSpacing / 1.14 + "px",
+            'font-weight': className === 'active' ? '700' : '400',
+            span: {
+              'font-size': baseSpacing / 1.14 + "px"
+            }
           }
         };
       }
@@ -1761,7 +1766,7 @@ var generate = function generate(baseSpacing, scale) {
         zIndex: 999,
         width: '60%',
         color: 'white',
-        timeout: 2000000,
+        timeout: 5000,
         icon: {
           size: 'xlarge',
           "default": Info,
