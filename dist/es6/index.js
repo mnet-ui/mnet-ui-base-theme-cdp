@@ -44,9 +44,9 @@ var accentColors = ['#739FFC', '#F5F5F5', '#739FFC', '#439ADC', '#FC564F'];
 var neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
 var statusColors = {
   critical: '#e35e59',
-  error: '#E28880',
+  error: '#DD7070',
   warning: '#EDB982',
-  ok: '#90D099',
+  ok: '#16B037',
   unknown: '#CCCCCC',
   disabled: '#CCCCCC'
 };
