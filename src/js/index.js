@@ -49,7 +49,7 @@ const lightColors = [
 const focusColor = '#B1C2FE';
 const initialBgColor = '#FC564F';
 const colors = {
-  active: '#E28880',
+  active: 'rgba(221, 221, 221, 0.5)',
   'background-back': {
     dark: '#FFFFFF',
     light: '#FFFFFF',
@@ -448,16 +448,17 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         radius: `${baseSpacing * 0.0625}px`,
       },
       color: { dark: undefined, light: undefined },
-      default: {
-        background: 'transparent',
-        border: 'none',
-        // color: undefined,
-        padding: {
-          vertical: '0',
-          horizontal: '0',
-        },
-        // extend: undefined,
-      },
+      // default: {
+      //   background: 'transparent',
+      //   border: 'none',
+      //   // color: undefined,
+      //   padding: {
+      //     vertical: '0',
+      //     horizontal: '0',
+      //   },
+      //   // extend: undefined,
+      // },
+      default: undefined,
       primary: {
         background: 'accent-1',
         border: {
@@ -1528,11 +1529,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         },
       }),
       suggestions: {
-        extend: ({ theme }) => ({
-          'button:hover': {
-            backgroundColor: normalizeColor('background-front', theme),
-          },
-        }),
+        extend: undefined,
       },
     },
     pagination: {

@@ -55,7 +55,7 @@ var lightColors = ['#fbfbfb', '#f5f6f8', '#E7EAF1', '#e1e3ef', '#9DA2AD', '#DADA
 var focusColor = '#B1C2FE';
 var initialBgColor = '#FC564F';
 var colors = {
-  active: '#E28880',
+  active: 'rgba(221, 221, 221, 0.5)',
   'background-back': {
     dark: '#FFFFFF',
     light: '#FFFFFF'
@@ -513,16 +513,17 @@ export var generate = function generate(baseSpacing, scale) {
         dark: undefined,
         light: undefined
       },
-      "default": {
-        background: 'transparent',
-        border: 'none',
-        // color: undefined,
-        padding: {
-          vertical: '0',
-          horizontal: '0'
-        } // extend: undefined,
-
-      },
+      // default: {
+      //   background: 'transparent',
+      //   border: 'none',
+      //   // color: undefined,
+      //   padding: {
+      //     vertical: '0',
+      //     horizontal: '0',
+      //   },
+      //   // extend: undefined,
+      // },
+      "default": undefined,
       primary: {
         background: 'accent-1',
         border: {
@@ -1694,14 +1695,7 @@ export var generate = function generate(baseSpacing, scale) {
         };
       },
       suggestions: {
-        extend: function extend(_ref8) {
-          var theme = _ref8.theme;
-          return {
-            'button:hover': {
-              backgroundColor: normalizeColor('background-front', theme)
-            }
-          };
-        }
+        extend: undefined
       }
     },
     pagination: {
@@ -1719,9 +1713,9 @@ export var generate = function generate(baseSpacing, scale) {
         pad: 'xsmall',
         size: baseSpacing / 1.14 + "px"
       },
-      extend: function extend(_ref9) {
-        var className = _ref9.className,
-            theme = _ref9.theme;
+      extend: function extend(_ref8) {
+        var className = _ref8.className,
+            theme = _ref8.theme;
         return {
           button: {
             color: normalizeColor(className === 'active' ? 'dark-1' : 'dark-2', theme),
