@@ -594,12 +594,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       // gap: undefined
       hover: {
-        border: {
-          color: {
-            dark: 'white',
-            light: 'black',
-          },
-        },
+        border: 'none',
       },
       icon: {
         // size: undefined,
@@ -609,29 +604,29 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         // checked: undefined,
         // indeterminate: undefined,
       },
-      size: `${baseSpacing * 0.625}px`,
+      size: `${baseSpacing}px`,
       toggle: {
         background: { light: 'accent-2' },
-        size: `${baseSpacing * 1.5}px`,
+        size: `${baseSpacing * 1.875}px`,
         color: {
-          dark: statusColors.ok,
-          light: statusColors.ok,
+          dark: 'status-ok',
+          light: 'status-ok',
         },
         knob: {
           background: { light: statusColors.error },
           color: { light: statusColors.error },
           extend: ({ checked, theme }) => ({
-            top: '3px',
+            top: '1px',
             left: '2px',
-            width: `${baseSpacing * 0.375}px`,
-            height: `${baseSpacing * 0.375}px`,
-            background: normalizeColor(checked ? 'status-error' : 'dark-2', theme),
+            width: `${baseSpacing * 0.625}px`,
+            height: `${baseSpacing * 0.625}px`,
+            background: normalizeColor(checked ? 'status-ok' : 'status-error', theme),
           }),
         },
-        radius: `${baseSpacing}px`,
+        radius: `${baseSpacing / 2}px`,
         extend: ({ checked, theme }) => ({
-          height: `${baseSpacing * 0.938}px`,
-          border: `1px solid ${normalizeColor(checked ? 'status-ok' : 'dark-2', theme)}`,
+          height: `${baseSpacing}px`,
+          border: `2px solid ${normalizeColor(checked ? 'status-ok' : 'status-error', theme)}`,
           background: 'white',
         }),
       },

@@ -673,12 +673,7 @@ export var generate = function generate(baseSpacing, scale) {
       },
       // gap: undefined
       hover: {
-        border: {
-          color: {
-            dark: 'white',
-            light: 'black'
-          }
-        }
+        border: 'none'
       },
       icon: {// size: undefined,
         // extend: undefined,
@@ -686,15 +681,15 @@ export var generate = function generate(baseSpacing, scale) {
       icons: {// checked: undefined,
         // indeterminate: undefined,
       },
-      size: baseSpacing * 0.625 + "px",
+      size: baseSpacing + "px",
       toggle: {
         background: {
           light: 'accent-2'
         },
-        size: baseSpacing * 1.5 + "px",
+        size: baseSpacing * 1.875 + "px",
         color: {
-          dark: statusColors.ok,
-          light: statusColors.ok
+          dark: 'status-ok',
+          light: 'status-ok'
         },
         knob: {
           background: {
@@ -707,21 +702,21 @@ export var generate = function generate(baseSpacing, scale) {
             var checked = _ref3.checked,
                 theme = _ref3.theme;
             return {
-              top: '3px',
+              top: '1px',
               left: '2px',
-              width: baseSpacing * 0.375 + "px",
-              height: baseSpacing * 0.375 + "px",
-              background: normalizeColor(checked ? 'status-error' : 'dark-2', theme)
+              width: baseSpacing * 0.625 + "px",
+              height: baseSpacing * 0.625 + "px",
+              background: normalizeColor(checked ? 'status-ok' : 'status-error', theme)
             };
           }
         },
-        radius: baseSpacing + "px",
+        radius: baseSpacing / 2 + "px",
         extend: function extend(_ref4) {
           var checked = _ref4.checked,
               theme = _ref4.theme;
           return {
-            height: baseSpacing * 0.938 + "px",
-            border: "1px solid " + normalizeColor(checked ? 'status-ok' : 'dark-2', theme),
+            height: baseSpacing + "px",
+            border: "2px solid " + normalizeColor(checked ? 'status-ok' : 'status-error', theme),
             background: 'white'
           };
         }
