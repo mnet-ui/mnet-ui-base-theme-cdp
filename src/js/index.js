@@ -20,9 +20,9 @@ const accentColors = ['#739FFC', '#F5F5F5', '#739FFC', '#439ADC', '#FC564F'];
 const neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
 const statusColors = {
   critical: '#e35e59',
-  error: '#E28880',
+  error: '#DD7070',
   warning: '#EDB982',
-  ok: '#90D099',
+  ok: '#16B037',
   unknown: '#CCCCCC',
   disabled: '#CCCCCC',
 };
@@ -49,7 +49,7 @@ const lightColors = [
 const focusColor = '#B1C2FE';
 const initialBgColor = '#FC564F';
 const colors = {
-  active: '#E28880',
+  active: 'rgba(221, 221, 221, 0.5)',
   'background-back': {
     dark: '#FFFFFF',
     light: '#FFFFFF',
@@ -222,14 +222,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           radius: `${controlBorderWidth * 5}px`,
         },
         zIndex: '20',
-        // marginTop: '4px',
-        extend: ({ theme }) => ({
-          'box-shadow': '0px 4px 13px rgba(0, 0, 0, 0.1)',
-          border: `${controlBorderWidth / 2}px solid ${normalizeColor('dark-2', theme)}`,
-          'li:hover': {
-            backgroundColor: normalizeColor('dark-3', theme),
-          },
-        }),
+        marginTop: 0,
+        extend: undefined,
       },
       edgeSize: {
         none: '0px',
@@ -448,16 +442,17 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         radius: `${baseSpacing * 0.0625}px`,
       },
       color: { dark: undefined, light: undefined },
-      default: {
-        background: 'transparent',
-        border: 'none',
-        // color: undefined,
-        padding: {
-          vertical: '0',
-          horizontal: '0',
-        },
-        // extend: undefined,
-      },
+      // default: {
+      //   background: 'transparent',
+      //   border: 'none',
+      //   // color: undefined,
+      //   padding: {
+      //     vertical: '0',
+      //     horizontal: '0',
+      //   },
+      //   // extend: undefined,
+      // },
+      default: undefined,
       primary: {
         background: 'accent-1',
         border: {
@@ -594,12 +589,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       // gap: undefined
       hover: {
-        border: {
-          color: {
-            dark: 'white',
-            light: 'black',
-          },
-        },
+        border: 'none',
       },
       icon: {
         // size: undefined,
@@ -609,29 +599,29 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         // checked: undefined,
         // indeterminate: undefined,
       },
-      size: `${baseSpacing * 0.625}px`,
+      size: `${baseSpacing}px`,
       toggle: {
         background: { light: 'accent-2' },
-        size: `${baseSpacing * 1.5}px`,
+        size: `${baseSpacing * 1.875}px`,
         color: {
-          dark: statusColors.ok,
-          light: statusColors.ok,
+          dark: 'status-ok',
+          light: 'status-ok',
         },
         knob: {
           background: { light: statusColors.error },
           color: { light: statusColors.error },
           extend: ({ checked, theme }) => ({
-            top: '3px',
+            top: '1px',
             left: '2px',
-            width: `${baseSpacing * 0.375}px`,
-            height: `${baseSpacing * 0.375}px`,
-            background: normalizeColor(checked ? 'status-error' : 'dark-2', theme),
+            width: `${baseSpacing * 0.625}px`,
+            height: `${baseSpacing * 0.625}px`,
+            background: normalizeColor(checked ? 'status-ok' : 'status-error', theme),
           }),
         },
-        radius: `${baseSpacing}px`,
+        radius: `${baseSpacing / 2}px`,
         extend: ({ checked, theme }) => ({
-          height: `${baseSpacing * 0.938}px`,
-          border: `1px solid ${normalizeColor(checked ? 'status-ok' : 'dark-2', theme)}`,
+          height: `${baseSpacing}px`,
+          border: `2px solid ${normalizeColor(checked ? 'status-ok' : 'status-error', theme)}`,
           background: 'white',
         }),
       },
@@ -1533,11 +1523,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         },
       }),
       suggestions: {
-        extend: ({ theme }) => ({
-          'button:hover': {
-            backgroundColor: normalizeColor('background-front', theme),
-          },
-        }),
+        extend: undefined,
       },
     },
     pagination: {
