@@ -260,17 +260,8 @@ export var generate = function generate(baseSpacing, scale) {
           radius: controlBorderWidth * 5 + "px"
         },
         zIndex: '20',
-        // marginTop: '4px',
-        extend: function extend(_ref) {
-          var theme = _ref.theme;
-          return {
-            'box-shadow': '0px 4px 13px rgba(0, 0, 0, 0.1)',
-            border: controlBorderWidth / 2 + "px solid " + normalizeColor('dark-2', theme),
-            'li:hover': {
-              backgroundColor: normalizeColor('dark-3', theme)
-            }
-          };
-        }
+        marginTop: 0,
+        extend: undefined
       },
       edgeSize: {
         none: '0px',
@@ -446,8 +437,8 @@ export var generate = function generate(baseSpacing, scale) {
       content: {
         color: 'dark-1',
         size: 'large',
-        extend: function extend(_ref2) {
-          var last = _ref2.last;
+        extend: function extend(_ref) {
+          var last = _ref.last;
           return {
             fontWeight: last ? '400' : '600',
             marginRight: baseSpacing / 3.2 + "px"
@@ -699,9 +690,9 @@ export var generate = function generate(baseSpacing, scale) {
           color: {
             light: statusColors.error
           },
-          extend: function extend(_ref3) {
-            var checked = _ref3.checked,
-                theme = _ref3.theme;
+          extend: function extend(_ref2) {
+            var checked = _ref2.checked,
+                theme = _ref2.theme;
             return {
               top: '1px',
               left: '2px',
@@ -712,9 +703,9 @@ export var generate = function generate(baseSpacing, scale) {
           }
         },
         radius: baseSpacing / 2 + "px",
-        extend: function extend(_ref4) {
-          var checked = _ref4.checked,
-              theme = _ref4.theme;
+        extend: function extend(_ref3) {
+          var checked = _ref3.checked,
+              theme = _ref3.theme;
           return {
             height: baseSpacing + "px",
             border: "2px solid " + normalizeColor(checked ? 'status-ok' : 'status-error', theme),
@@ -1562,8 +1553,8 @@ export var generate = function generate(baseSpacing, scale) {
       }
     },
     table: {
-      extend: function extend(_ref5) {
-        var theme = _ref5.theme;
+      extend: function extend(_ref4) {
+        var theme = _ref4.theme;
         return {
           'table-layout': 'fixed',
           'border-collapse': 'collapse',
@@ -1616,8 +1607,8 @@ export var generate = function generate(baseSpacing, scale) {
         background: {
           color: 'dark-3'
         },
-        extend: function extend(_ref6) {
-          var theme = _ref6.theme;
+        extend: function extend(_ref5) {
+          var theme = _ref5.theme;
           return {
             span: {
               color: normalizeColor('dark-1', theme),
@@ -1680,9 +1671,9 @@ export var generate = function generate(baseSpacing, scale) {
     },
     textInput: {
       // disabled: { opacity: undefined },
-      extend: function extend(_ref7) {
-        var theme = _ref7.theme,
-            onSuggestionsOpen = _ref7.onSuggestionsOpen;
+      extend: function extend(_ref6) {
+        var theme = _ref6.theme,
+            onSuggestionsOpen = _ref6.onSuggestionsOpen;
         return {
           'padding-left': baseSpacing * 1.25 + "px",
           'box-shadow': 'none',
@@ -1713,9 +1704,9 @@ export var generate = function generate(baseSpacing, scale) {
         pad: 'xsmall',
         size: baseSpacing / 1.14 + "px"
       },
-      extend: function extend(_ref8) {
-        var className = _ref8.className,
-            theme = _ref8.theme;
+      extend: function extend(_ref7) {
+        var className = _ref7.className,
+            theme = _ref7.theme;
         return {
           button: {
             color: normalizeColor(className === 'active' ? 'dark-1' : 'dark-2', theme),

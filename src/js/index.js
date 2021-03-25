@@ -222,14 +222,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           radius: `${controlBorderWidth * 5}px`,
         },
         zIndex: '20',
-        // marginTop: '4px',
-        extend: ({ theme }) => ({
-          'box-shadow': '0px 4px 13px rgba(0, 0, 0, 0.1)',
-          border: `${controlBorderWidth / 2}px solid ${normalizeColor('dark-2', theme)}`,
-          'li:hover': {
-            backgroundColor: normalizeColor('dark-3', theme),
-          },
-        }),
+        marginTop: 0,
+        extend: undefined,
       },
       edgeSize: {
         none: '0px',
