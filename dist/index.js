@@ -711,7 +711,7 @@ var generate = function generate(baseSpacing, scale) {
               left: '2px',
               width: baseSpacing * 0.625 + "px",
               height: baseSpacing * 0.625 + "px",
-              background: (0, _colors.normalizeColor)(checked ? 'status-ok' : 'status-error', theme)
+              background: (0, _colors.normalizeColor)(checked ? 'status-ok' : 'dark-2', theme)
             };
           }
         },
@@ -721,7 +721,7 @@ var generate = function generate(baseSpacing, scale) {
               theme = _ref3.theme;
           return {
             height: baseSpacing + "px",
-            border: "2px solid " + (0, _colors.normalizeColor)(checked ? 'status-ok' : 'status-error', theme),
+            border: "2px solid " + (0, _colors.normalizeColor)(checked ? 'status-ok' : 'dark-2', theme),
             background: 'white'
           };
         }
@@ -1690,7 +1690,6 @@ var generate = function generate(baseSpacing, scale) {
         return {
           'padding-left': baseSpacing * 1.25 + "px",
           'box-shadow': 'none',
-          'font-size': baseSpacing / 1.34 + "px",
           'margin-left': baseSpacing / 8 + "px",
           color: (0, _colors.normalizeColor)('dark-1', theme),
           input: {
