@@ -698,7 +698,7 @@ export var generate = function generate(baseSpacing, scale) {
               left: '2px',
               width: baseSpacing * 0.625 + "px",
               height: baseSpacing * 0.625 + "px",
-              background: normalizeColor(checked ? 'status-ok' : 'status-error', theme)
+              background: normalizeColor(checked ? 'status-ok' : 'dark-2', theme)
             };
           }
         },
@@ -708,7 +708,7 @@ export var generate = function generate(baseSpacing, scale) {
               theme = _ref3.theme;
           return {
             height: baseSpacing + "px",
-            border: "2px solid " + normalizeColor(checked ? 'status-ok' : 'status-error', theme),
+            border: "2px solid " + normalizeColor(checked ? 'status-ok' : 'dark-2', theme),
             background: 'white'
           };
         }
@@ -1677,7 +1677,6 @@ export var generate = function generate(baseSpacing, scale) {
         return {
           'padding-left': baseSpacing * 1.25 + "px",
           'box-shadow': 'none',
-          'font-size': baseSpacing / 1.34 + "px",
           'margin-left': baseSpacing / 8 + "px",
           color: normalizeColor('dark-1', theme),
           input: {
@@ -1802,9 +1801,11 @@ export var generate = function generate(baseSpacing, scale) {
       container: {
         background: 'white',
         direction: 'column',
-        border: {
-          side: 'all'
-        },
+        border: [{
+          side: 'top'
+        }, {
+          side: 'vertical'
+        }],
         round: {
           size: 'small',
           corner: 'top'

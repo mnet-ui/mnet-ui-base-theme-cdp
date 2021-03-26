@@ -615,13 +615,13 @@ export const generate = (baseSpacing = 16, scale = 6) => {
             left: '2px',
             width: `${baseSpacing * 0.625}px`,
             height: `${baseSpacing * 0.625}px`,
-            background: normalizeColor(checked ? 'status-ok' : 'status-error', theme),
+            background: normalizeColor(checked ? 'status-ok' : 'dark-2', theme),
           }),
         },
         radius: `${baseSpacing / 2}px`,
         extend: ({ checked, theme }) => ({
           height: `${baseSpacing}px`,
-          border: `2px solid ${normalizeColor(checked ? 'status-ok' : 'status-error', theme)}`,
+          border: `2px solid ${normalizeColor(checked ? 'status-ok' : 'dark-2', theme)}`,
           background: 'white',
         }),
       },
@@ -1515,7 +1515,6 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       extend: ({ theme, onSuggestionsOpen }) => ({
         'padding-left': `${baseSpacing * 1.25}px`,
         'box-shadow': 'none',
-        'font-size': `${baseSpacing / 1.34}px`,
         'margin-left': `${baseSpacing / 8}px`,
         color: normalizeColor('dark-1', theme),
         input: {
@@ -1625,7 +1624,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       container: {
         background: 'white',
         direction: 'column',
-        border: { side: 'all' },
+        border: [{ side: 'top' }, { side: 'vertical' }],
         round: { size: 'small', corner: 'top' },
       },
       views: {
