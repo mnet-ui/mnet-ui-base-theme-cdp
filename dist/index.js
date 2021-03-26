@@ -1814,9 +1814,11 @@ var generate = function generate(baseSpacing, scale) {
       container: {
         background: 'white',
         direction: 'column',
-        border: {
-          side: 'all'
-        },
+        border: [{
+          side: 'top'
+        }, {
+          side: 'vertical'
+        }],
         round: {
           size: 'small',
           corner: 'top'

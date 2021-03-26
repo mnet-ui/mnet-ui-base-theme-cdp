@@ -1624,7 +1624,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       container: {
         background: 'white',
         direction: 'column',
-        border: { side: 'all' },
+        border: [{ side: 'top' }, { side: 'vertical' }],
         round: { size: 'small', corner: 'top' },
       },
       views: {
