@@ -585,7 +585,13 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       // color: { dark: undefined, light: undefined },
       extend: {
-        opacity: 1,
+        opacity: 11,
+        maxWidth: '100%',
+        span: {
+          whiteSpace: 'nowrap',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+        },
       },
       // gap: undefined
       hover: {
