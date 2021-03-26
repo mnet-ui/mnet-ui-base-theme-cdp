@@ -661,7 +661,7 @@ export var generate = function generate(baseSpacing, scale) {
       },
       // color: { dark: undefined, light: undefined },
       extend: {
-        opacity: 11,
+        opacity: 1,
         maxWidth: '100%',
         span: {
           whiteSpace: 'nowrap',
