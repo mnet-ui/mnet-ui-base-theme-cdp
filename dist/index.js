@@ -674,7 +674,13 @@ var generate = function generate(baseSpacing, scale) {
       },
       // color: { dark: undefined, light: undefined },
       extend: {
-        opacity: 1
+        opacity: 1,
+        maxWidth: '100%',
+        span: {
+          whiteSpace: 'nowrap',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis'
+        }
       },
       // gap: undefined
       hover: {
