@@ -1523,6 +1523,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         'box-shadow': 'none',
         'margin-left': `${baseSpacing / 8}px`,
         color: normalizeColor('dark-1', theme),
+        lineHeight: 'normal',
         input: {
           fontWeight: onSuggestionsOpen ? '400' : '600',
         },
