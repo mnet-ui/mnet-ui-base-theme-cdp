@@ -1698,6 +1698,7 @@ var generate = function generate(baseSpacing, scale) {
           'box-shadow': 'none',
           'margin-left': baseSpacing / 8 + "px",
           color: (0, _colors.normalizeColor)('dark-1', theme),
+          lineHeight: 'normal',
           input: {
             fontWeight: onSuggestionsOpen ? '400' : '600'
           }
