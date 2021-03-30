@@ -1520,7 +1520,6 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       // disabled: { opacity: undefined },
       extend: ({ theme, onSuggestionsOpen }) => ({
         'box-shadow': 'none',
-        'margin-left': `${baseSpacing / 8}px`,
         color: normalizeColor('dark-1', theme),
         lineHeight: 'normal',
         input: {
