@@ -1519,7 +1519,6 @@ export const generate = (baseSpacing = 16, scale = 6) => {
     textInput: {
       // disabled: { opacity: undefined },
       extend: ({ theme, onSuggestionsOpen }) => ({
-        'padding-left': `${baseSpacing * 1.25}px`,
         'box-shadow': 'none',
         'margin-left': `${baseSpacing / 8}px`,
         color: normalizeColor('dark-1', theme),

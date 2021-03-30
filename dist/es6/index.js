@@ -1681,7 +1681,6 @@ export var generate = function generate(baseSpacing, scale) {
         var theme = _ref6.theme,
             onSuggestionsOpen = _ref6.onSuggestionsOpen;
         return {
-          'padding-left': baseSpacing * 1.25 + "px",
           'box-shadow': 'none',
           'margin-left': baseSpacing / 8 + "px",
           color: normalizeColor('dark-1', theme),
