@@ -585,8 +585,8 @@ export var generate = function generate(baseSpacing, scale) {
       },
       disabled: {
         background: 'dark-2',
-        border: undefined,
-        color: undefined,
+        border: false,
+        color: 'white',
         opacity: undefined //   extend: undefined,
         //   default: {},
         //   primary: {},
@@ -1728,7 +1728,9 @@ export var generate = function generate(baseSpacing, scale) {
       color: 'white',
       tipSize: '5px',
       round: 'small',
-      maxWidth: '20%'
+      maxWidth: '20%',
+      justify: 'center',
+      align: 'center'
     },
     notification: {
       toast: {
