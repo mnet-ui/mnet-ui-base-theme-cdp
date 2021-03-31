@@ -1341,7 +1341,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
     switch: {
       padding: `${baseSpacing * 0.625}px`,
       fontWeight: 600,
+      fontSize: `${baseSpacing * 0.625}px`,
       opacity: 1,
+      height: `${baseSpacing * 1.56}px`,
       background: {
         active: 'accent-1',
         inactive: 'dark-3',
