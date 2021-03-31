@@ -442,16 +442,16 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         radius: `${baseSpacing * 0.0625}px`,
       },
       color: { dark: undefined, light: undefined },
-      // default: {
-      //   background: 'transparent',
-      //   border: 'none',
-      //   // color: undefined,
-      //   padding: {
-      //     vertical: '0',
-      //     horizontal: '0',
-      //   },
-      //   // extend: undefined,
-      // },
+      basic: {
+        background: 'transparent',
+        border: 'none',
+        // color: undefined,
+        padding: {
+          vertical: '0',
+          horizontal: '0',
+        },
+        // extend: undefined,
+      },
       default: undefined,
       primary: {
         background: 'accent-1',
