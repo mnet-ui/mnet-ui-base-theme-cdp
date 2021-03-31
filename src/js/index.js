@@ -511,8 +511,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       disabled: {
         background: 'dark-2',
-        border: undefined,
-        color: undefined,
+        border: false,
+        color: 'white',
         opacity: undefined,
         //   extend: undefined,
         //   default: {},
@@ -1564,6 +1564,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       tipSize: '5px',
       round: 'small',
       maxWidth: '20%',
+      justify: 'center',
+      align: 'center',
     },
     notification: {
       toast: {
