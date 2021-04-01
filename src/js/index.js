@@ -442,16 +442,16 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         radius: `${baseSpacing * 0.0625}px`,
       },
       color: { dark: undefined, light: undefined },
-      // default: {
-      //   background: 'transparent',
-      //   border: 'none',
-      //   // color: undefined,
-      //   padding: {
-      //     vertical: '0',
-      //     horizontal: '0',
-      //   },
-      //   // extend: undefined,
-      // },
+      basic: {
+        background: 'transparent',
+        border: 'none',
+        // color: undefined,
+        padding: {
+          vertical: '0',
+          horizontal: '0',
+        },
+        // extend: undefined,
+      },
       default: undefined,
       primary: {
         background: 'accent-1',
@@ -469,33 +469,22 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         },
       },
       secondary: {
-        background: 'accent-2',
-        border: {
-          color: { dark: 'accent-2', light: 'accent-2' },
-        },
-        color: 'dark-1',
-        padding: {
-          vertical: 'medium',
-          horizontal: 'xlarge',
-        },
-        // extend: undefined,
-      },
-      tertiary: {
         background: 'white',
         border: {
           color: { dark: 'accent-1', light: 'accent-1' },
           width: '1px',
         },
         color: 'accent-1',
-        // padding: {
-        //   vertical: undefined,
-        //   horizontal: undefined,
-        // },
+        padding: {
+          vertical: 'large',
+          horizontal: 'xlarge',
+        },
         extend: {
-          height: `${baseSpacing * 3.75}px`,
-          borderRadius: `${baseSpacing / 3.2}px`,
+          fontWeight: 600,
+          fontSize: `${baseSpacing * 0.875}px`,
         },
       },
+      tertiary: undefined,
       active: {
         background: undefined,
         border: {
@@ -1341,7 +1330,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
     switch: {
       padding: `${baseSpacing * 0.625}px`,
       fontWeight: 600,
+      fontSize: `${baseSpacing * 0.625}px`,
       opacity: 1,
+      height: `${baseSpacing * 1.56}px`,
       background: {
         active: 'accent-1',
         inactive: 'dark-3',
