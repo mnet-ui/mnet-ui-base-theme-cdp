@@ -1809,11 +1809,7 @@ var generate = function generate(baseSpacing, scale) {
       container: {
         background: 'white',
         direction: 'column',
-        border: [{
-          side: 'top'
-        }, {
-          side: 'vertical'
-        }],
+        border: true,
         round: {
           size: 'small',
           corner: 'top'
@@ -1877,7 +1873,11 @@ var generate = function generate(baseSpacing, scale) {
     urlList: {
       container: {
         direction: 'column',
-        border: true,
+        border: [{
+          side: 'bottom'
+        }, {
+          side: 'vertical'
+        }],
         round: {
           size: 'small',
           corner: 'bottom'

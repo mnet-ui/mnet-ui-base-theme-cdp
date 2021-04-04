@@ -1622,7 +1622,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       container: {
         background: 'white',
         direction: 'column',
-        border: [{ side: 'top' }, { side: 'vertical' }],
+        border: true,
         round: { size: 'small', corner: 'top' },
       },
       views: {
@@ -1660,7 +1660,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
     urlList: {
       container: {
         direction: 'column',
-        border: true,
+        border: [{ side: 'bottom' }, { side: 'vertical' }],
         round: { size: 'small', corner: 'bottom' },
       },
       title: {
