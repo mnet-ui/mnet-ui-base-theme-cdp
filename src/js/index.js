@@ -46,7 +46,7 @@ const lightColors = [
   '#DADADA',
   '#F5F7FD',
 ];
-const focusColor = '#B1C2FE';
+const focusColor = 'transparent';
 const initialBgColor = '#FC564F';
 const colors = {
   active: 'rgba(221, 221, 221, 0.5)',

@@ -52,7 +52,7 @@ var statusColors = {
 };
 var darkColors = ['#575F7D', '#8F94A6', '#E8EAF0', '#898EA2', '#BABDCA', '#DEDEDE', '#2F3A4A', '#29313D'];
 var lightColors = ['#fbfbfb', '#f5f6f8', '#E7EAF1', '#e1e3ef', '#9DA2AD', '#DADADA', '#F5F7FD'];
-var focusColor = '#B1C2FE';
+var focusColor = 'transparent';
 var initialBgColor = '#FC564F';
 var colors = {
   active: 'rgba(221, 221, 221, 0.5)',
