@@ -911,7 +911,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       title: {
         wrapper: {
-          pad: 'large',
+          pad: { horizontal: 'large', vertical: 'medium' },
           border: {
             side: 'bottom',
             color: 'dark-6',
