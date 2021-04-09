@@ -329,8 +329,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         // },
       },
       border: {
-        side: 'bottom',
-        color: 'border',
+        // side: 'bottom',
+        // color: 'border',
       },
       heading: {
         level: '4', // level ranges from 1-6

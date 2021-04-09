@@ -385,9 +385,8 @@ var generate = function generate(baseSpacing, scale) {
         //   color: 'border',
         // },
       },
-      border: {
-        side: 'bottom',
-        color: 'border'
+      border: {// side: 'bottom',
+        // color: 'border',
       },
       heading: {
         level: '4' // level ranges from 1-6
