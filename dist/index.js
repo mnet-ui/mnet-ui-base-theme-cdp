@@ -1044,7 +1044,10 @@ var generate = function generate(baseSpacing, scale) {
       },
       title: {
         wrapper: {
-          pad: 'large',
+          pad: {
+            horizontal: 'large',
+            vertical: 'medium'
+          },
           border: {
             side: 'bottom',
             color: 'dark-6'
