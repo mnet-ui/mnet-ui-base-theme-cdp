@@ -380,10 +380,8 @@ var generate = function generate(baseSpacing, scale) {
       }
     },
     accordion: {
-      panel: {// border: {
-        //   side: 'bottom',
-        //   color: 'border',
-        // },
+      panel: {
+        border: 'none'
       },
       border: 'none',
       heading: {

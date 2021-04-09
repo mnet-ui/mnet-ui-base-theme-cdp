@@ -323,10 +323,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
     },
     accordion: {
       panel: {
-        // border: {
-        //   side: 'bottom',
-        //   color: 'border',
-        // },
+        border: 'none',
       },
       border: 'none',
       heading: {
