@@ -1262,35 +1262,38 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       header: {
         background: 'dark-8',
         align: 'center',
-        pad: { vertical: 'large' },
+        pad: {
+          top: `${baseSpacing}px`,
+          bottom: `${baseSpacing * 1.428}px`,
+        },
         initial: {
           background: initialBgColor,
-          height: 'xsmall',
-          width: 'xsmall',
+          height: `${baseSpacing * 4.64}px`,
+          width: `${baseSpacing * 4.64}px`,
           align: 'center',
           justify: 'center',
           round: 'full',
           margin: { vertical: 'medium' },
           text: {
             color: 'white',
-            size: `${baseSpacing * 1.55}px`,
+            size: `${baseSpacing * 1.785}px`,
           },
         },
         username: {
-          size: 'large',
+          size: `${baseSpacing}px`,
           color: 'white',
           margin: { vertical: 'small' },
         },
         anchor: {
           textDecoration: 'none',
-          size: 'medium',
+          size: 'large',
           margin: { top: 'small' },
           color: 'accent-1',
           fontWeight: '200',
         },
       },
       menu: {
-        pad: { vertical: 'large', horizontal: 'small' },
+        pad: { vertical: 'xlarge', horizontal: 'medium' },
         item: {
           pad: { horizontal: 'medium', vertical: 'medium' },
           direction: 'row',

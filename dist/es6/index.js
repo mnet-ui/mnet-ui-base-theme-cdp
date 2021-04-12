@@ -1397,12 +1397,13 @@ export var generate = function generate(baseSpacing, scale) {
         background: 'dark-8',
         align: 'center',
         pad: {
-          vertical: 'large'
+          top: baseSpacing + "px",
+          bottom: baseSpacing * 1.428 + "px"
         },
         initial: {
           background: initialBgColor,
-          height: 'xsmall',
-          width: 'xsmall',
+          height: baseSpacing * 4.64 + "px",
+          width: baseSpacing * 4.64 + "px",
           align: 'center',
           justify: 'center',
           round: 'full',
@@ -1411,11 +1412,11 @@ export var generate = function generate(baseSpacing, scale) {
           },
           text: {
             color: 'white',
-            size: baseSpacing * 1.55 + "px"
+            size: baseSpacing * 1.785 + "px"
           }
         },
         username: {
-          size: 'large',
+          size: baseSpacing + "px",
           color: 'white',
           margin: {
             vertical: 'small'
@@ -1423,7 +1424,7 @@ export var generate = function generate(baseSpacing, scale) {
         },
         anchor: {
           textDecoration: 'none',
-          size: 'medium',
+          size: 'large',
           margin: {
             top: 'small'
           },
@@ -1433,8 +1434,8 @@ export var generate = function generate(baseSpacing, scale) {
       },
       menu: {
         pad: {
-          vertical: 'large',
-          horizontal: 'small'
+          vertical: 'xlarge',
+          horizontal: 'medium'
         },
         item: {
           pad: {
