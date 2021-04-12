@@ -602,14 +602,14 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           extend: ({ checked, theme }) => ({
             top: '1px',
             left: '2px',
-            width: `${baseSpacing * 0.625}px`,
-            height: `${baseSpacing * 0.625}px`,
+            width: `${baseSpacing / 2}px`,
+            height: `${baseSpacing / 2}px`,
             background: normalizeColor(checked ? 'status-ok' : 'dark-2', theme),
           }),
         },
         radius: `${baseSpacing / 2}px`,
         extend: ({ checked, theme }) => ({
-          height: `${baseSpacing * 1.07}px`,
+          height: `${baseSpacing}px`,
           border: `2px solid ${normalizeColor(checked ? 'status-ok' : 'dark-2', theme)}`,
           background: 'white',
         }),

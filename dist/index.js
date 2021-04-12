@@ -696,8 +696,8 @@ var generate = function generate(baseSpacing, scale) {
             return {
               top: '1px',
               left: '2px',
-              width: baseSpacing * 0.625 + "px",
-              height: baseSpacing * 0.625 + "px",
+              width: baseSpacing / 2 + "px",
+              height: baseSpacing / 2 + "px",
               background: (0, _colors.normalizeColor)(checked ? 'status-ok' : 'dark-2', theme)
             };
           }
@@ -707,7 +707,7 @@ var generate = function generate(baseSpacing, scale) {
           var checked = _ref3.checked,
               theme = _ref3.theme;
           return {
-            height: baseSpacing * 1.07 + "px",
+            height: baseSpacing + "px",
             border: "2px solid " + (0, _colors.normalizeColor)(checked ? 'status-ok' : 'dark-2', theme),
             background: 'white'
           };
