@@ -323,9 +323,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
     },
     accordion: {
       panel: {
-        border: 'none',
+        border: undefined,
       },
-      border: 'none',
+      border: undefined,
       heading: {
         level: '4', // level ranges from 1-6
         // margin: undefined
@@ -609,7 +609,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         },
         radius: `${baseSpacing / 2}px`,
         extend: ({ checked, theme }) => ({
-          height: `${baseSpacing}px`,
+          height: `${baseSpacing * 1.07}px`,
           border: `2px solid ${normalizeColor(checked ? 'status-ok' : 'dark-2', theme)}`,
           background: 'white',
         }),
@@ -1684,4 +1684,4 @@ export const generate = (baseSpacing = 16, scale = 6) => {
   return deepFreeze(result);
 };
 
-export const cdp = generate(16);
+export const cdp = generate(14);

@@ -368,9 +368,9 @@ export var generate = function generate(baseSpacing, scale) {
     },
     accordion: {
       panel: {
-        border: 'none'
+        border: undefined
       },
-      border: 'none',
+      border: undefined,
       heading: {
         level: '4' // level ranges from 1-6
         // margin: undefined
@@ -694,7 +694,7 @@ export var generate = function generate(baseSpacing, scale) {
           var checked = _ref3.checked,
               theme = _ref3.theme;
           return {
-            height: baseSpacing + "px",
+            height: baseSpacing * 1.07 + "px",
             border: "2px solid " + normalizeColor(checked ? 'status-ok' : 'dark-2', theme),
             background: 'white'
           };
@@ -1899,4 +1899,4 @@ export var generate = function generate(baseSpacing, scale) {
   };
   return deepFreeze(result);
 };
-export var cdp = generate(16);
+export var cdp = generate(14);
