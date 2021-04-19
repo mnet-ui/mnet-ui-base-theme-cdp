@@ -63,7 +63,7 @@ var statusColors = {
   disabled: '#CCCCCC'
 };
 var darkColors = ['#575F7D', '#8F94A6', '#E8EAF0', '#898EA2', '#BABDCA', '#DEDEDE', '#2F3A4A', '#29313D'];
-var lightColors = ['#fbfbfb', '#f5f6f8', '#E7EAF1', '#e1e3ef', '#9DA2AD', '#DADADA', '#F5F7FD'];
+var lightColors = ['#F5F5F5', '#C4C4C4', '#E7EAF1', '#e1e3ef', '#9DA2AD', '#DADADA', '#F5F7FD'];
 var focusColor = 'transparent';
 var initialBgColor = '#FC564F';
 var colors = {

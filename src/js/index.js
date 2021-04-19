@@ -38,8 +38,8 @@ const darkColors = [
 
 ];
 const lightColors = [
-  '#fbfbfb',
-  '#f5f6f8',
+  '#F5F5F5',
+  '#C4C4C4',
   '#E7EAF1',
   '#e1e3ef',
   '#9DA2AD',
