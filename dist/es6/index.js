@@ -1711,7 +1711,7 @@ export var generate = function generate(baseSpacing, scale) {
       }
     },
     tooptip: {
-      background: 'dark-1',
+      background: 'black',
       color: 'white',
       tipSize: '5px',
       round: 'small',
