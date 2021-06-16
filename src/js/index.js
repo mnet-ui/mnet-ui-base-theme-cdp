@@ -1545,7 +1545,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       }),
     },
     tooptip: {
-      background: 'black',
+      background: 'dark-1',
       color: 'white',
       tipSize: '5px',
       round: 'small',
@@ -1554,6 +1554,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       align: 'center',
       text: {
         size: 'large',
+        wight: 600,
       },
     },
     notification: {

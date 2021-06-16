@@ -1711,7 +1711,7 @@ export var generate = function generate(baseSpacing, scale) {
       }
     },
     tooptip: {
-      background: 'black',
+      background: 'dark-1',
       color: 'white',
       tipSize: '5px',
       round: 'small',
@@ -1719,7 +1719,8 @@ export var generate = function generate(baseSpacing, scale) {
       justify: 'center',
       align: 'center',
       text: {
-        size: 'large'
+        size: 'large',
+        wight: 600
       }
     },
     notification: {
