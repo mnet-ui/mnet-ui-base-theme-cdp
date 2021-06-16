@@ -1554,7 +1554,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       align: 'center',
       text: {
         size: 'large',
-        wight: 600,
+        weight: 600,
       },
     },
     notification: {

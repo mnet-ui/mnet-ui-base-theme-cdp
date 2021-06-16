@@ -1733,7 +1733,7 @@ var generate = function generate(baseSpacing, scale) {
       align: 'center',
       text: {
         size: 'large',
-        wight: 600
+        weight: 600
       }
     },
     notification: {
