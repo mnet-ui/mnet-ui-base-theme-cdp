@@ -1552,6 +1552,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       maxWidth: '20%',
       justify: 'center',
       align: 'center',
+      text: {
+        size: 'large',
+      },
     },
     notification: {
       toast: {

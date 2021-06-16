@@ -1730,7 +1730,10 @@ var generate = function generate(baseSpacing, scale) {
       round: 'small',
       maxWidth: '20%',
       justify: 'center',
-      align: 'center'
+      align: 'center',
+      text: {
+        size: 'large'
+      }
     },
     notification: {
       toast: {
