@@ -52,13 +52,13 @@ var ArrowUp = _mnetIcons.CDPComponents.ArrowUp,
   'Open Sans': true
 });
 var brandColor = '#E15151';
-var accentColors = ['#739FFC', '#F5F5F5', '#90D099', '#439ADC', '#FC564F'];
+var accentColors = ['#739FFC', '#F5F5F5', '#90D099', '#16B037', '#FC564F'];
 var neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
 var statusColors = {
   critical: '#e35e59',
-  error: '#DD7070',
+  error: '#E28880',
   warning: '#EDB982',
-  ok: '#16B037',
+  ok: '#90D099',
   unknown: '#CCCCCC',
   disabled: '#CCCCCC'
 };
@@ -680,8 +680,8 @@ var generate = function generate(baseSpacing, scale) {
         },
         size: baseSpacing * 1.875 + "px",
         color: {
-          dark: 'status-ok',
-          light: 'status-ok'
+          dark: 'accent-4',
+          light: 'accent-4'
         },
         knob: {
           background: {
@@ -698,7 +698,7 @@ var generate = function generate(baseSpacing, scale) {
               left: '2px',
               width: baseSpacing / 2 + "px",
               height: baseSpacing / 2 + "px",
-              background: (0, _colors.normalizeColor)(checked ? 'status-ok' : 'dark-2', theme)
+              background: (0, _colors.normalizeColor)(checked ? 'accent-4' : 'dark-2', theme)
             };
           }
         },
@@ -708,7 +708,7 @@ var generate = function generate(baseSpacing, scale) {
               theme = _ref3.theme;
           return {
             height: baseSpacing + "px",
-            border: "2px solid " + (0, _colors.normalizeColor)(checked ? 'status-ok' : 'dark-2', theme),
+            border: "2px solid " + (0, _colors.normalizeColor)(checked ? 'accent-4' : 'dark-2', theme),
             background: 'white'
           };
         }
