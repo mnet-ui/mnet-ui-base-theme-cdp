@@ -16,13 +16,13 @@ addGoogleFont({
 });
 
 const brandColor = '#E15151';
-const accentColors = ['#739FFC', '#F5F5F5', '#90D099', '#439ADC', '#FC564F'];
+const accentColors = ['#739FFC', '#F5F5F5', '#90D099', '#16B037', '#FC564F'];
 const neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
 const statusColors = {
   critical: '#e35e59',
-  error: '#DD7070',
+  error: '#E28880',
   warning: '#EDB982',
-  ok: '#16B037',
+  ok: '#90D099',
   unknown: '#CCCCCC',
   disabled: '#CCCCCC',
 };
@@ -593,8 +593,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         background: { light: 'accent-2' },
         size: `${baseSpacing * 1.875}px`,
         color: {
-          dark: 'status-ok',
-          light: 'status-ok',
+          dark: 'accent-4',
+          light: 'accent-4',
         },
         knob: {
           background: { light: statusColors.error },
@@ -604,13 +604,13 @@ export const generate = (baseSpacing = 16, scale = 6) => {
             left: '2px',
             width: `${baseSpacing / 2}px`,
             height: `${baseSpacing / 2}px`,
-            background: normalizeColor(checked ? 'status-ok' : 'dark-2', theme),
+            background: normalizeColor(checked ? 'accent-4' : 'dark-2', theme),
           }),
         },
         radius: `${baseSpacing / 2}px`,
         extend: ({ checked, theme }) => ({
           height: `${baseSpacing}px`,
-          border: `2px solid ${normalizeColor(checked ? 'status-ok' : 'dark-2', theme)}`,
+          border: `2px solid ${normalizeColor(checked ? 'accent-4' : 'dark-2', theme)}`,
           background: 'white',
         }),
       },
@@ -1560,6 +1560,10 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       maxWidth: '20%',
       justify: 'center',
       align: 'center',
+      text: {
+        size: 'large',
+        weight: 600,
+      },
     },
     notification: {
       toast: {
