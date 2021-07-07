@@ -1059,7 +1059,7 @@ export var generate = function generate(baseSpacing, scale) {
       option: {
         width: 'full',
         direction: 'row',
-        justify: 'between',
+        justify: 'start',
         pad: {
           horizontal: 'medium'
         }

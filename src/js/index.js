@@ -952,7 +952,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       option: {
         width: 'full',
         direction: 'row',
-        justify: 'between',
+        justify: 'start',
         pad: { horizontal: 'medium' },
       },
       checkbox: {
