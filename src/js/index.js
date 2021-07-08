@@ -952,7 +952,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       option: {
         width: 'full',
         direction: 'row',
-        justify: 'between',
+        justify: 'start',
         pad: { horizontal: 'medium' },
       },
       checkbox: {
@@ -977,6 +977,14 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           extend: props => ({
             background: normalizeColor('dark-3', props.theme),
           }),
+        },
+        include: {
+          check: 'check',
+          background: 'transparent',
+        },
+        exclude: {
+          check: null,
+          background: 'transparent',
         },
       },
       chips: {
@@ -1650,6 +1658,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         },
       },
       multiSelect: {
+        reverse: true,
+        removeSelected: false,
         labelKey: 'label',
         valueKey: { key: 'id', reduce: true },
         layout: 'single-column',
