@@ -446,7 +446,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         },
         // extend: undefined,
       },
-      default: undefined,
+      default: true,
       primary: {
         background: 'accent-1',
         border: {
@@ -588,6 +588,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         // checked: undefined,
         // indeterminate: undefined,
       },
+      label: { align: 'center' },
       size: `${baseSpacing}px`,
       toggle: {
         background: { light: 'accent-2' },
@@ -1554,6 +1555,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
     },
     tooptip: {
       background: 'dark-1',
+      pad: 'medium',
       color: 'white',
       tipSize: '5px',
       round: 'small',

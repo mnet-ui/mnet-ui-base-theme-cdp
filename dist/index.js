@@ -504,7 +504,7 @@ var generate = function generate(baseSpacing, scale) {
         } // extend: undefined,
 
       },
-      "default": undefined,
+      "default": true,
       primary: {
         background: 'accent-1',
         border: {
@@ -654,6 +654,9 @@ var generate = function generate(baseSpacing, scale) {
       },
       icons: {// checked: undefined,
         // indeterminate: undefined,
+      },
+      label: {
+        align: 'center'
       },
       size: baseSpacing + "px",
       toggle: {
@@ -1715,6 +1718,7 @@ var generate = function generate(baseSpacing, scale) {
     },
     tooptip: {
       background: 'dark-1',
+      pad: 'medium',
       color: 'white',
       tipSize: '5px',
       round: 'small',
