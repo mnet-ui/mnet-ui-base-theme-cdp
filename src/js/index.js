@@ -486,6 +486,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           width: `${borderWidth}px`,
           radius: `${baseSpacing * 0.2}px`,
         },
+        pad: { horizontal: 'none' },
         color: undefined,
         //   extend: undefined,
         //   default: {},
@@ -955,6 +956,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         direction: 'row',
         justify: 'start',
         pad: { horizontal: 'medium' },
+        align: 'center',
       },
       checkbox: {
         box: {

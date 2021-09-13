@@ -553,6 +553,9 @@ var generate = function generate(baseSpacing, scale) {
           width: borderWidth + "px",
           radius: baseSpacing * 0.2 + "px"
         },
+        pad: {
+          horizontal: 'none'
+        },
         color: undefined //   extend: undefined,
         //   default: {},
         //   primary: {},
@@ -1078,7 +1081,8 @@ var generate = function generate(baseSpacing, scale) {
         justify: 'start',
         pad: {
           horizontal: 'medium'
-        }
+        },
+        align: 'center'
       },
       checkbox: {
         box: {
