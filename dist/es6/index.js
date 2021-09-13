@@ -540,12 +540,13 @@ export var generate = function generate(baseSpacing, scale) {
           width: borderWidth + "px",
           radius: baseSpacing * 0.2 + "px"
         },
-        pad: {
-          horizontal: 'none'
-        },
-        color: undefined //   extend: undefined,
-        //   default: {},
-        //   primary: {},
+        color: undefined,
+        //   extend: undefined,
+        "default": {
+          pad: {
+            horizontal: 'none'
+          }
+        } //   primary: {},
         //   secondary: {},
 
       },
