@@ -487,10 +487,9 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           radius: `${baseSpacing * 0.2}px`,
         },
         color: undefined,
-        //   extend: undefined,
-        default: {
-          pad: { horizontal: 'none' },
-        },
+        extend: ({ active }) => `
+          ${active ? 'padding-left: 0px' : ''}
+        `,
         //   primary: {},
         //   secondary: {},
       },
