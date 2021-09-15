@@ -504,7 +504,7 @@ var generate = function generate(baseSpacing, scale) {
         } // extend: undefined,
 
       },
-      "default": undefined,
+      "default": true,
       primary: {
         background: 'accent-1',
         border: {
@@ -553,9 +553,11 @@ var generate = function generate(baseSpacing, scale) {
           width: borderWidth + "px",
           radius: baseSpacing * 0.2 + "px"
         },
-        color: undefined //   extend: undefined,
-        //   default: {},
-        //   primary: {},
+        color: undefined,
+        extend: function extend(_ref2) {
+          var active = _ref2.active;
+          return "\n          " + (active ? 'padding-left: 0px' : '') + "\n        ";
+        } //   primary: {},
         //   secondary: {},
 
       },
@@ -655,6 +657,9 @@ var generate = function generate(baseSpacing, scale) {
       icons: {// checked: undefined,
         // indeterminate: undefined,
       },
+      label: {
+        align: 'center'
+      },
       size: baseSpacing + "px",
       toggle: {
         background: {
@@ -672,9 +677,9 @@ var generate = function generate(baseSpacing, scale) {
           color: {
             light: statusColors.error
           },
-          extend: function extend(_ref2) {
-            var checked = _ref2.checked,
-                theme = _ref2.theme;
+          extend: function extend(_ref3) {
+            var checked = _ref3.checked,
+                theme = _ref3.theme;
             return {
               top: '1px',
               left: '2px',
@@ -685,9 +690,9 @@ var generate = function generate(baseSpacing, scale) {
           }
         },
         radius: baseSpacing / 2 + "px",
-        extend: function extend(_ref3) {
-          var checked = _ref3.checked,
-              theme = _ref3.theme;
+        extend: function extend(_ref4) {
+          var checked = _ref4.checked,
+              theme = _ref4.theme;
           return {
             height: baseSpacing + "px",
             border: "2px solid " + (0, _colors.normalizeColor)(checked ? 'accent-4' : 'dark-2', theme),
@@ -1075,7 +1080,8 @@ var generate = function generate(baseSpacing, scale) {
         justify: 'start',
         pad: {
           horizontal: 'medium'
-        }
+        },
+        align: 'center'
       },
       checkbox: {
         box: {
@@ -1549,8 +1555,8 @@ var generate = function generate(baseSpacing, scale) {
       }
     },
     table: {
-      extend: function extend(_ref4) {
-        var theme = _ref4.theme;
+      extend: function extend(_ref5) {
+        var theme = _ref5.theme;
         return {
           'table-layout': 'fixed',
           'border-collapse': 'collapse',
@@ -1603,8 +1609,8 @@ var generate = function generate(baseSpacing, scale) {
         background: {
           color: 'dark-3'
         },
-        extend: function extend(_ref5) {
-          var theme = _ref5.theme;
+        extend: function extend(_ref6) {
+          var theme = _ref6.theme;
           return {
             span: {
               color: (0, _colors.normalizeColor)('dark-1', theme),
@@ -1667,9 +1673,9 @@ var generate = function generate(baseSpacing, scale) {
     },
     textInput: {
       // disabled: { opacity: undefined },
-      extend: function extend(_ref6) {
-        var theme = _ref6.theme,
-            onSuggestionsOpen = _ref6.onSuggestionsOpen;
+      extend: function extend(_ref7) {
+        var theme = _ref7.theme,
+            onSuggestionsOpen = _ref7.onSuggestionsOpen;
         return {
           'box-shadow': 'none',
           color: (0, _colors.normalizeColor)('dark-1', theme),
@@ -1698,9 +1704,9 @@ var generate = function generate(baseSpacing, scale) {
         pad: 'xsmall',
         size: baseSpacing / 1.14 + "px"
       },
-      extend: function extend(_ref7) {
-        var className = _ref7.className,
-            theme = _ref7.theme;
+      extend: function extend(_ref8) {
+        var className = _ref8.className,
+            theme = _ref8.theme;
         return {
           button: {
             color: (0, _colors.normalizeColor)(className === 'active' ? 'dark-1' : 'dark-2', theme),
@@ -1715,6 +1721,7 @@ var generate = function generate(baseSpacing, scale) {
     },
     tooptip: {
       background: 'dark-1',
+      pad: 'medium',
       color: 'white',
       tipSize: '5px',
       round: 'small',
