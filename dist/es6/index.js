@@ -1676,7 +1676,7 @@ export var generate = function generate(baseSpacing, scale) {
         extend: undefined
       }
     },
-    pagination: {
+    mnetPagination: {
       background: 'transparent',
       round: 'small',
       border: {

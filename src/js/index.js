@@ -1529,7 +1529,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         extend: undefined,
       },
     },
-    pagination: {
+    mnetPagination: {
       background: 'transparent',
       round: 'small',
       border: {
