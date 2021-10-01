@@ -1538,6 +1538,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       pad: 'medium',
       active: {
         color: 'transparent',
+        background: 'transparent',
       },
       icon: {
         bgColor: 'transparent',

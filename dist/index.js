@@ -1697,7 +1697,8 @@ var generate = function generate(baseSpacing, scale) {
       },
       pad: 'medium',
       active: {
-        color: 'transparent'
+        color: 'transparent',
+        background: 'transparent'
       },
       icon: {
         bgColor: 'transparent',
