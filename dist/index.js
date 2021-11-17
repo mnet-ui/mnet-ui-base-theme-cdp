@@ -1891,7 +1891,7 @@ var generate = function generate(baseSpacing, scale) {
         },
         size: 'xlarge',
         weight: '600',
-        color: 'dark-2'
+        color: 'dark-1'
       },
       anchor: {
         extend: {
