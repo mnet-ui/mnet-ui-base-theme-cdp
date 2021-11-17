@@ -1877,7 +1877,8 @@ export var generate = function generate(baseSpacing, scale) {
           vertical: 'medium'
         },
         size: 'xlarge',
-        weight: '600'
+        weight: '600',
+        color: 'dark-2'
       },
       anchor: {
         extend: {
