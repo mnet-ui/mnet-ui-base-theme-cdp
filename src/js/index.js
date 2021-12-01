@@ -1682,6 +1682,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         margin: { vertical: 'medium' },
         size: 'xlarge',
         weight: '600',
+        color: 'dark-1',
       },
       anchor: {
         extend: {

@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.cdp = exports.generate = void 0;
+exports.generate = exports.cdp = void 0;
 
 var _polished = require("polished");
 
@@ -1890,7 +1890,8 @@ var generate = function generate(baseSpacing, scale) {
           vertical: 'medium'
         },
         size: 'xlarge',
-        weight: '600'
+        weight: '600',
+        color: 'dark-1'
       },
       anchor: {
         extend: {
