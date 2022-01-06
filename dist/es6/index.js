@@ -1707,17 +1707,26 @@ export var generate = function generate(baseSpacing, scale) {
       }
     },
     tooptip: {
-      background: 'dark-1',
-      pad: 'medium',
-      color: 'white',
+      showArrow: false,
+      background: 'white',
+      color: 'dark-1',
       tipSize: '5px',
       round: 'small',
       maxWidth: '20%',
-      justify: 'center',
-      align: 'center',
+      dropProps: {
+        left: 'right',
+        top: 'bottom'
+      },
+      boxShadow: '0 1px 5px 0 rgba(0,0,0,0.21)',
+      pad: {
+        horizontal: 'large',
+        vertical: 'medium'
+      },
       text: {
         size: 'large',
-        weight: 600
+        style: {
+          lineHeight: baseSpacing * 1.43 + "px"
+        }
       }
     },
     notification: {
