@@ -1335,7 +1335,10 @@ export const generate = (baseSpacing = 16, scale = 6) => {
     },
     switch: {
       option: {
-        pad: `${baseSpacing * 0.625}px`,
+        pad: {
+          vertical: 'small',
+          horizontal: 'medium',
+        },
       },
       background: {
         active: 'accent-1',
@@ -1347,7 +1350,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       text: {
         weight: 600,
-        size: `${baseSpacing * 0.625}px`,
+        size: 'small',
         active: 'white',
         inactive: 'dark-2',
         disabled: {

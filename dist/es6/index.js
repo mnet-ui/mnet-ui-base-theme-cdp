@@ -1472,7 +1472,10 @@ export var generate = function generate(baseSpacing, scale) {
     },
     "switch": {
       option: {
-        pad: baseSpacing * 0.625 + "px"
+        pad: {
+          vertical: 'small',
+          horizontal: 'medium'
+        }
       },
       background: {
         active: 'accent-1',
@@ -1484,7 +1487,7 @@ export var generate = function generate(baseSpacing, scale) {
       },
       text: {
         weight: 600,
-        size: baseSpacing * 0.625 + "px",
+        size: 'small',
         active: 'white',
         inactive: 'dark-2',
         disabled: {
