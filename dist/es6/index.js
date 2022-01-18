@@ -8,9 +8,7 @@ import { rgba } from 'polished';
 import { css } from 'styled-components';
 import { add as addGoogleFont } from 'google-fonts';
 import { CDPComponents } from 'mnet-icons';
-import { deepFreeze } from 'mnet-ui-base/utils/object';
-import { normalizeColor } from 'mnet-ui-base/utils/colors';
-import { parseMetricToNum } from 'mnet-ui-base/utils/mixins';
+import { deepFreeze, normalizeColor, parseMetricToNum } from 'grommet/utils';
 var ArrowUp = CDPComponents.ArrowUp,
     ArrowDown = CDPComponents.ArrowDown,
     ArrowRight = CDPComponents.ArrowRight,
