@@ -1473,11 +1473,9 @@ export var generate = function generate(baseSpacing, scale) {
       }
     },
     "switch": {
-      padding: baseSpacing * 0.625 + "px",
-      fontWeight: 600,
-      fontSize: baseSpacing * 0.625 + "px",
-      opacity: 1,
-      height: baseSpacing * 1.56 + "px",
+      option: {
+        pad: baseSpacing * 0.625 + "px"
+      },
       background: {
         active: 'accent-1',
         inactive: 'dark-3',
@@ -1487,6 +1485,8 @@ export var generate = function generate(baseSpacing, scale) {
         }
       },
       text: {
+        weight: 600,
+        size: baseSpacing * 0.625 + "px",
         active: 'white',
         inactive: 'dark-2',
         disabled: {
