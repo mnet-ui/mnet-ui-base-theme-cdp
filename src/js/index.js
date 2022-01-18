@@ -1576,7 +1576,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           margin: 'xsmall',
           extend: {
             boxShadow: '0 1px 5px 0 rgba(0, 0, 0, 0.21)',
-            maxWidth: '20%',
+            maxWidth: `${baseSpacing * 21.5}px`,
           },
         },
       },
