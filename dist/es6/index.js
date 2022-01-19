@@ -1731,7 +1731,7 @@ export var generate = function generate(baseSpacing, scale) {
           margin: 'xsmall',
           extend: {
             boxShadow: '0 1px 5px 0 rgba(0, 0, 0, 0.21)',
-            maxWidth: baseSpacing * 21.5 + "px"
+            maxWidth: baseSpacing * 26 + "px"
           }
         }
       },
