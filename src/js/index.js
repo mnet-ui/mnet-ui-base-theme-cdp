@@ -1530,31 +1530,34 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         extend: undefined,
       },
     },
-    mnetPagination: {
-      background: 'transparent',
-      round: 'small',
-      border: {
-        color: 'transparent',
-      },
-      pad: 'medium',
-      active: {
-        color: 'transparent',
-      },
-      icon: {
-        bgColor: 'transparent',
-        pad: 'xsmall',
-        size: `${baseSpacing / 1.14}px`,
-      },
-      extend: ({ className, theme }) => ({
-        button: {
-          color: normalizeColor(className === 'active' ? 'dark-1' : 'dark-2', theme),
-          'font-size': `${baseSpacing / 1.14}px`,
-          'font-weight': className === 'active' ? '700' : '400',
-          span: {
-            'font-size': `${baseSpacing / 1.14}px`,
+    pagination: {
+      button: {
+        active: {
+          background: 'transparent',
+          color: 'dark-1',
+          style: {
+            fontWeight: '600',
           },
         },
-      }),
+        color: 'dark-2',
+        hover: {
+          background: {
+            color: undefined,
+          },
+          color: undefined,
+        },
+        size: {
+          small: {
+            pad: {
+              vertical: 'xsmall',
+              horizontal: 'small',
+            },
+            font: {
+              size: `${baseSpacing * 0.93}px`,
+            },
+          },
+        },
+      },
     },
     tip: {
       wrapper: {
