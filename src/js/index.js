@@ -553,6 +553,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
     },
     checkBox: {
+      color: 'accent-4',
       border: {
         color: {
           dark: 'dark-2',
@@ -592,10 +593,6 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       toggle: {
         background: { light: 'accent-2' },
         size: `${baseSpacing * 1.875}px`,
-        color: {
-          dark: 'accent-4',
-          light: 'accent-4',
-        },
         knob: {
           background: { light: statusColors.error },
           color: { light: statusColors.error },
@@ -1223,20 +1220,24 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       // },
     },
     select: {
-      background: 'dark-3',
       activeColor: 'light-5',
       container: {
-        extend: props => ({
-          borderColor: normalizeColor('border', props.theme),
-          background: normalizeColor('dark-3', props.theme),
+        extend: ({ theme }) => ({
+          borderColor: normalizeColor('border', theme),
+          background: normalizeColor('dark-3', theme),
         }),
       },
       control: {
         // open: undefined,
-        extend: {
+        extend: ({ theme }) => ({
           border: 'none',
           borderRadius: `${baseSpacing / 3.2}px`,
-        },
+          background: normalizeColor('dark-3', theme),
+          '[class*=" cdp-icon"]': {
+            fontSize: `${baseSpacing}px`,
+            fontWeight: 600,
+          },
+        }),
       },
       options: {
         container: {
@@ -1251,18 +1252,18 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       icons: {
         color: 'icon',
-        margin: 'none',
-        pad: 'medium',
-        background: 'dark-3',
+        margin: 'medium',
+        // background: 'dark-3',
+        size: `${baseSpacing}px`,
         up: ArrowUp,
         down: ArrowDown,
-        extend: {
-          borderRadius: `${baseSpacing / 3.2}px`,
-          span: {
-            fontSize: `${baseSpacing}px`,
-            fontWeight: 600,
-          },
-        },
+        // extend: {
+        //   borderRadius: `${baseSpacing / 3.2}px`,
+        //   span: {
+        //     fontSize: `${baseSpacing}px`,
+        //     fontWeight: 600,
+        //   },
+        // },
       },
       // searchInput: undefined,
       step: 20,

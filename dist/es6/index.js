@@ -610,6 +610,7 @@ export var generate = function generate(baseSpacing, scale) {
       }
     },
     checkBox: {
+      color: 'accent-4',
       border: {
         color: {
           dark: 'dark-2',
@@ -651,10 +652,6 @@ export var generate = function generate(baseSpacing, scale) {
           light: 'accent-2'
         },
         size: baseSpacing * 1.875 + "px",
-        color: {
-          dark: 'accent-4',
-          light: 'accent-4'
-        },
         knob: {
           background: {
             light: statusColors.error
@@ -1340,21 +1337,29 @@ export var generate = function generate(baseSpacing, scale) {
 
     },
     select: {
-      background: 'dark-3',
       activeColor: 'light-5',
       container: {
-        extend: function extend(props) {
+        extend: function extend(_ref5) {
+          var theme = _ref5.theme;
           return {
-            borderColor: normalizeColor('border', props.theme),
-            background: normalizeColor('dark-3', props.theme)
+            borderColor: normalizeColor('border', theme),
+            background: normalizeColor('dark-3', theme)
           };
         }
       },
       control: {
         // open: undefined,
-        extend: {
-          border: 'none',
-          borderRadius: baseSpacing / 3.2 + "px"
+        extend: function extend(_ref6) {
+          var theme = _ref6.theme;
+          return {
+            border: 'none',
+            borderRadius: baseSpacing / 3.2 + "px",
+            background: normalizeColor('dark-3', theme),
+            '[class*=" cdp-icon"]': {
+              fontSize: baseSpacing + "px",
+              fontWeight: 600
+            }
+          };
         }
       },
       options: {
@@ -1370,18 +1375,18 @@ export var generate = function generate(baseSpacing, scale) {
       },
       icons: {
         color: 'icon',
-        margin: 'none',
-        pad: 'medium',
-        background: 'dark-3',
+        margin: 'medium',
+        // background: 'dark-3',
+        size: baseSpacing + "px",
         up: ArrowUp,
-        down: ArrowDown,
-        extend: {
-          borderRadius: baseSpacing / 3.2 + "px",
-          span: {
-            fontSize: baseSpacing + "px",
-            fontWeight: 600
-          }
-        }
+        down: ArrowDown // extend: {
+        //   borderRadius: `${baseSpacing / 3.2}px`,
+        //   span: {
+        //     fontSize: `${baseSpacing}px`,
+        //     fontWeight: 600,
+        //   },
+        // },
+
       },
       // searchInput: undefined,
       step: 20
@@ -1543,8 +1548,8 @@ export var generate = function generate(baseSpacing, scale) {
       }
     },
     table: {
-      extend: function extend(_ref5) {
-        var theme = _ref5.theme;
+      extend: function extend(_ref7) {
+        var theme = _ref7.theme;
         return {
           'table-layout': 'fixed',
           'border-collapse': 'collapse',
@@ -1597,8 +1602,8 @@ export var generate = function generate(baseSpacing, scale) {
         background: {
           color: 'dark-3'
         },
-        extend: function extend(_ref6) {
-          var theme = _ref6.theme;
+        extend: function extend(_ref8) {
+          var theme = _ref8.theme;
           return {
             span: {
               color: normalizeColor('dark-1', theme),
@@ -1661,9 +1666,9 @@ export var generate = function generate(baseSpacing, scale) {
     },
     textInput: {
       // disabled: { opacity: undefined },
-      extend: function extend(_ref7) {
-        var theme = _ref7.theme,
-            onSuggestionsOpen = _ref7.onSuggestionsOpen;
+      extend: function extend(_ref9) {
+        var theme = _ref9.theme,
+            onSuggestionsOpen = _ref9.onSuggestionsOpen;
         return {
           'box-shadow': 'none',
           color: normalizeColor('dark-1', theme),
