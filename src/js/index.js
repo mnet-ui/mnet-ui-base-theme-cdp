@@ -1589,6 +1589,17 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         // shadow: 'none',
       },
     },
+    spinner: {
+      container: {
+        size: 'xsmall',
+        border: [
+          { side: 'all', color: 'transparent', size: 'small' },
+          { side: 'right', color: 'white', size: 'small' },
+          { side: 'top', color: 'white', size: 'small' },
+          { side: 'left', color: 'white', size: 'small' },
+        ],
+      },
+    },
     notification: {
       toast: {
         closeIcon: Close,

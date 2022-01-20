@@ -1739,6 +1739,28 @@ export var generate = function generate(baseSpacing, scale) {
 
       }
     },
+    spinner: {
+      container: {
+        size: 'xsmall',
+        border: [{
+          side: 'all',
+          color: 'transparent',
+          size: 'small'
+        }, {
+          side: 'right',
+          color: 'white',
+          size: 'small'
+        }, {
+          side: 'top',
+          color: 'white',
+          size: 'small'
+        }, {
+          side: 'left',
+          color: 'white',
+          size: 'small'
+        }]
+      }
+    },
     notification: {
       toast: {
         closeIcon: Close,
