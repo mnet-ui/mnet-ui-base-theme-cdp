@@ -3,9 +3,7 @@ import { css } from 'styled-components';
 import { add as addGoogleFont } from 'google-fonts';
 import { CDPComponents } from 'mnet-icons';
 
-import { deepFreeze } from 'mnet-ui-base/utils/object';
-import { normalizeColor } from 'mnet-ui-base/utils/colors';
-import { parseMetricToNum } from 'mnet-ui-base/utils/mixins';
+import { deepFreeze, normalizeColor, parseMetricToNum } from 'grommet/utils';
 
 const {
   ArrowUp, ArrowDown, ArrowRight, Close, Info, Success, Failed,
@@ -555,6 +553,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
     },
     checkBox: {
+      color: 'accent-4',
       border: {
         color: {
           dark: 'dark-2',
@@ -594,10 +593,6 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       toggle: {
         background: { light: 'accent-2' },
         size: `${baseSpacing * 1.875}px`,
-        color: {
-          dark: 'accent-4',
-          light: 'accent-4',
-        },
         knob: {
           background: { light: statusColors.error },
           color: { light: statusColors.error },
@@ -1225,20 +1220,24 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       // },
     },
     select: {
-      background: 'dark-3',
       activeColor: 'light-5',
       container: {
-        extend: props => ({
-          borderColor: normalizeColor('border', props.theme),
-          background: normalizeColor('dark-3', props.theme),
+        extend: ({ theme }) => ({
+          borderColor: normalizeColor('border', theme),
+          background: normalizeColor('dark-3', theme),
         }),
       },
       control: {
         // open: undefined,
-        extend: {
+        extend: ({ theme }) => ({
           border: 'none',
           borderRadius: `${baseSpacing / 3.2}px`,
-        },
+          background: normalizeColor('dark-3', theme),
+          '[class*=" cdp-icon"]': {
+            fontSize: `${baseSpacing}px`,
+            fontWeight: 600,
+          },
+        }),
       },
       options: {
         container: {
@@ -1253,18 +1252,18 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       icons: {
         color: 'icon',
-        margin: 'none',
-        pad: 'medium',
-        background: 'dark-3',
+        margin: 'medium',
+        // background: 'dark-3',
+        size: `${baseSpacing}px`,
         up: ArrowUp,
         down: ArrowDown,
-        extend: {
-          borderRadius: `${baseSpacing / 3.2}px`,
-          span: {
-            fontSize: `${baseSpacing}px`,
-            fontWeight: 600,
-          },
-        },
+        // extend: {
+        //   borderRadius: `${baseSpacing / 3.2}px`,
+        //   span: {
+        //     fontSize: `${baseSpacing}px`,
+        //     fontWeight: 600,
+        //   },
+        // },
       },
       // searchInput: undefined,
       step: 20,
@@ -1336,11 +1335,12 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
     },
     switch: {
-      padding: `${baseSpacing * 0.625}px`,
-      fontWeight: 600,
-      fontSize: `${baseSpacing * 0.625}px`,
-      opacity: 1,
-      height: `${baseSpacing * 1.56}px`,
+      option: {
+        pad: {
+          vertical: 'small',
+          horizontal: 'medium',
+        },
+      },
       background: {
         active: 'accent-1',
         inactive: 'dark-3',
@@ -1350,6 +1350,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         },
       },
       text: {
+        weight: 600,
+        size: 'small',
         active: 'white',
         inactive: 'dark-2',
         disabled: {
@@ -1529,50 +1531,74 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         extend: undefined,
       },
     },
-    mnetPagination: {
-      background: 'transparent',
-      round: 'small',
-      border: {
-        color: 'transparent',
-      },
-      pad: 'medium',
-      active: {
-        color: 'transparent',
-      },
-      icon: {
-        bgColor: 'transparent',
-        pad: 'xsmall',
-        size: `${baseSpacing / 1.14}px`,
-      },
-      extend: ({ className, theme }) => ({
-        button: {
-          color: normalizeColor(className === 'active' ? 'dark-1' : 'dark-2', theme),
-          'font-size': `${baseSpacing / 1.14}px`,
-          'font-weight': className === 'active' ? '700' : '400',
-          span: {
-            'font-size': `${baseSpacing / 1.14}px`,
+    pagination: {
+      button: {
+        active: {
+          background: 'transparent',
+          color: 'dark-1',
+          style: {
+            fontWeight: '600',
           },
         },
-      }),
-    },
-    tooptip: {
-      showArrow: false,
-      background: 'white',
-      color: 'dark-1',
-      tipSize: '5px',
-      round: 'small',
-      maxWidth: '20%',
-      dropProps: { left: 'right', top: 'bottom' },
-      boxShadow: '0 1px 5px 0 rgba(0,0,0,0.21)',
-      pad: {
-        horizontal: 'large',
-        vertical: 'medium',
-      },
-      text: {
-        size: 'large',
-        style: {
-          lineHeight: `${baseSpacing * 1.43}px`,
+        color: 'dark-2',
+        hover: {
+          background: {
+            color: undefined,
+          },
+          color: undefined,
         },
+        size: {
+          small: {
+            pad: {
+              vertical: 'xsmall',
+              horizontal: 'small',
+            },
+            font: {
+              size: `${baseSpacing * 0.93}px`,
+            },
+          },
+        },
+      },
+    },
+    tip: {
+      wrapper: {
+        showArrow: false,
+        caret: {
+          extend: {
+            filter: 'drop-shadow(0px 4px 5px rgb(0 0 0 / 0.2))',
+          },
+        },
+        contentWrap: {
+          align: 'center',
+          justify: 'center',
+          elevation: 'xxlarge',
+        },
+        content: {
+          background: 'white',
+          direction: 'row',
+          pad: { horizontal: 'large', vertical: 'medium' },
+          round: 'small',
+          margin: 'xsmall',
+          extend: {
+            boxShadow: '0 1px 5px 0 rgba(0, 0, 0, 0.21)',
+            maxWidth: `${baseSpacing * 26}px`,
+          },
+        },
+      },
+      drop: {
+        isTooltip: true,
+        // shadow: 'none',
+      },
+    },
+    spinner: {
+      container: {
+        size: 'xsmall',
+        border: [
+          { side: 'all', color: 'transparent', size: 'small' },
+          { side: 'right', color: 'white', size: 'small' },
+          { side: 'top', color: 'white', size: 'small' },
+          { side: 'left', color: 'white', size: 'small' },
+        ],
       },
     },
     notification: {

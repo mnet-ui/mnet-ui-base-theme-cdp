@@ -38,16 +38,16 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.11.0",
-    "mnet-icons": "git+ssh://git@tree.mn:saumik.s/mnet-icons.git",
-    "mnet-ui-base": "https://github.com/mnet-ui/mnet-ui-base#release",
+    "grommet": "^2.20.0",
+    "mnet-icons": "git+ssh://git@tree.mn:saumik.s/mnet-icons.git#grommet",
     "polished": "^3.4.1",
     "pre-commit": "^1.2.2",
     "react": "^16.5.2",
     "styled-components": "^4.0.0"
   },
   "peerDependencies": {
+    "grommet": "^2.20.0",
     "mnet-icons": "git+ssh://git@tree.mn:saumik.s/mnet-icons.git",
-    "mnet-ui-base": "https://github.com/mnet-ui/mnet-ui-base#release",
     "polished": "^3.4.1",
     "styled-components": "^4.0.0"
   }
