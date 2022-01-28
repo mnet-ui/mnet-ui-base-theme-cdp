@@ -8,9 +8,7 @@ import { rgba } from 'polished';
 import { css } from 'styled-components';
 import { add as addGoogleFont } from 'google-fonts';
 import { CDPComponents } from 'mnet-icons';
-import { deepFreeze } from 'mnet-ui-base/utils/object';
-import { normalizeColor } from 'mnet-ui-base/utils/colors';
-import { parseMetricToNum } from 'mnet-ui-base/utils/mixins';
+import { deepFreeze, normalizeColor, parseMetricToNum } from 'grommet/utils';
 var ArrowUp = CDPComponents.ArrowUp,
     ArrowDown = CDPComponents.ArrowDown,
     ArrowRight = CDPComponents.ArrowRight,
@@ -612,6 +610,7 @@ export var generate = function generate(baseSpacing, scale) {
       }
     },
     checkBox: {
+      color: 'accent-4',
       border: {
         color: {
           dark: 'dark-2',
@@ -653,10 +652,6 @@ export var generate = function generate(baseSpacing, scale) {
           light: 'accent-2'
         },
         size: baseSpacing * 1.875 + "px",
-        color: {
-          dark: 'accent-4',
-          light: 'accent-4'
-        },
         knob: {
           background: {
             light: statusColors.error
@@ -1342,21 +1337,29 @@ export var generate = function generate(baseSpacing, scale) {
 
     },
     select: {
-      background: 'dark-3',
       activeColor: 'light-5',
       container: {
-        extend: function extend(props) {
+        extend: function extend(_ref5) {
+          var theme = _ref5.theme;
           return {
-            borderColor: normalizeColor('border', props.theme),
-            background: normalizeColor('dark-3', props.theme)
+            borderColor: normalizeColor('border', theme),
+            background: normalizeColor('dark-3', theme)
           };
         }
       },
       control: {
         // open: undefined,
-        extend: {
-          border: 'none',
-          borderRadius: baseSpacing / 3.2 + "px"
+        extend: function extend(_ref6) {
+          var theme = _ref6.theme;
+          return {
+            border: 'none',
+            borderRadius: baseSpacing / 3.2 + "px",
+            background: normalizeColor('dark-3', theme),
+            '[class*=" cdp-icon"]': {
+              fontSize: baseSpacing + "px",
+              fontWeight: 600
+            }
+          };
         }
       },
       options: {
@@ -1372,18 +1375,18 @@ export var generate = function generate(baseSpacing, scale) {
       },
       icons: {
         color: 'icon',
-        margin: 'none',
-        pad: 'medium',
-        background: 'dark-3',
+        margin: 'medium',
+        // background: 'dark-3',
+        size: baseSpacing + "px",
         up: ArrowUp,
-        down: ArrowDown,
-        extend: {
-          borderRadius: baseSpacing / 3.2 + "px",
-          span: {
-            fontSize: baseSpacing + "px",
-            fontWeight: 600
-          }
-        }
+        down: ArrowDown // extend: {
+        //   borderRadius: `${baseSpacing / 3.2}px`,
+        //   span: {
+        //     fontSize: `${baseSpacing}px`,
+        //     fontWeight: 600,
+        //   },
+        // },
+
       },
       // searchInput: undefined,
       step: 20
@@ -1473,11 +1476,12 @@ export var generate = function generate(baseSpacing, scale) {
       }
     },
     "switch": {
-      padding: baseSpacing * 0.625 + "px",
-      fontWeight: 600,
-      fontSize: baseSpacing * 0.625 + "px",
-      opacity: 1,
-      height: baseSpacing * 1.56 + "px",
+      option: {
+        pad: {
+          vertical: 'small',
+          horizontal: 'medium'
+        }
+      },
       background: {
         active: 'accent-1',
         inactive: 'dark-3',
@@ -1487,6 +1491,8 @@ export var generate = function generate(baseSpacing, scale) {
         }
       },
       text: {
+        weight: 600,
+        size: 'small',
         active: 'white',
         inactive: 'dark-2',
         disabled: {
@@ -1542,8 +1548,8 @@ export var generate = function generate(baseSpacing, scale) {
       }
     },
     table: {
-      extend: function extend(_ref5) {
-        var theme = _ref5.theme;
+      extend: function extend(_ref7) {
+        var theme = _ref7.theme;
         return {
           'table-layout': 'fixed',
           'border-collapse': 'collapse',
@@ -1596,8 +1602,8 @@ export var generate = function generate(baseSpacing, scale) {
         background: {
           color: 'dark-3'
         },
-        extend: function extend(_ref6) {
-          var theme = _ref6.theme;
+        extend: function extend(_ref8) {
+          var theme = _ref8.theme;
           return {
             span: {
               color: normalizeColor('dark-1', theme),
@@ -1660,9 +1666,9 @@ export var generate = function generate(baseSpacing, scale) {
     },
     textInput: {
       // disabled: { opacity: undefined },
-      extend: function extend(_ref7) {
-        var theme = _ref7.theme,
-            onSuggestionsOpen = _ref7.onSuggestionsOpen;
+      extend: function extend(_ref9) {
+        var theme = _ref9.theme,
+            onSuggestionsOpen = _ref9.onSuggestionsOpen;
         return {
           'box-shadow': 'none',
           color: normalizeColor('dark-1', theme),
@@ -1676,57 +1682,88 @@ export var generate = function generate(baseSpacing, scale) {
         extend: undefined
       }
     },
-    mnetPagination: {
-      background: 'transparent',
-      round: 'small',
-      border: {
-        color: 'transparent'
-      },
-      pad: 'medium',
-      active: {
-        color: 'transparent'
-      },
-      icon: {
-        bgColor: 'transparent',
-        pad: 'xsmall',
-        size: baseSpacing / 1.14 + "px"
-      },
-      extend: function extend(_ref8) {
-        var className = _ref8.className,
-            theme = _ref8.theme;
-        return {
-          button: {
-            color: normalizeColor(className === 'active' ? 'dark-1' : 'dark-2', theme),
-            'font-size': baseSpacing / 1.14 + "px",
-            'font-weight': className === 'active' ? '700' : '400',
-            span: {
-              'font-size': baseSpacing / 1.14 + "px"
+    pagination: {
+      button: {
+        active: {
+          background: 'transparent',
+          color: 'dark-1',
+          style: {
+            fontWeight: '600'
+          }
+        },
+        color: 'dark-2',
+        hover: {
+          background: {
+            color: undefined
+          },
+          color: undefined
+        },
+        size: {
+          small: {
+            pad: {
+              vertical: 'xsmall',
+              horizontal: 'small'
+            },
+            font: {
+              size: baseSpacing * 0.93 + "px"
             }
           }
-        };
+        }
       }
     },
-    tooptip: {
-      showArrow: false,
-      background: 'white',
-      color: 'dark-1',
-      tipSize: '5px',
-      round: 'small',
-      maxWidth: '20%',
-      dropProps: {
-        left: 'right',
-        top: 'bottom'
-      },
-      boxShadow: '0 1px 5px 0 rgba(0,0,0,0.21)',
-      pad: {
-        horizontal: 'large',
-        vertical: 'medium'
-      },
-      text: {
-        size: 'large',
-        style: {
-          lineHeight: baseSpacing * 1.43 + "px"
+    tip: {
+      wrapper: {
+        showArrow: false,
+        caret: {
+          extend: {
+            filter: 'drop-shadow(0px 4px 5px rgb(0 0 0 / 0.2))'
+          }
+        },
+        contentWrap: {
+          align: 'center',
+          justify: 'center',
+          elevation: 'xxlarge'
+        },
+        content: {
+          background: 'white',
+          direction: 'row',
+          pad: {
+            horizontal: 'large',
+            vertical: 'medium'
+          },
+          round: 'small',
+          margin: 'xsmall',
+          extend: {
+            boxShadow: '0 1px 5px 0 rgba(0, 0, 0, 0.21)',
+            maxWidth: baseSpacing * 26 + "px"
+          }
         }
+      },
+      drop: {
+        isTooltip: true // shadow: 'none',
+
+      }
+    },
+    spinner: {
+      container: {
+        size: 'xsmall',
+        border: [{
+          side: 'all',
+          color: 'transparent',
+          size: 'small'
+        }, {
+          side: 'right',
+          color: 'white',
+          size: 'small'
+        }, {
+          side: 'top',
+          color: 'white',
+          size: 'small'
+        }, {
+          side: 'left',
+          color: 'white',
+          size: 'small'
+        }]
       }
     },
     notification: {
