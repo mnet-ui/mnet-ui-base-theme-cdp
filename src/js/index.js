@@ -1426,7 +1426,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           width: `${baseSpacing * 12}px`,
         },
         'th:nth-child(5)': {
-          width: `${baseSpacing * 9}px`,
+          width: `${baseSpacing * 12}px`,
         },
         color: normalizeColor('dark-1', theme),
         td: {

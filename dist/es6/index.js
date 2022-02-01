@@ -1567,7 +1567,7 @@ export var generate = function generate(baseSpacing, scale) {
             width: baseSpacing * 12 + "px"
           },
           'th:nth-child(5)': {
-            width: baseSpacing * 9 + "px"
+            width: baseSpacing * 12 + "px"
           },
           color: normalizeColor('dark-1', theme),
           td: {
