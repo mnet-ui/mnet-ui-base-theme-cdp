@@ -1376,36 +1376,36 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       active: {
         color: 'white',
         weight: 600,
-        background: 'dark-1',
+        background: 'accent-1',
       },
       color: 'dark-1',
-      // background: undefined,
-      // hover: undefined,
-
-      pad: {
-        vertical: 'small',
-        horizontal: 'medium',
-      },
+      background: 'dark-3',
+      pad: 'medium',
       margin: 'none',
       border: 0,
-      extend: {
-        borderRadius: `${baseSpacing / 3.2}px`,
-        span: {
-          fontSize: `${baseSpacing * 0.875}px`,
-        },
-        paddingBottom: `${baseSpacing / 3.2}px`,
+      hover: {
+        background: 'accent-1',
+        color: 'white',
       },
     },
     tabs: {
       // background: undefined,
       // extend: undefined,
       gap: 'none',
-      header: {
-        // background: undefined,
-        // extend: undefined,
-      },
       panel: {
-        extend: {},
+        extend: () => ({
+          paddingTop: `${baseSpacing}px`,
+        }),
+      },
+      header: {
+        border: {
+          side: 'bottom',
+          color: 'accent-1',
+          size: 'small',
+        },
+        extend: css`
+          width: 100%;
+        `,
       },
     },
     table: {
