@@ -1544,13 +1544,7 @@ var generate = function generate(baseSpacing, scale) {
       // background: undefined,
       // extend: undefined,
       gap: 'none',
-      panel: {
-        extend: function extend() {
-          return {
-            paddingTop: baseSpacing + "px"
-          };
-        }
-      },
+      // panel: undefined,
       header: {
         border: {
           side: 'bottom',
@@ -1574,13 +1568,16 @@ var generate = function generate(baseSpacing, scale) {
             background: (0, _utils.normalizeColor)('background-back', theme)
           },
           'th:nth-child(1)': {
-            width: baseSpacing * 9 + "px"
+            width: baseSpacing * 8 + "px"
           },
-          'th:nth-child(3)': {
+          'th:nth-child(4)': {
             width: baseSpacing * 12 + "px"
           },
           'th:nth-child(5)': {
             width: baseSpacing * 12 + "px"
+          },
+          'th:nth-child(6)': {
+            width: baseSpacing * 8 + "px"
           },
           color: (0, _utils.normalizeColor)('dark-1', theme),
           td: {

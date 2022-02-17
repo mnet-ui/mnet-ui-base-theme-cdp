@@ -1392,11 +1392,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       // background: undefined,
       // extend: undefined,
       gap: 'none',
-      panel: {
-        extend: () => ({
-          paddingTop: `${baseSpacing}px`,
-        }),
-      },
+      // panel: undefined,
       header: {
         border: {
           side: 'bottom',
@@ -1420,13 +1416,16 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           background: normalizeColor('background-back', theme),
         },
         'th:nth-child(1)': {
-          width: `${baseSpacing * 9}px`,
+          width: `${baseSpacing * 8}px`,
         },
-        'th:nth-child(3)': {
+        'th:nth-child(4)': {
           width: `${baseSpacing * 12}px`,
         },
         'th:nth-child(5)': {
           width: `${baseSpacing * 12}px`,
+        },
+        'th:nth-child(6)': {
+          width: `${baseSpacing * 8}px`,
         },
         color: normalizeColor('dark-1', theme),
         td: {
