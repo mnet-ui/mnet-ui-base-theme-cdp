@@ -1557,16 +1557,13 @@ export var generate = function generate(baseSpacing, scale) {
             background: normalizeColor('background-back', theme)
           },
           'th:nth-child(1)': {
-            width: baseSpacing * 8 + "px"
+            width: baseSpacing * 9 + "px"
           },
           'th:nth-child(4)': {
             width: baseSpacing * 12 + "px"
           },
           'th:nth-child(5)': {
-            width: baseSpacing * 12 + "px"
-          },
-          'th:nth-child(6)': {
-            width: baseSpacing * 8 + "px"
+            width: baseSpacing * 9 + "px"
           },
           color: normalizeColor('dark-1', theme),
           td: {
