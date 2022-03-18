@@ -1380,12 +1380,13 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       },
       color: 'dark-1',
       background: 'dark-3',
-      pad: 'medium',
+      pad: undefined,
       margin: 'none',
       border: 0,
-      hover: {
-        background: 'accent-1',
-        color: 'white',
+      hover: undefined,
+      extend: {
+        width: `${baseSpacing * 8 + 13}px`,
+        'text-align': 'center',
       },
     },
     tabs: {
@@ -1397,7 +1398,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         border: {
           side: 'bottom',
           color: 'accent-1',
-          size: 'small',
+          size: '4px',
         },
         extend: css`
           width: 100%;

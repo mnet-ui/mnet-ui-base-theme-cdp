@@ -1521,12 +1521,13 @@ export var generate = function generate(baseSpacing, scale) {
       },
       color: 'dark-1',
       background: 'dark-3',
-      pad: 'medium',
+      pad: undefined,
       margin: 'none',
       border: 0,
-      hover: {
-        background: 'accent-1',
-        color: 'white'
+      hover: undefined,
+      extend: {
+        width: baseSpacing * 8 + 13 + "px",
+        'text-align': 'center'
       }
     },
     tabs: {
@@ -1538,7 +1539,7 @@ export var generate = function generate(baseSpacing, scale) {
         border: {
           side: 'bottom',
           color: 'accent-1',
-          size: 'small'
+          size: '4px'
         },
         extend: css(_templateObject3 || (_templateObject3 = _taggedTemplateLiteralLoose(["\n          width: 100%;\n        "])))
       }
