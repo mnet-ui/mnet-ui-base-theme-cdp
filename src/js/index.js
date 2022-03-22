@@ -1386,7 +1386,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       hover: undefined,
       extend: {
         width: `${baseSpacing * 8 + 13}px`,
-        'text-align': 'center',
+        height: `${baseSpacing * 4 + 4}px`,
       },
     },
     tabs: {

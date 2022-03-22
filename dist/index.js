@@ -1538,7 +1538,7 @@ var generate = function generate(baseSpacing, scale) {
       hover: undefined,
       extend: {
         width: baseSpacing * 8 + 13 + "px",
-        'text-align': 'center'
+        height: baseSpacing * 4 + 4 + "px"
       }
     },
     tabs: {
