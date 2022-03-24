@@ -1400,9 +1400,15 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           color: 'accent-1',
           size: '4px',
         },
-        extend: css`
-          width: 100%;
-        `,
+        extend: {
+          width: '100%',
+          'button:first-child > div': {
+            borderTopLeftRadius: '6px',
+          },
+          'button:nth-last-child(2) > div': {
+            borderTopRightRadius: '6px',
+          },
+        },
       },
     },
     table: {

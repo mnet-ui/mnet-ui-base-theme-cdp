@@ -13,7 +13,7 @@ var _mnetIcons = require("mnet-icons");
 
 var _utils = require("grommet/utils");
 
-var _templateObject, _templateObject2, _templateObject3;
+var _templateObject, _templateObject2;
 
 function _taggedTemplateLiteralLoose(strings, raw) { if (!raw) { raw = strings.slice(0); } strings.raw = raw; return strings; }
 
@@ -1552,7 +1552,15 @@ var generate = function generate(baseSpacing, scale) {
           color: 'accent-1',
           size: '4px'
         },
-        extend: (0, _styledComponents.css)(_templateObject3 || (_templateObject3 = _taggedTemplateLiteralLoose(["\n          width: 100%;\n        "])))
+        extend: {
+          width: '100%',
+          'button:first-child > div': {
+            borderTopLeftRadius: '6px'
+          },
+          'button:nth-last-child(2) > div': {
+            borderTopRightRadius: '6px'
+          }
+        }
       }
     },
     table: {
