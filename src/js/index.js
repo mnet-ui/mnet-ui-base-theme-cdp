@@ -1398,7 +1398,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         border: {
           side: 'bottom',
           color: 'accent-1',
-          size: '4px',
+          size: '2px',
         },
         extend: {
           width: '100%',

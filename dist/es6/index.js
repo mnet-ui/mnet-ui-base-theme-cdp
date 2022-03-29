@@ -1539,7 +1539,7 @@ export var generate = function generate(baseSpacing, scale) {
         border: {
           side: 'bottom',
           color: 'accent-1',
-          size: '4px'
+          size: '2px'
         },
         extend: {
           width: '100%',
