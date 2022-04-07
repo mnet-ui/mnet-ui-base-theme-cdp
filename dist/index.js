@@ -685,11 +685,13 @@ var generate = function generate(baseSpacing, scale) {
         radius: baseSpacing / 2 + "px",
         extend: function extend(_ref4) {
           var checked = _ref4.checked,
+              disabled = _ref4.disabled,
               theme = _ref4.theme;
           return {
             height: baseSpacing + "px",
             border: "2px solid " + (0, _utils.normalizeColor)(checked ? 'accent-4' : 'dark-2', theme),
-            background: 'white'
+            background: 'white',
+            opacity: disabled ? 0.3 : 1
           };
         }
       }

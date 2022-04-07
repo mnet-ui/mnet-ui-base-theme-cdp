@@ -605,10 +605,11 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           }),
         },
         radius: `${baseSpacing / 2}px`,
-        extend: ({ checked, theme }) => ({
+        extend: ({ checked, disabled, theme }) => ({
           height: `${baseSpacing}px`,
           border: `2px solid ${normalizeColor(checked ? 'accent-4' : 'dark-2', theme)}`,
           background: 'white',
+          opacity: disabled ? 0.3 : 1,
         }),
       },
     },
