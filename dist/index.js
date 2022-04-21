@@ -1784,7 +1784,7 @@ var generate = function generate(baseSpacing, scale) {
         timeout: 5000,
         icon: {
           size: 'xlarge',
-          "default": _cdp.Info,
+          "default": _cdp.InfoIconStroke,
           ok: _cdp.Success,
           error: _cdp.Failed
         },

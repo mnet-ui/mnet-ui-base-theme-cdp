@@ -7,7 +7,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 import { rgba } from 'polished';
 import { css } from 'styled-components';
 import { add as addGoogleFont } from 'google-fonts';
-import { ArrowUp, ArrowDown, ArrowRight, Close, Info, Success, Failed } from 'mnet-icons/dist/cdp';
+import { ArrowUp, ArrowDown, ArrowRight, Close, InfoIconStroke, Success, Failed } from 'mnet-icons/dist/cdp';
 import { deepFreeze, normalizeColor, parseMetricToNum } from 'grommet/utils';
 addGoogleFont({
   'Open Sans': true
@@ -1773,7 +1773,7 @@ export var generate = function generate(baseSpacing, scale) {
         timeout: 5000,
         icon: {
           size: 'xlarge',
-          "default": Info,
+          "default": InfoIconStroke,
           ok: Success,
           error: Failed
         },
