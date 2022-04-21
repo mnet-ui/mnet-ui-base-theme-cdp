@@ -9,7 +9,7 @@ var _styledComponents = require("styled-components");
 
 var _googleFonts = require("google-fonts");
 
-var _mnetIcons = require("mnet-icons");
+var _cdp = require("mnet-icons/dist/cdp");
 
 var _utils = require("grommet/utils");
 
@@ -19,13 +19,6 @@ function _taggedTemplateLiteralLoose(strings, raw) { if (!raw) { raw = strings.s
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-var ArrowUp = _mnetIcons.CDPComponents.ArrowUp,
-    ArrowDown = _mnetIcons.CDPComponents.ArrowDown,
-    ArrowRight = _mnetIcons.CDPComponents.ArrowRight,
-    Close = _mnetIcons.CDPComponents.Close,
-    Info = _mnetIcons.CDPComponents.Info,
-    Success = _mnetIcons.CDPComponents.Success,
-    Failed = _mnetIcons.CDPComponents.Failed;
 (0, _googleFonts.add)({
   'Open Sans': true
 });
@@ -436,7 +429,7 @@ var generate = function generate(baseSpacing, scale) {
         size: 'large'
       },
       icons: {
-        separator: ArrowRight
+        separator: _cdp.ArrowRight
       },
       extend: {
         ul: {
@@ -1391,8 +1384,8 @@ var generate = function generate(baseSpacing, scale) {
         margin: 'medium',
         // background: 'dark-3',
         size: baseSpacing + "px",
-        up: ArrowUp,
-        down: ArrowDown // extend: {
+        up: _cdp.ArrowUp,
+        down: _cdp.ArrowDown // extend: {
         //   borderRadius: `${baseSpacing / 3.2}px`,
         //   span: {
         //     fontSize: `${baseSpacing}px`,
@@ -1783,7 +1776,7 @@ var generate = function generate(baseSpacing, scale) {
     },
     notification: {
       toast: {
-        closeIcon: Close,
+        closeIcon: _cdp.Close,
         position: 'top-right',
         zIndex: 999,
         width: '60%',
@@ -1791,9 +1784,9 @@ var generate = function generate(baseSpacing, scale) {
         timeout: 5000,
         icon: {
           size: 'xlarge',
-          "default": Info,
-          ok: Success,
-          error: Failed
+          "default": _cdp.Info,
+          ok: _cdp.Success,
+          error: _cdp.Failed
         },
         text: {
           "default": {
