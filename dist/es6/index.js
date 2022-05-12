@@ -7,15 +7,8 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 import { rgba } from 'polished';
 import { css } from 'styled-components';
 import { add as addGoogleFont } from 'google-fonts';
-import { CDPComponents } from 'mnet-icons';
+import { ArrowUp, ArrowDown, ArrowRight, Close, InfoIconStroke, Success, Failed } from 'mnet-icons/dist/cdp';
 import { deepFreeze, normalizeColor, parseMetricToNum } from 'grommet/utils';
-var ArrowUp = CDPComponents.ArrowUp,
-    ArrowDown = CDPComponents.ArrowDown,
-    ArrowRight = CDPComponents.ArrowRight,
-    Close = CDPComponents.Close,
-    Info = CDPComponents.Info,
-    Success = CDPComponents.Success,
-    Failed = CDPComponents.Failed;
 addGoogleFont({
   'Open Sans': true
 });
@@ -1780,7 +1773,7 @@ export var generate = function generate(baseSpacing, scale) {
         timeout: 5000,
         icon: {
           size: 'xlarge',
-          "default": Info,
+          "default": InfoIconStroke,
           ok: Success,
           error: Failed
         },
