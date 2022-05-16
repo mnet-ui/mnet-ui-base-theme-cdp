@@ -7,7 +7,13 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 import { rgba } from 'polished';
 import { css } from 'styled-components';
 import { add as addGoogleFont } from 'google-fonts';
-import { ArrowUp, ArrowDown, ArrowRight, Close, InfoIconStroke, Success, Failed } from 'mnet-icons/dist/cdp';
+import { ArrowUp } from 'mnet-icons/dist/CDP/icons/ArrowUp';
+import { ArrowDown } from 'mnet-icons/dist/CDP/icons/ArrowDown';
+import { ArrowRight } from 'mnet-icons/dist/CDP/icons/ArrowRight';
+import { Close } from 'mnet-icons/dist/CDP/icons/Close';
+import { InfoIconStroke } from 'mnet-icons/dist/CDP/icons/InfoIconStroke';
+import { Success } from 'mnet-icons/dist/CDP/icons/Success';
+import { Failed } from 'mnet-icons/dist/CDP/icons/Failed';
 import { deepFreeze, normalizeColor, parseMetricToNum } from 'grommet/utils';
 addGoogleFont({
   'Open Sans': true

@@ -9,7 +9,19 @@ var _styledComponents = require("styled-components");
 
 var _googleFonts = require("google-fonts");
 
-var _cdp = require("mnet-icons/dist/cdp");
+var _ArrowUp = require("mnet-icons/dist/CDP/icons/ArrowUp");
+
+var _ArrowDown = require("mnet-icons/dist/CDP/icons/ArrowDown");
+
+var _ArrowRight = require("mnet-icons/dist/CDP/icons/ArrowRight");
+
+var _Close = require("mnet-icons/dist/CDP/icons/Close");
+
+var _InfoIconStroke = require("mnet-icons/dist/CDP/icons/InfoIconStroke");
+
+var _Success = require("mnet-icons/dist/CDP/icons/Success");
+
+var _Failed = require("mnet-icons/dist/CDP/icons/Failed");
 
 var _utils = require("grommet/utils");
 
@@ -429,7 +441,7 @@ var generate = function generate(baseSpacing, scale) {
         size: 'large'
       },
       icons: {
-        separator: _cdp.ArrowRight
+        separator: _ArrowRight.ArrowRight
       },
       extend: {
         ul: {
@@ -1384,8 +1396,8 @@ var generate = function generate(baseSpacing, scale) {
         margin: 'medium',
         // background: 'dark-3',
         size: baseSpacing + "px",
-        up: _cdp.ArrowUp,
-        down: _cdp.ArrowDown // extend: {
+        up: _ArrowUp.ArrowUp,
+        down: _ArrowDown.ArrowDown // extend: {
         //   borderRadius: `${baseSpacing / 3.2}px`,
         //   span: {
         //     fontSize: `${baseSpacing}px`,
@@ -1776,7 +1788,7 @@ var generate = function generate(baseSpacing, scale) {
     },
     notification: {
       toast: {
-        closeIcon: _cdp.Close,
+        closeIcon: _Close.Close,
         position: 'top-right',
         zIndex: 999,
         width: '60%',
@@ -1784,9 +1796,9 @@ var generate = function generate(baseSpacing, scale) {
         timeout: 5000,
         icon: {
           size: 'xlarge',
-          "default": _cdp.InfoIconStroke,
-          ok: _cdp.Success,
-          error: _cdp.Failed
+          "default": _InfoIconStroke.InfoIconStroke,
+          ok: _Success.Success,
+          error: _Failed.Failed
         },
         text: {
           "default": {
