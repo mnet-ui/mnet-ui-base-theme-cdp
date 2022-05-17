@@ -14,7 +14,9 @@ import { Close } from 'mnet-icons/dist/CDP/icons/Close';
 import { InfoIconStroke } from 'mnet-icons/dist/CDP/icons/InfoIconStroke';
 import { Success } from 'mnet-icons/dist/CDP/icons/Success';
 import { Failed } from 'mnet-icons/dist/CDP/icons/Failed';
-import { deepFreeze, normalizeColor, parseMetricToNum } from 'grommet/utils';
+import { deepFreeze } from 'grommet/utils/object';
+import { parseMetricToNum } from 'grommet/utils/mixins';
+import { normalizeColor } from 'grommet/utils/colors';
 addGoogleFont({
   'Open Sans': true
 });
