@@ -9,9 +9,25 @@ var _styledComponents = require("styled-components");
 
 var _googleFonts = require("google-fonts");
 
-var _mnetIcons = require("mnet-icons");
+var _ArrowUp = require("mnet-icons/dist/CDP/icons/ArrowUp");
 
-var _utils = require("grommet/utils");
+var _ArrowDown = require("mnet-icons/dist/CDP/icons/ArrowDown");
+
+var _ArrowRight = require("mnet-icons/dist/CDP/icons/ArrowRight");
+
+var _Close = require("mnet-icons/dist/CDP/icons/Close");
+
+var _InfoIconStroke = require("mnet-icons/dist/CDP/icons/InfoIconStroke");
+
+var _Success = require("mnet-icons/dist/CDP/icons/Success");
+
+var _Failed = require("mnet-icons/dist/CDP/icons/Failed");
+
+var _colors = require("grommet/utils/colors");
+
+var _object = require("grommet/utils/object");
+
+var _mixins = require("grommet/utils/mixins");
 
 var _templateObject, _templateObject2;
 
@@ -19,13 +35,6 @@ function _taggedTemplateLiteralLoose(strings, raw) { if (!raw) { raw = strings.s
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-var ArrowUp = _mnetIcons.CDPComponents.ArrowUp,
-    ArrowDown = _mnetIcons.CDPComponents.ArrowDown,
-    ArrowRight = _mnetIcons.CDPComponents.ArrowRight,
-    Close = _mnetIcons.CDPComponents.Close,
-    Info = _mnetIcons.CDPComponents.Info,
-    Success = _mnetIcons.CDPComponents.Success,
-    Failed = _mnetIcons.CDPComponents.Failed;
 (0, _googleFonts.add)({
   'Open Sans': true
 });
@@ -318,8 +327,8 @@ var generate = function generate(baseSpacing, scale) {
       },
       input: {
         padding: {
-          horizontal: (0, _utils.parseMetricToNum)(baseSpacing / 2 + "px") - (0, _utils.parseMetricToNum)(controlBorderWidth + "px") + "px",
-          vertical: (0, _utils.parseMetricToNum)(baseSpacing / 1.418 + "px") - (0, _utils.parseMetricToNum)(controlBorderWidth + "px") + "px"
+          horizontal: (0, _mixins.parseMetricToNum)(baseSpacing / 2 + "px") - (0, _mixins.parseMetricToNum)(controlBorderWidth + "px") + "px",
+          vertical: (0, _mixins.parseMetricToNum)(baseSpacing / 1.418 + "px") - (0, _mixins.parseMetricToNum)(controlBorderWidth + "px") + "px"
         },
         font: {
           size: 'large',
@@ -436,7 +445,7 @@ var generate = function generate(baseSpacing, scale) {
         size: 'large'
       },
       icons: {
-        separator: ArrowRight
+        separator: _ArrowRight.ArrowRight
       },
       extend: {
         ul: {
@@ -678,7 +687,7 @@ var generate = function generate(baseSpacing, scale) {
               left: '2px',
               width: baseSpacing / 2 + "px",
               height: baseSpacing / 2 + "px",
-              background: (0, _utils.normalizeColor)(checked ? 'accent-4' : 'dark-2', theme)
+              background: (0, _colors.normalizeColor)(checked ? 'accent-4' : 'dark-2', theme)
             };
           }
         },
@@ -689,7 +698,7 @@ var generate = function generate(baseSpacing, scale) {
               theme = _ref4.theme;
           return {
             height: baseSpacing + "px",
-            border: "2px solid " + (0, _utils.normalizeColor)(checked ? 'accent-4' : 'dark-2', theme),
+            border: "2px solid " + (0, _colors.normalizeColor)(checked ? 'accent-4' : 'dark-2', theme),
             background: 'white',
             opacity: disabled ? 0.3 : 1
           };
@@ -1101,7 +1110,7 @@ var generate = function generate(baseSpacing, scale) {
           },
           extend: function extend(props) {
             return {
-              background: (0, _utils.normalizeColor)('dark-3', props.theme)
+              background: (0, _colors.normalizeColor)('dark-3', props.theme)
             };
           }
         },
@@ -1139,7 +1148,7 @@ var generate = function generate(baseSpacing, scale) {
             return {
               width: props.twoColumnLayout ? '100%' : 'auto',
               margin: props.twoColumnLayout ? 0 : baseSpacing / (1.618 * 2) + "px",
-              background: (0, _utils.normalizeColor)(props.twoColumnLayout ? 'white' : 'light-3', props.theme),
+              background: (0, _colors.normalizeColor)(props.twoColumnLayout ? 'white' : 'light-3', props.theme),
               padding: props.twoColumnLayout ? baseSpacing / 1.618 + "px" : baseSpacing / (1.618 * 2) + "px " + baseSpacing / 1.618 + "px",
               'border-radius': props.twoColumnLayout ? 0 : baseSpacing / (1.618 * 2) + "px",
               'border-bottom': props.twoColumnLayout ? '1px solid #D9DBE5' : 'none',
@@ -1164,7 +1173,7 @@ var generate = function generate(baseSpacing, scale) {
                   return '#FC564F';
 
                 default:
-                  return (0, _utils.normalizeColor)('dark-3', props.theme);
+                  return (0, _colors.normalizeColor)('dark-3', props.theme);
               }
             };
 
@@ -1210,7 +1219,7 @@ var generate = function generate(baseSpacing, scale) {
           },
           extend: function extend(props) {
             return {
-              background: (0, _utils.normalizeColor)(props.layout === 'double-column' ? 'white' : 'light-2', props.theme),
+              background: (0, _colors.normalizeColor)(props.layout === 'double-column' ? 'white' : 'light-2', props.theme),
               'flex-direction': props.layout === 'double-column' ? 'row-reverse' : 'row',
               'padding-left': props.layout === 'double-column' ? baseSpacing / 1.618 + "px" : 0,
               'border-bottom': props.layout === 'double-column' ? '1px solid #D9DBE5' : 'none'
@@ -1333,7 +1342,7 @@ var generate = function generate(baseSpacing, scale) {
       track: {
         height: '4px',
         color: (0, _styledComponents.css)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteralLoose(["\n          ", ";\n        "])), function (props) {
-          return (0, _polished.rgba)((0, _utils.normalizeColor)('border', props.theme), 0.2);
+          return (0, _polished.rgba)((0, _colors.normalizeColor)('border', props.theme), 0.2);
         })
       },
       thumb: {// color: { dark: undefined, light: undefined },
@@ -1355,8 +1364,8 @@ var generate = function generate(baseSpacing, scale) {
         extend: function extend(_ref5) {
           var theme = _ref5.theme;
           return {
-            borderColor: (0, _utils.normalizeColor)('border', theme),
-            background: (0, _utils.normalizeColor)('dark-3', theme)
+            borderColor: (0, _colors.normalizeColor)('border', theme),
+            background: (0, _colors.normalizeColor)('dark-3', theme)
           };
         }
       },
@@ -1367,7 +1376,7 @@ var generate = function generate(baseSpacing, scale) {
           return {
             border: 'none',
             borderRadius: baseSpacing / 3.2 + "px",
-            background: (0, _utils.normalizeColor)('dark-3', theme),
+            background: (0, _colors.normalizeColor)('dark-3', theme),
             '[class*=" cdp-icon"]': {
               fontSize: baseSpacing + "px",
               fontWeight: 600
@@ -1391,8 +1400,8 @@ var generate = function generate(baseSpacing, scale) {
         margin: 'medium',
         // background: 'dark-3',
         size: baseSpacing + "px",
-        up: ArrowUp,
-        down: ArrowDown // extend: {
+        up: _ArrowUp.ArrowUp,
+        down: _ArrowDown.ArrowDown // extend: {
         //   borderRadius: `${baseSpacing / 3.2}px`,
         //   span: {
         //     fontSize: `${baseSpacing}px`,
@@ -1573,10 +1582,10 @@ var generate = function generate(baseSpacing, scale) {
           'border-collapse': 'collapse',
           width: '100%',
           'tr:nth-child(even)': {
-            background: (0, _utils.normalizeColor)('background-front', theme)
+            background: (0, _colors.normalizeColor)('background-front', theme)
           },
           'tr:nth-child(odd)': {
-            background: (0, _utils.normalizeColor)('background-back', theme)
+            background: (0, _colors.normalizeColor)('background-back', theme)
           },
           'th:nth-child(1)': {
             width: baseSpacing * 10 + "px"
@@ -1584,7 +1593,7 @@ var generate = function generate(baseSpacing, scale) {
           'th:nth-child(4)': {
             width: baseSpacing * 12 + "px"
           },
-          color: (0, _utils.normalizeColor)('dark-1', theme),
+          color: (0, _colors.normalizeColor)('dark-1', theme),
           td: {
             border: 'none'
           },
@@ -1592,7 +1601,7 @@ var generate = function generate(baseSpacing, scale) {
             th: {
               span: {
                 fontSize: 'small',
-                color: (0, _utils.normalizeColor)('dark-1', theme),
+                color: (0, _colors.normalizeColor)('dark-1', theme),
                 fontWeight: 600
               }
             }
@@ -1621,7 +1630,7 @@ var generate = function generate(baseSpacing, scale) {
           var theme = _ref8.theme;
           return {
             span: {
-              color: (0, _utils.normalizeColor)('dark-1', theme),
+              color: (0, _colors.normalizeColor)('dark-1', theme),
               'font-weight': '600',
               fontSize: baseFontSize + "px"
             }
@@ -1686,7 +1695,7 @@ var generate = function generate(baseSpacing, scale) {
             onSuggestionsOpen = _ref9.onSuggestionsOpen;
         return {
           'box-shadow': 'none',
-          color: (0, _utils.normalizeColor)('dark-1', theme),
+          color: (0, _colors.normalizeColor)('dark-1', theme),
           lineHeight: 'normal',
           input: {
             fontWeight: onSuggestionsOpen ? '400' : '600'
@@ -1783,7 +1792,7 @@ var generate = function generate(baseSpacing, scale) {
     },
     notification: {
       toast: {
-        closeIcon: Close,
+        closeIcon: _Close.Close,
         position: 'top-right',
         zIndex: 999,
         width: '60%',
@@ -1791,9 +1800,9 @@ var generate = function generate(baseSpacing, scale) {
         timeout: 5000,
         icon: {
           size: 'xlarge',
-          "default": Info,
-          ok: Success,
-          error: Failed
+          "default": _InfoIconStroke.InfoIconStroke,
+          ok: _Success.Success,
+          error: _Failed.Failed
         },
         text: {
           "default": {
@@ -1963,7 +1972,7 @@ var generate = function generate(baseSpacing, scale) {
       }
     }
   };
-  return (0, _utils.deepFreeze)(result);
+  return (0, _object.deepFreeze)(result);
 };
 
 exports.generate = generate;

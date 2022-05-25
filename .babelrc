@@ -1,5 +1,17 @@
 {
   "presets": [
     "./tools/grommet-babel-preset-env"
+  ],
+  "plugins": [
+    [
+      "transform-imports", 
+      {
+        "mnet-icons": {
+          "transform": "mnet-icons/dist/CDP/icons/${member}",
+          "preventFullImport": true,
+          "skipDefaultConversion": true
+        }
+      }
+    ]
   ]
 }
