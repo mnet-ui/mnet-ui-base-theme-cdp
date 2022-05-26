@@ -605,10 +605,11 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           }),
         },
         radius: `${baseSpacing / 2}px`,
-        extend: ({ checked, theme }) => ({
+        extend: ({ checked, disabled, theme }) => ({
           height: `${baseSpacing}px`,
           border: `2px solid ${normalizeColor(checked ? 'accent-4' : 'dark-2', theme)}`,
           background: 'white',
+          opacity: disabled ? 0.3 : 1,
         }),
       },
     },
@@ -1376,36 +1377,39 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       active: {
         color: 'white',
         weight: 600,
-        background: 'dark-1',
+        background: 'accent-1',
       },
       color: 'dark-1',
-      // background: undefined,
-      // hover: undefined,
-
-      pad: {
-        vertical: 'small',
-        horizontal: 'medium',
-      },
+      background: 'dark-3',
+      pad: undefined,
       margin: 'none',
       border: 0,
+      hover: undefined,
       extend: {
-        borderRadius: `${baseSpacing / 3.2}px`,
-        span: {
-          fontSize: `${baseSpacing * 0.875}px`,
-        },
-        paddingBottom: `${baseSpacing / 3.2}px`,
+        width: `${baseSpacing * 8 + 13}px`,
+        height: `${baseSpacing * 4 + 4}px`,
       },
     },
     tabs: {
       // background: undefined,
       // extend: undefined,
       gap: 'none',
+      // panel: undefined,
       header: {
-        // background: undefined,
-        // extend: undefined,
-      },
-      panel: {
-        extend: {},
+        border: {
+          side: 'bottom',
+          color: 'accent-1',
+          size: '2px',
+        },
+        extend: {
+          width: '100%',
+          'button:first-child > div': {
+            borderTopLeftRadius: '6px',
+          },
+          'button:nth-last-child(2) > div': {
+            borderTopRightRadius: '6px',
+          },
+        },
       },
     },
     table: {
@@ -1420,13 +1424,10 @@ export const generate = (baseSpacing = 16, scale = 6) => {
           background: normalizeColor('background-back', theme),
         },
         'th:nth-child(1)': {
-          width: `${baseSpacing * 9}px`,
+          width: `${baseSpacing * 10}px`,
         },
-        'th:nth-child(3)': {
+        'th:nth-child(4)': {
           width: `${baseSpacing * 12}px`,
-        },
-        'th:nth-child(5)': {
-          width: `${baseSpacing * 9}px`,
         },
         color: normalizeColor('dark-1', theme),
         td: {
