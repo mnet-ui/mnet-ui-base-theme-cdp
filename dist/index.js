@@ -9,19 +9,19 @@ var _styledComponents = require("styled-components");
 
 var _googleFonts = require("google-fonts");
 
-var _ArrowUp = require("mnet-icons/dist/CDP/icons/ArrowUp");
+var _ArrowUp = require("mnet-icons/dist/es6/icons/cdp/ArrowUp");
 
-var _ArrowDown = require("mnet-icons/dist/CDP/icons/ArrowDown");
+var _ArrowDown = require("mnet-icons/dist/es6/icons/cdp/ArrowDown");
 
-var _ArrowRight = require("mnet-icons/dist/CDP/icons/ArrowRight");
+var _ArrowRight = require("mnet-icons/dist/es6/icons/cdp/ArrowRight");
 
-var _Close = require("mnet-icons/dist/CDP/icons/Close");
+var _Close = require("mnet-icons/dist/es6/icons/cdp/Close");
 
-var _InfoIconStroke = require("mnet-icons/dist/CDP/icons/InfoIconStroke");
+var _InfoIconStroke = require("mnet-icons/dist/es6/icons/cdp/InfoIconStroke");
 
-var _Success = require("mnet-icons/dist/CDP/icons/Success");
+var _Success = require("mnet-icons/dist/es6/icons/cdp/Success");
 
-var _Failed = require("mnet-icons/dist/CDP/icons/Failed");
+var _Failed = require("mnet-icons/dist/es6/icons/cdp/Failed");
 
 var _colors = require("grommet/utils/colors");
 
