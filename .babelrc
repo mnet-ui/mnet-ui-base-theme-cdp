@@ -6,7 +6,7 @@
     [
       "transform-imports", 
       {
-        "mnet-icons": {
+        "mnet-icons/cdp": {
           "transform": "mnet-icons/dist/es6/icons/cdp/${member}",
           "preventFullImport": true,
           "skipDefaultConversion": true

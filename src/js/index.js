@@ -9,7 +9,7 @@ import {
   InfoIconStroke,
   Success,
   Failed,
-} from 'mnet-icons';
+} from 'mnet-icons/cdp';
 
 import { normalizeColor } from 'grommet/utils/colors';
 import { deepFreeze } from 'grommet/utils/object';
