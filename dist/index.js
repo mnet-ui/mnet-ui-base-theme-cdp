@@ -39,7 +39,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
   'Open Sans': true
 });
 var brandColor = '#E15151';
-var accentColors = ['#739FFC', '#F5F5F5', '#90D099', '#16B037', '#FC564F'];
+var accentColors = ['#739FFC', '#EBF2FF', '#90D099', '#16B037', '#FC564F'];
 var neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
 var statusColors = {
   critical: '#e35e59',

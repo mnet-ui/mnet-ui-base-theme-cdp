@@ -21,7 +21,7 @@ addGoogleFont({
 });
 
 const brandColor = '#E15151';
-const accentColors = ['#739FFC', '#F5F5F5', '#90D099', '#16B037', '#FC564F'];
+const accentColors = ['#739FFC', '#EBF2FF', '#90D099', '#16B037', '#FC564F'];
 const neutralColors = ['#519bff', '#99742E', '#00739D', '#A2423D'];
 const statusColors = {
   critical: '#e35e59',
