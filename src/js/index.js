@@ -1,13 +1,20 @@
 import { rgba } from 'polished';
 import { css } from 'styled-components';
 import { add as addGoogleFont } from 'google-fonts';
-import { CDPComponents } from 'mnet-icons';
+import {
+  ArrowUp,
+  ArrowDown,
+  ArrowRight,
+  Close,
+  InfoIconStroke,
+  Success,
+  Failed,
+} from 'mnet-icons/cdp';
 
-import { deepFreeze, normalizeColor, parseMetricToNum } from 'grommet/utils';
+import { normalizeColor } from 'grommet/utils/colors';
+import { deepFreeze } from 'grommet/utils/object';
+import { parseMetricToNum } from 'grommet/utils/mixins';
 
-const {
-  ArrowUp, ArrowDown, ArrowRight, Close, Info, Success, Failed,
-} = CDPComponents;
 
 addGoogleFont({
   'Open Sans': true,
@@ -1612,7 +1619,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         timeout: 5000,
         icon: {
           size: 'xlarge',
-          default: Info,
+          default: InfoIconStroke,
           ok: Success,
           error: Failed,
         },
