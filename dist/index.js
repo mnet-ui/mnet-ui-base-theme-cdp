@@ -1537,42 +1537,33 @@ var generate = function generate(baseSpacing, scale) {
     },
     tab: {
       active: {
-        color: 'white',
+        color: 'accent-1',
         weight: 600,
-        background: 'accent-1'
+        background: 'background-front'
       },
       color: 'dark-1',
-      background: 'dark-3',
+      background: 'white',
       pad: undefined,
       margin: 'none',
       border: 0,
-      hover: undefined,
+      hover: {
+        background: 'background-front'
+      },
       extend: {
-        width: baseSpacing * 8 + 13 + "px",
-        height: baseSpacing * 4 + 4 + "px"
+        'justify-content': 'center',
+        'align-items': 'center',
+        width: baseSpacing * 7 + 2 + "px",
+        height: baseSpacing * 4 + 4 + "px",
+        'border-top-left-radius': baseSpacing / 4 + "px",
+        'border-top-right-radius': baseSpacing / 4 + "px"
       }
     },
     tabs: {
       // background: undefined,
       // extend: undefined,
-      gap: 'none',
-      // panel: undefined,
-      header: {
-        border: {
-          side: 'bottom',
-          color: 'accent-1',
-          size: '2px'
-        },
-        extend: {
-          width: '100%',
-          'button:first-child > div': {
-            borderTopLeftRadius: '6px'
-          },
-          'button:nth-last-child(2) > div': {
-            borderTopRightRadius: '6px'
-          }
-        }
-      }
+      gap: 'none' // panel: undefined,
+      // header: undefined,
+
     },
     table: {
       extend: function extend(_ref7) {
