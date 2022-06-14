@@ -1398,7 +1398,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         'justify-content': 'center',
         'align-items': 'center',
         width: `${baseSpacing * 7 + 2}px`,
-        height: `${baseSpacing * 4 + 4}px`,
+        height: `${baseSpacing * 3 + 8}px`,
         'border-top-left-radius': `${baseSpacing / 4}px`,
         'border-top-right-radius': `${baseSpacing / 4}px`,
       },

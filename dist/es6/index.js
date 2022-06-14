@@ -1534,7 +1534,7 @@ export var generate = function generate(baseSpacing, scale) {
         'justify-content': 'center',
         'align-items': 'center',
         width: baseSpacing * 7 + 2 + "px",
-        height: baseSpacing * 4 + 4 + "px",
+        height: baseSpacing * 3 + 8 + "px",
         'border-top-left-radius': baseSpacing / 4 + "px",
         'border-top-right-radius': baseSpacing / 4 + "px"
       }
