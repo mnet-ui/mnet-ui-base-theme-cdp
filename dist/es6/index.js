@@ -967,6 +967,9 @@ export var generate = function generate(baseSpacing, scale) {
       // when we scale the font size down
       weight: 700
     },
+    icon: {
+      size: undefined
+    },
     layer: {
       background: 'white',
       border: {
