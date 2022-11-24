@@ -9,6 +9,7 @@ import {
   InfoIconStroke,
   Success,
   Failed,
+  ArrowLeft,
 } from 'mnet-icons/cdp';
 
 import { normalizeColor } from 'grommet/utils/colors';
@@ -548,6 +549,34 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         slideDuration: '0.8s',
       },
       heading: { level: '4' }, // level ranges from 1-6
+      day: {
+        extend: ({
+          isSelected, isInRange, children, theme,
+        }) => ({
+          backgroundColor: `${
+            // eslint-disable-next-line no-nested-ternary
+            isSelected
+              ? normalizeColor('accent-1', theme)
+              : isInRange
+                ? normalizeColor('active', theme)
+                : undefined
+          }`,
+          color: `${
+            // eslint-disable-next-line no-nested-ternary
+            isSelected
+              ? normalizeColor('white', theme)
+              : Number.isNaN(Number(children))
+                ? normalizeColor('dark-1', theme)
+                : undefined
+          }`,
+          borderRadius: '4px',
+          width: '24px',
+          height: '24px',
+          fontWeight: isSelected || Number.isNaN(Number(children)) ? 600 : 400,
+          marginBottom: '2px',
+          opacity: Number.isNaN(Number(children)) ? 1 : undefined,
+        }),
+      },
     },
     carousel: {
       animation: {
@@ -1262,7 +1291,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
                       width: '100%',
                       pad: 'large',
                       extend: ({ checked, theme }) => ({
-                        borderLeft: checked ? `3px solid ${normalizeColor('brand', theme)}` : '0',
+                        borderLeft: checked ? `3px solid ${normalizeColor('accent-1', theme)}` : '0',
+                        borderBottom: `1px solid ${normalizeColor('border', theme)} !important`,
                         '&:hover': {
                           background: normalizeColor('active', theme),
                         },
@@ -1274,15 +1304,15 @@ export const generate = (baseSpacing = 16, scale = 6) => {
                     text: {
                       weight: 600,
                       size: 'large',
-                      active: 'brand',
+                      active: 'accent-1',
                       inactive: 'dark-7',
                     },
                     radioButton: {
                       hover: {
                         border: {
                           color: {
-                            dark: 'brand',
-                            light: 'brand',
+                            dark: 'accent-1',
+                            light: 'accent-1',
                           },
                         },
                       },
@@ -1290,13 +1320,10 @@ export const generate = (baseSpacing = 16, scale = 6) => {
                   },
                 },
                 wrapper: {
-                  extend: ({ theme }) => ({
+                  extend: () => ({
                     'label, label>div': {
                       width: '100%',
                       margin: '0',
-                    },
-                    label: {
-                      borderBottom: `1px solid ${normalizeColor('border', theme)}`,
                     },
                     input: {
                       display: 'none',
@@ -1339,8 +1366,8 @@ export const generate = (baseSpacing = 16, scale = 6) => {
                   weight: 600,
                 },
                 icons: {
-                  prev: Left,
-                  next: Right,
+                  prev: ArrowLeft,
+                  next: ArrowRight,
                   color: 'dark-8',
                   hover: ({ theme }) => ({
                     background: normalizeColor('active', theme),
@@ -1356,7 +1383,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
               gap: 'xsmall',
             },
             button: {
-              secondary: false,
+              // secondary: false,
             },
           },
         },
@@ -1559,7 +1586,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         'th:nth-child(1)': {
           width: `${baseSpacing * 10}px`,
         },
-        'th:nth-child(4)': {
+        'th:last-child': {
           width: `${baseSpacing * 12}px`,
         },
         color: normalizeColor('dark-1', theme),
