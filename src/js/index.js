@@ -1237,6 +1237,131 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       //   type: undefined,
       // },
     },
+    reporting: {
+      filters: {
+        drop: {
+          datepicker: {
+            container: {
+              border: {
+                side: 'bottom',
+                size: 'xsmall',
+              },
+            },
+            presets: {
+              wrapper: {
+                width: `${baseSpacing * 12.5}px`,
+                border: {
+                  side: 'right',
+                  size: 'xsmall',
+                },
+              },
+              date: {
+                item: {
+                  switch: {
+                    option: {
+                      width: '100%',
+                      pad: 'large',
+                      extend: ({ checked, theme }) => ({
+                        borderLeft: checked ? `3px solid ${normalizeColor('brand', theme)}` : '0',
+                        '&:hover': {
+                          background: normalizeColor('active', theme),
+                        },
+                      }),
+                    },
+                    container: {
+                      gap: 'none',
+                    },
+                    text: {
+                      weight: 600,
+                      size: 'large',
+                      active: 'brand',
+                      inactive: 'dark-7',
+                    },
+                    radioButton: {
+                      hover: {
+                        border: {
+                          color: {
+                            dark: 'brand',
+                            light: 'brand',
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+                wrapper: {
+                  extend: ({ theme }) => ({
+                    'label, label>div': {
+                      width: '100%',
+                      margin: '0',
+                    },
+                    label: {
+                      borderBottom: `1px solid ${normalizeColor('border', theme)}`,
+                    },
+                    input: {
+                      display: 'none',
+                    },
+                  }),
+                },
+              },
+            },
+            calendar: {
+              wrapper: {
+                pad: {
+                  horizontal: `${baseSpacing * 2}px`,
+                  vertical: 'small',
+                },
+              },
+              selection: {
+                container: {
+                  align: 'center',
+                  pad: 'large',
+                  border: {
+                    side: 'bottom',
+                    size: 'xsmall',
+                  },
+                },
+                label: {
+                  color: 'dark-7',
+                  size: 'large',
+                },
+              },
+              header: {
+                container: {
+                  width: `${baseSpacing * 10}px`,
+                  pad: {
+                    vertical: 'large',
+                  },
+                },
+                text: {
+                  size: 'large',
+                  color: 'dark-7',
+                  weight: 600,
+                },
+                icons: {
+                  prev: Left,
+                  next: Right,
+                  color: 'dark-8',
+                  hover: ({ theme }) => ({
+                    background: normalizeColor('active', theme),
+                  }),
+                },
+              },
+            },
+          },
+          buttonPanel: {
+            container: {
+              pad: 'medium',
+              justify: 'start',
+              gap: 'xsmall',
+            },
+            button: {
+              secondary: false,
+            },
+          },
+        },
+      },
+    },
     select: {
       activeColor: 'light-5',
       container: {

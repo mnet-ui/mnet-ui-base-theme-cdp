@@ -1372,11 +1372,146 @@ var generate = function generate(baseSpacing, scale) {
       // },
 
     },
+    reporting: {
+      filters: {
+        drop: {
+          datepicker: {
+            container: {
+              border: {
+                side: 'bottom',
+                size: 'xsmall'
+              }
+            },
+            presets: {
+              wrapper: {
+                width: baseSpacing * 12.5 + "px",
+                border: {
+                  side: 'right',
+                  size: 'xsmall'
+                }
+              },
+              date: {
+                item: {
+                  "switch": {
+                    option: {
+                      width: '100%',
+                      pad: 'large',
+                      extend: function extend(_ref5) {
+                        var checked = _ref5.checked,
+                            theme = _ref5.theme;
+                        return {
+                          borderLeft: checked ? "3px solid " + (0, _colors.normalizeColor)('brand', theme) : '0',
+                          '&:hover': {
+                            background: (0, _colors.normalizeColor)('active', theme)
+                          }
+                        };
+                      }
+                    },
+                    container: {
+                      gap: 'none'
+                    },
+                    text: {
+                      weight: 600,
+                      size: 'large',
+                      active: 'brand',
+                      inactive: 'dark-7'
+                    },
+                    radioButton: {
+                      hover: {
+                        border: {
+                          color: {
+                            dark: 'brand',
+                            light: 'brand'
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                wrapper: {
+                  extend: function extend(_ref6) {
+                    var theme = _ref6.theme;
+                    return {
+                      'label, label>div': {
+                        width: '100%',
+                        margin: '0'
+                      },
+                      label: {
+                        borderBottom: "1px solid " + (0, _colors.normalizeColor)('border', theme)
+                      },
+                      input: {
+                        display: 'none'
+                      }
+                    };
+                  }
+                }
+              }
+            },
+            calendar: {
+              wrapper: {
+                pad: {
+                  horizontal: baseSpacing * 2 + "px",
+                  vertical: 'small'
+                }
+              },
+              selection: {
+                container: {
+                  align: 'center',
+                  pad: 'large',
+                  border: {
+                    side: 'bottom',
+                    size: 'xsmall'
+                  }
+                },
+                label: {
+                  color: 'dark-7',
+                  size: 'large'
+                }
+              },
+              header: {
+                container: {
+                  width: baseSpacing * 10 + "px",
+                  pad: {
+                    vertical: 'large'
+                  }
+                },
+                text: {
+                  size: 'large',
+                  color: 'dark-7',
+                  weight: 600
+                },
+                icons: {
+                  prev: Left,
+                  next: Right,
+                  color: 'dark-8',
+                  hover: function hover(_ref7) {
+                    var theme = _ref7.theme;
+                    return {
+                      background: (0, _colors.normalizeColor)('active', theme)
+                    };
+                  }
+                }
+              }
+            }
+          },
+          buttonPanel: {
+            container: {
+              pad: 'medium',
+              justify: 'start',
+              gap: 'xsmall'
+            },
+            button: {
+              secondary: false
+            }
+          }
+        }
+      }
+    },
     select: {
       activeColor: 'light-5',
       container: {
-        extend: function extend(_ref5) {
-          var theme = _ref5.theme;
+        extend: function extend(_ref8) {
+          var theme = _ref8.theme;
           return {
             borderColor: (0, _colors.normalizeColor)('border', theme),
             background: (0, _colors.normalizeColor)('dark-3', theme)
@@ -1385,8 +1520,8 @@ var generate = function generate(baseSpacing, scale) {
       },
       control: {
         // open: undefined,
-        extend: function extend(_ref6) {
-          var theme = _ref6.theme;
+        extend: function extend(_ref9) {
+          var theme = _ref9.theme;
           return {
             border: 'none',
             borderRadius: baseSpacing / 3.2 + "px",
@@ -1580,8 +1715,8 @@ var generate = function generate(baseSpacing, scale) {
 
     },
     table: {
-      extend: function extend(_ref7) {
-        var theme = _ref7.theme;
+      extend: function extend(_ref10) {
+        var theme = _ref10.theme;
         return {
           'table-layout': 'fixed',
           'border-collapse': 'collapse',
@@ -1631,8 +1766,8 @@ var generate = function generate(baseSpacing, scale) {
         background: {
           color: 'dark-3'
         },
-        extend: function extend(_ref8) {
-          var theme = _ref8.theme;
+        extend: function extend(_ref11) {
+          var theme = _ref11.theme;
           return {
             span: {
               color: (0, _colors.normalizeColor)('dark-1', theme),
@@ -1695,9 +1830,9 @@ var generate = function generate(baseSpacing, scale) {
     },
     textInput: {
       // disabled: { opacity: undefined },
-      extend: function extend(_ref9) {
-        var theme = _ref9.theme,
-            onSuggestionsOpen = _ref9.onSuggestionsOpen;
+      extend: function extend(_ref12) {
+        var theme = _ref12.theme,
+            onSuggestionsOpen = _ref12.onSuggestionsOpen;
         return {
           'box-shadow': 'none',
           color: (0, _colors.normalizeColor)('dark-1', theme),
