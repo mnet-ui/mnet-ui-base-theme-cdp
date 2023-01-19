@@ -23,6 +23,8 @@ var _Success = require("mnet-icons/dist/es6/icons/cdp/Success");
 
 var _Failed = require("mnet-icons/dist/es6/icons/cdp/Failed");
 
+var _ArrowLeft = require("mnet-icons/dist/es6/icons/cdp/ArrowLeft");
+
 var _colors = require("grommet/utils/colors");
 
 var _object = require("grommet/utils/object");
@@ -619,8 +621,28 @@ var generate = function generate(baseSpacing, scale) {
       },
       heading: {
         level: '4'
-      } // level ranges from 1-6
-
+      },
+      // level ranges from 1-6
+      day: {
+        extend: function extend(_ref3) {
+          var isSelected = _ref3.isSelected,
+              isInRange = _ref3.isInRange,
+              children = _ref3.children,
+              theme = _ref3.theme;
+          return {
+            backgroundColor: "" + ( // eslint-disable-next-line no-nested-ternary
+            isSelected ? (0, _colors.normalizeColor)('accent-1', theme) : isInRange ? (0, _colors.normalizeColor)('active', theme) : undefined),
+            color: "" + ( // eslint-disable-next-line no-nested-ternary
+            isSelected ? (0, _colors.normalizeColor)('white', theme) : Number.isNaN(Number(children)) ? (0, _colors.normalizeColor)('dark-1', theme) : undefined),
+            borderRadius: '4px',
+            width: '24px',
+            height: '24px',
+            fontWeight: isSelected || Number.isNaN(Number(children)) ? 600 : 400,
+            marginBottom: '2px',
+            opacity: Number.isNaN(Number(children)) ? 1 : undefined
+          };
+        }
+      }
     },
     carousel: {
       animation: {
@@ -681,9 +703,9 @@ var generate = function generate(baseSpacing, scale) {
           color: {
             light: statusColors.error
           },
-          extend: function extend(_ref3) {
-            var checked = _ref3.checked,
-                theme = _ref3.theme;
+          extend: function extend(_ref4) {
+            var checked = _ref4.checked,
+                theme = _ref4.theme;
             return {
               top: '1px',
               left: '2px',
@@ -694,10 +716,10 @@ var generate = function generate(baseSpacing, scale) {
           }
         },
         radius: baseSpacing / 2 + "px",
-        extend: function extend(_ref4) {
-          var checked = _ref4.checked,
-              disabled = _ref4.disabled,
-              theme = _ref4.theme;
+        extend: function extend(_ref5) {
+          var checked = _ref5.checked,
+              disabled = _ref5.disabled,
+              theme = _ref5.theme;
           return {
             height: baseSpacing + "px",
             border: "2px solid " + (0, _colors.normalizeColor)(checked ? 'accent-4' : 'dark-2', theme),
@@ -1372,11 +1394,142 @@ var generate = function generate(baseSpacing, scale) {
       // },
 
     },
+    reporting: {
+      filters: {
+        drop: {
+          datepicker: {
+            container: {
+              border: {
+                side: 'bottom',
+                size: 'xsmall'
+              }
+            },
+            presets: {
+              wrapper: {
+                width: baseSpacing * 12.5 + "px",
+                border: {
+                  side: 'right',
+                  size: 'xsmall'
+                }
+              },
+              date: {
+                item: {
+                  "switch": {
+                    option: {
+                      width: '100%',
+                      pad: 'large',
+                      extend: function extend(_ref6) {
+                        var checked = _ref6.checked,
+                            theme = _ref6.theme;
+                        return {
+                          borderLeft: checked ? "3px solid " + (0, _colors.normalizeColor)('accent-1', theme) : '0',
+                          borderBottom: "1px solid " + (0, _colors.normalizeColor)('border', theme) + " !important",
+                          '&:hover': {
+                            background: (0, _colors.normalizeColor)('active', theme)
+                          }
+                        };
+                      }
+                    },
+                    container: {
+                      gap: 'none'
+                    },
+                    text: {
+                      weight: 600,
+                      size: 'large',
+                      active: 'accent-1',
+                      inactive: 'dark-7'
+                    },
+                    radioButton: {
+                      hover: {
+                        border: {
+                          color: {
+                            dark: 'accent-1',
+                            light: 'accent-1'
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                wrapper: {
+                  extend: function extend() {
+                    return {
+                      'label, label>div': {
+                        width: '100%',
+                        margin: '0'
+                      },
+                      input: {
+                        display: 'none'
+                      }
+                    };
+                  }
+                }
+              }
+            },
+            calendar: {
+              wrapper: {
+                pad: {
+                  horizontal: baseSpacing * 2 + "px",
+                  vertical: 'small'
+                }
+              },
+              selection: {
+                container: {
+                  align: 'center',
+                  pad: 'large',
+                  border: {
+                    side: 'bottom',
+                    size: 'xsmall'
+                  }
+                },
+                label: {
+                  color: 'dark-7',
+                  size: 'large'
+                }
+              },
+              header: {
+                container: {
+                  width: baseSpacing * 10 + "px",
+                  pad: {
+                    vertical: 'large'
+                  }
+                },
+                text: {
+                  size: 'large',
+                  color: 'dark-7',
+                  weight: 600
+                },
+                icons: {
+                  prev: _ArrowLeft.ArrowLeft,
+                  next: _ArrowRight.ArrowRight,
+                  color: 'dark-8',
+                  hover: function hover(_ref7) {
+                    var theme = _ref7.theme;
+                    return {
+                      background: (0, _colors.normalizeColor)('active', theme)
+                    };
+                  }
+                }
+              }
+            }
+          },
+          buttonPanel: {
+            container: {
+              pad: 'medium',
+              justify: 'start',
+              gap: 'xsmall'
+            },
+            button: {// secondary: false,
+            }
+          }
+        }
+      }
+    },
     select: {
       activeColor: 'light-5',
       container: {
-        extend: function extend(_ref5) {
-          var theme = _ref5.theme;
+        extend: function extend(_ref8) {
+          var theme = _ref8.theme;
           return {
             borderColor: (0, _colors.normalizeColor)('border', theme),
             background: (0, _colors.normalizeColor)('dark-3', theme)
@@ -1385,8 +1538,8 @@ var generate = function generate(baseSpacing, scale) {
       },
       control: {
         // open: undefined,
-        extend: function extend(_ref6) {
-          var theme = _ref6.theme;
+        extend: function extend(_ref9) {
+          var theme = _ref9.theme;
           return {
             border: 'none',
             borderRadius: baseSpacing / 3.2 + "px",
@@ -1580,8 +1733,8 @@ var generate = function generate(baseSpacing, scale) {
 
     },
     table: {
-      extend: function extend(_ref7) {
-        var theme = _ref7.theme;
+      extend: function extend(_ref10) {
+        var theme = _ref10.theme;
         return {
           'table-layout': 'fixed',
           'border-collapse': 'collapse',
@@ -1595,7 +1748,7 @@ var generate = function generate(baseSpacing, scale) {
           'th:nth-child(1)': {
             width: baseSpacing * 10 + "px"
           },
-          'th:nth-child(4)': {
+          'th:last-child': {
             width: baseSpacing * 12 + "px"
           },
           color: (0, _colors.normalizeColor)('dark-1', theme),
@@ -1631,8 +1784,8 @@ var generate = function generate(baseSpacing, scale) {
         background: {
           color: 'dark-3'
         },
-        extend: function extend(_ref8) {
-          var theme = _ref8.theme;
+        extend: function extend(_ref11) {
+          var theme = _ref11.theme;
           return {
             span: {
               color: (0, _colors.normalizeColor)('dark-1', theme),
@@ -1695,9 +1848,9 @@ var generate = function generate(baseSpacing, scale) {
     },
     textInput: {
       // disabled: { opacity: undefined },
-      extend: function extend(_ref9) {
-        var theme = _ref9.theme,
-            onSuggestionsOpen = _ref9.onSuggestionsOpen;
+      extend: function extend(_ref12) {
+        var theme = _ref12.theme,
+            onSuggestionsOpen = _ref12.onSuggestionsOpen;
         return {
           'box-shadow': 'none',
           color: (0, _colors.normalizeColor)('dark-1', theme),

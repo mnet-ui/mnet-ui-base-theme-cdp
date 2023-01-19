@@ -9,6 +9,7 @@ import {
   InfoIconStroke,
   Success,
   Failed,
+  ArrowLeft,
 } from 'mnet-icons/cdp';
 
 import { normalizeColor } from 'grommet/utils/colors';
@@ -548,6 +549,34 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         slideDuration: '0.8s',
       },
       heading: { level: '4' }, // level ranges from 1-6
+      day: {
+        extend: ({
+          isSelected, isInRange, children, theme,
+        }) => ({
+          backgroundColor: `${
+            // eslint-disable-next-line no-nested-ternary
+            isSelected
+              ? normalizeColor('accent-1', theme)
+              : isInRange
+                ? normalizeColor('active', theme)
+                : undefined
+          }`,
+          color: `${
+            // eslint-disable-next-line no-nested-ternary
+            isSelected
+              ? normalizeColor('white', theme)
+              : Number.isNaN(Number(children))
+                ? normalizeColor('dark-1', theme)
+                : undefined
+          }`,
+          borderRadius: '4px',
+          width: '24px',
+          height: '24px',
+          fontWeight: isSelected || Number.isNaN(Number(children)) ? 600 : 400,
+          marginBottom: '2px',
+          opacity: Number.isNaN(Number(children)) ? 1 : undefined,
+        }),
+      },
     },
     carousel: {
       animation: {
@@ -1237,6 +1266,129 @@ export const generate = (baseSpacing = 16, scale = 6) => {
       //   type: undefined,
       // },
     },
+    reporting: {
+      filters: {
+        drop: {
+          datepicker: {
+            container: {
+              border: {
+                side: 'bottom',
+                size: 'xsmall',
+              },
+            },
+            presets: {
+              wrapper: {
+                width: `${baseSpacing * 12.5}px`,
+                border: {
+                  side: 'right',
+                  size: 'xsmall',
+                },
+              },
+              date: {
+                item: {
+                  switch: {
+                    option: {
+                      width: '100%',
+                      pad: 'large',
+                      extend: ({ checked, theme }) => ({
+                        borderLeft: checked ? `3px solid ${normalizeColor('accent-1', theme)}` : '0',
+                        borderBottom: `1px solid ${normalizeColor('border', theme)} !important`,
+                        '&:hover': {
+                          background: normalizeColor('active', theme),
+                        },
+                      }),
+                    },
+                    container: {
+                      gap: 'none',
+                    },
+                    text: {
+                      weight: 600,
+                      size: 'large',
+                      active: 'accent-1',
+                      inactive: 'dark-7',
+                    },
+                    radioButton: {
+                      hover: {
+                        border: {
+                          color: {
+                            dark: 'accent-1',
+                            light: 'accent-1',
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+                wrapper: {
+                  extend: () => ({
+                    'label, label>div': {
+                      width: '100%',
+                      margin: '0',
+                    },
+                    input: {
+                      display: 'none',
+                    },
+                  }),
+                },
+              },
+            },
+            calendar: {
+              wrapper: {
+                pad: {
+                  horizontal: `${baseSpacing * 2}px`,
+                  vertical: 'small',
+                },
+              },
+              selection: {
+                container: {
+                  align: 'center',
+                  pad: 'large',
+                  border: {
+                    side: 'bottom',
+                    size: 'xsmall',
+                  },
+                },
+                label: {
+                  color: 'dark-7',
+                  size: 'large',
+                },
+              },
+              header: {
+                container: {
+                  width: `${baseSpacing * 10}px`,
+                  pad: {
+                    vertical: 'large',
+                  },
+                },
+                text: {
+                  size: 'large',
+                  color: 'dark-7',
+                  weight: 600,
+                },
+                icons: {
+                  prev: ArrowLeft,
+                  next: ArrowRight,
+                  color: 'dark-8',
+                  hover: ({ theme }) => ({
+                    background: normalizeColor('active', theme),
+                  }),
+                },
+              },
+            },
+          },
+          buttonPanel: {
+            container: {
+              pad: 'medium',
+              justify: 'start',
+              gap: 'xsmall',
+            },
+            button: {
+              // secondary: false,
+            },
+          },
+        },
+      },
+    },
     select: {
       activeColor: 'light-5',
       container: {
@@ -1434,7 +1586,7 @@ export const generate = (baseSpacing = 16, scale = 6) => {
         'th:nth-child(1)': {
           width: `${baseSpacing * 10}px`,
         },
-        'th:nth-child(4)': {
+        'th:last-child': {
           width: `${baseSpacing * 12}px`,
         },
         color: normalizeColor('dark-1', theme),
